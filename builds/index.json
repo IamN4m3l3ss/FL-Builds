@@ -4,6 +4,6 @@
   "name": "Bloodletter Assassin",
   "class": "Rogue \u2192 Assassin",
   "weapon": "Daggers",
-  "summary": "Stack Bleed and pop it with Rupture in a single Hasted Attack."
+  "summary": "Attack from Hidden: every hit crits, stacks Bleed and pops it with Rupture."
  }
 ]

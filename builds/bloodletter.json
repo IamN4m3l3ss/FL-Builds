@@ -4,14 +4,11 @@
  "class": "Rogue \u2192 Assassin",
  "weapon": "Daggers",
  "snapshot": "2026-11-22",
- "summary": "Stack Bleed and pop it with Rupture in a single Hasted Attack.",
+ "summary": "Attack from Hidden: every hit crits, stacks Bleed and pops it with Rupture.",
  "gate": "g6",
  "order": [
   "t34",
-  "i.grit.s0",
-  "i.grit.n0",
-  "f127.s0",
-  "t53",
+  "t35",
   "t36",
   "t52",
   "t41",
@@ -32,41 +29,44 @@
   "r.rending.an",
   "r.rending.b",
   "r.rending.bn",
+  "t53",
   "t42",
-  "t83",
-  "f19.s0",
-  "f19.s1",
-  "t84",
-  "t119",
-  "k.sun",
-  "t120",
-  "w.sun.1.n0",
+  "t54",
+  "t21",
+  "t57",
+  "t55",
   "t56",
   "t86",
   "k.gale",
+  "t78",
+  "t79",
+  "r.ambush.e",
+  "r.ambush.a",
+  "r.ambush.an",
+  "r.ambush.m",
   "k.blood",
   "f39.s1",
   "i.constitution.n0",
-  "t35",
-  "t85",
-  "t16",
-  "t54",
-  "t17",
-  "t18",
-  "t55",
-  "t57",
-  "t32",
-  "t78",
+  "i.grit.n0",
+  "t82",
+  "t87",
+  "t59",
+  "t58",
+  "w.dream.1.s2",
+  "t15",
+  "t14",
+  "t83",
   "t50",
   "w.blood.sig.s0",
-  "t40",
-  "t73",
-  "f1026.s0",
-  "t49",
-  "t30",
-  "t72",
-  "t70",
-  "t48"
+  "t43",
+  "t32",
+  "t16",
+  "t17",
+  "t13",
+  "t20",
+  "t19",
+  "t18",
+  "t85"
  ],
  "goals": [
   "Open Wounds",
@@ -83,9 +83,6 @@
   "Open Wounds",
   "Open Wounds",
   "Open Wounds",
-  "Open Wounds",
-  "Open Wounds",
-  "Open Wounds",
   "Haemorrhage",
   "Haemorrhage",
   "Haemorrhage",
@@ -94,22 +91,25 @@
   "Rending",
   "Impaling Wound",
   "Impaling Wound",
-  "Sharp Focus",
-  "Sharp Focus",
-  "Sharp Focus",
-  "Sharp Focus",
-  "Keen Eye",
-  "Keen Eye",
-  "Keen Eye",
-  "Keen Eye",
-  "Keen Eye",
   "Windborne",
   "Windborne",
   "Windborne",
+  "Windborne",
+  "Windborne",
+  "Windborne",
+  "Windborne",
+  "Windborne",
+  "Windborne",
+  "Unseen Blade",
+  "Unseen Blade",
+  "Unseen Blade",
+  "Unseen Blade",
+  "Unseen Blade",
+  "Fading Step",
   "Blood Rite",
   "Second Breath",
   "Second Breath",
-  "filler",
+  "Red Harvest",
   "filler",
   "filler",
   "filler",
@@ -157,9 +157,9 @@
   },
   {
    "slot": "Ring",
-   "item": "Giant's Tooth",
-   "why": "Crit chance, and Vulnerable adds a Bleed.",
-   "alt": "Bloodiron Ring"
+   "item": "Bloodiron Ring",
+   "why": "More Bleed on hit, no healing penalty.",
+   "alt": "Bloodstone Ring"
   },
   {
    "slot": "Head",
@@ -169,51 +169,55 @@
   },
   {
    "slot": "Feet",
-   "item": "Astren Shoes",
-   "why": "Status power, which makes Bleed hit harder.",
-   "alt": "Frostmere Boots"
+   "item": "Nightwhisper Boots",
+   "why": "Start every fight Hidden, so your first Attack always crits.",
+   "alt": "Astren Shoes"
   }
  ],
  "rotation": [
   {
+   "skill": "Mark for Death",
+   "text": "You become Hidden. Death Sentence pops any Bleed already on the target."
+  },
+  {
    "skill": "Attack",
-   "text": "Windborne makes it hit twice. Hit one stacks Bleed, and a crit on hit two applies Vulnerable and Rupture goes off."
+   "text": "From Hidden, Unseen Blade makes it crit. The crit stacks Bleed and Maul Band's Vulnerable sets off Rupture."
   },
   {
-   "skill": "No crit?",
-   "text": "Use Mark for Death. Death Sentence applies Vulnerable and sets off Rupture."
-  },
-  {
-   "skill": "Big target",
-   "text": "Deep Cut first to double the Bleed, then pop it."
+   "skill": "After a kill",
+   "text": "Vanish makes you Hidden again, so Attack the next target straight away."
   }
  ],
  "cls": "rogue",
  "super": "assassin",
  "classTree": [
   {
+   "node": "assassin:shadows:1",
+   "why": "Needed to reach From the Shadows."
+  },
+  {
+   "node": "assassin:shadows:2",
+   "why": "+40% damage while Hidden, and your hits can't be dodged."
+  },
+  {
+   "node": "assassin:shadows:3",
+   "why": "Needed to reach Vanish."
+  },
+  {
+   "node": "assassin:shadows:4",
+   "why": "Every kill makes you Hidden again, so the next Attack crits."
+  },
+  {
    "node": "assassin:contract:1",
    "why": "Needed to reach Death Sentence."
   },
   {
    "node": "assassin:contract:2",
-   "why": "Backup Rupture trigger when you don't crit."
+   "why": "Mark for Death also sets off Rupture."
   },
   {
    "node": "assassin:venom:1",
    "why": "+10% status power."
-  },
-  {
-   "node": "assassin:contract:3",
-   "why": "Crit chance."
-  },
-  {
-   "node": "assassin:shadows:1",
-   "why": "Needed to reach Shadows II."
-  },
-  {
-   "node": "assassin:shadows:3",
-   "why": "Only if points are left."
   }
  ],
  "chase": {
@@ -222,6 +226,6 @@
  },
  "statPick": {
   "attr": "Spirit",
-  "why": "Every round stat node gives +2 to an attribute you choose. Take Spirit: +1% status power per point makes Bleed and Rupture hit harder. This path has 36 of them, so +72 Spirit."
+  "why": "Every round stat node gives +2 to an attribute you choose. Take Spirit: +1% status power per point makes Bleed and Rupture hit harder. This path has 38 of them, so +76 Spirit."
  }
 }
