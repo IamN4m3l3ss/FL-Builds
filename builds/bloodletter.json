@@ -2,9 +2,12 @@
  "id": "bloodletter",
  "name": "Bloodletter Assassin",
  "class": "Rogue \u2192 Assassin",
- "weapon": "Daggers",
+ "cls": "rogue",
+ "super": "assassin",
+ "weapon": "Two daggers",
+ "tier": "A",
  "snapshot": "2026-11-22",
- "summary": "Attack from Hidden: every hit crits, stacks Bleed and pops it with Rupture.",
+ "summary": "Twin Cut spreads Bleed to every enemy, Mark for Death makes them all Rupture.",
  "gate": "g6",
  "order": [
   "t34",
@@ -48,25 +51,25 @@
   "f39.s1",
   "i.constitution.n0",
   "i.grit.n0",
-  "t82",
-  "t87",
-  "t59",
-  "t58",
-  "w.dream.1.s2",
-  "t15",
-  "t14",
-  "t83",
-  "t50",
+  "f127.s0",
+  "i.grit.s0",
+  "w.blood.1.s1",
+  "w.blood.sig.s3",
+  "w.blood.sig.s7",
+  "w.blood.sig.s8",
+  "w.blood.sig.s6",
+  "w.blood.sig.s2",
+  "w.blood.sig.s1",
   "w.blood.sig.s0",
-  "t43",
-  "t32",
-  "t16",
-  "t17",
-  "t13",
+  "t83",
+  "t15",
   "t20",
   "t19",
-  "t18",
-  "t85"
+  "t82",
+  "t80",
+  "t32",
+  "t31",
+  "t14"
  ],
  "goals": [
   "Open Wounds",
@@ -130,12 +133,52 @@
   "filler",
   "filler"
  ],
+ "statPick": {
+  "attr": "Spirit",
+  "why": "Every round stat node gives +2 to an attribute you choose. Spirit gives +1% status power per point, and status power makes Bleed and Rupture hit harder. This path has 30 of them, so +60 Spirit."
+ },
+ "classTree": [
+  {
+   "node": "assassin:contract:1",
+   "why": "Needed to reach Death Sentence."
+  },
+  {
+   "node": "assassin:contract:2",
+   "why": "Mark for Death gives Vulnerable, which sets off Rupture."
+  },
+  {
+   "node": "assassin:shadows:1",
+   "why": "Needed to reach From the Shadows."
+  },
+  {
+   "node": "assassin:shadows:2",
+   "why": "+40% damage while Hidden, and your hits cannot be dodged."
+  },
+  {
+   "node": "assassin:shadows:3",
+   "why": "Needed to reach Vanish."
+  },
+  {
+   "node": "assassin:shadows:4",
+   "why": "Every kill makes you Hidden again."
+  },
+  {
+   "node": "assassin:venom:1",
+   "why": "+10% status power."
+  }
+ ],
  "gear": [
   {
    "slot": "Weapon",
    "item": "Red Widow's Fang",
    "why": "Every Bleed you apply gets 2 extra stacks.",
-   "alt": "Crimson Fang"
+   "alt": "Bloodletter Dagger"
+  },
+  {
+   "slot": "Off-hand",
+   "item": "Crimson Fang",
+   "why": "30% Bleed on hit, +15% against Bleeding enemies. Both daggers' powers count.",
+   "alt": "Bloodletter Dagger"
   },
   {
    "slot": "Amulet",
@@ -150,82 +193,87 @@
    "alt": "Wyrmtooth Coat"
   },
   {
+   "slot": "Head",
+   "item": "Bloodfever Helm",
+   "why": "Lifesteal.",
+   "alt": "Wyrm Knight's Helm"
+  },
+  {
+   "slot": "Ring",
+   "item": "Bloodstone Ring",
+   "why": "Lifesteal.",
+   "alt": "Bloodiron Ring"
+  },
+  {
    "slot": "Ring",
    "item": "Red Widow's Band",
    "why": "Bleed cap +5 and status power.",
    "alt": "Bloodiron Ring"
   },
   {
-   "slot": "Ring",
-   "item": "Bloodiron Ring",
-   "why": "More Bleed on hit, no healing penalty.",
-   "alt": "Bloodstone Ring"
-  },
-  {
-   "slot": "Head",
-   "item": "Wyrm Knight's Helm",
-   "why": "Status power, and Bleed spreads.",
-   "alt": "Wyrmtooth Helm"
-  },
-  {
    "slot": "Feet",
    "item": "Nightwhisper Boots",
-   "why": "Start every fight Hidden, so your first Attack always crits.",
+   "why": "Start every fight Hidden, so your first Attack crits.",
    "alt": "Astren Shoes"
-  }
- ],
- "rotation": [
-  {
-   "skill": "Mark for Death",
-   "text": "You become Hidden. Death Sentence pops any Bleed already on the target."
-  },
-  {
-   "skill": "Attack",
-   "text": "From Hidden, Unseen Blade makes it crit. The crit stacks Bleed and Maul Band's Vulnerable sets off Rupture."
-  },
-  {
-   "skill": "After a kill",
-   "text": "Vanish makes you Hidden again, so Attack the next target straight away."
-  }
- ],
- "cls": "rogue",
- "super": "assassin",
- "classTree": [
-  {
-   "node": "assassin:shadows:1",
-   "why": "Needed to reach From the Shadows."
-  },
-  {
-   "node": "assassin:shadows:2",
-   "why": "+40% damage while Hidden, and your hits can't be dodged."
-  },
-  {
-   "node": "assassin:shadows:3",
-   "why": "Needed to reach Vanish."
-  },
-  {
-   "node": "assassin:shadows:4",
-   "why": "Every kill makes you Hidden again, so the next Attack crits."
-  },
-  {
-   "node": "assassin:contract:1",
-   "why": "Needed to reach Death Sentence."
-  },
-  {
-   "node": "assassin:contract:2",
-   "why": "Mark for Death also sets off Rupture."
-  },
-  {
-   "node": "assassin:venom:1",
-   "why": "+10% status power."
   }
  ],
  "chase": {
   "item": "Serpent Coil",
-  "why": "Every Bleed you apply also gives Vulnerable, so each Bleed sets off Rupture."
+  "why": "Mythic ring: lifesteal, and every Bleed you apply also gives Vulnerable, so it pops at once."
  },
- "statPick": {
-  "attr": "Spirit",
-  "why": "Every round stat node gives +2 to an attribute you choose. Take Spirit: +1% status power per point makes Bleed and Rupture hit harder. This path has 38 of them, so +76 Spirit."
- }
+ "gems": [
+  {
+   "skill": "Twin Cut",
+   "gems": [
+    "Nova",
+    "Contagion",
+    "Echo"
+   ],
+   "why": "Bleed on every enemy, and it casts again free next turn."
+  },
+  {
+   "skill": "Deep Cut",
+   "gems": [
+    "Nova",
+    "Echo",
+    "Momentum"
+   ],
+   "why": "Doubles every enemy's Bleed, twice."
+  },
+  {
+   "skill": "Mark for Death",
+   "gems": [
+    "Contagion",
+    "Echo"
+   ],
+   "why": "Vulnerable on every enemy, so they all Rupture."
+  },
+  {
+   "skill": "Execute",
+   "gems": [
+    "Nova",
+    "Momentum",
+    "Overload"
+   ],
+   "why": "Finishes the whole group. Kills give more actions."
+  }
+ ],
+ "rotation": [
+  {
+   "skill": "Twin Cut",
+   "text": "Bleed on every enemy. Echo casts it again next turn."
+  },
+  {
+   "skill": "Deep Cut",
+   "text": "Doubles every enemy's Bleed."
+  },
+  {
+   "skill": "Mark for Death",
+   "text": "Vulnerable on every enemy, so they all Rupture. You become Hidden."
+  },
+  {
+   "skill": "Attack or Execute",
+   "text": "Crit from Hidden, or Execute the group below 60% HP."
+  }
+ ]
 }

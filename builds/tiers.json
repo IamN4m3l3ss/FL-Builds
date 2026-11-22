@@ -1,0 +1,127 @@
+[
+ {
+  "tier": "S",
+  "entries": [
+   {
+    "name": "Berserker",
+    "from": "Warrior",
+    "why": "Attacks hit every enemy while Frenzied, with lifesteal. Best tower sustain and area damage."
+   },
+   {
+    "name": "Pyromancer",
+    "from": "Mage",
+    "why": "Burn on every enemy every turn, then Detonate. Area damage with no crits needed."
+   },
+   {
+    "name": "Marksman",
+    "from": "Archer",
+    "why": "Volley hits every enemy every turn with no cooldown."
+   }
+  ]
+ },
+ {
+  "tier": "A",
+  "entries": [
+   {
+    "name": "Zealot",
+    "from": "Priest ultra",
+    "why": "Level 40+. Area Brand, extra actions and a self-healing ultra."
+   },
+   {
+    "name": "Seraph",
+    "from": "Priest ultra",
+    "why": "Level 40+. Area damage plus full-party heals and revives."
+   },
+   {
+    "name": "Dragoon",
+    "from": "Lancer",
+    "why": "Reliable Sunder triggers for Rupture on every enemy. No built-in lifesteal."
+   },
+   {
+    "name": "Gunner",
+    "from": "Archer",
+    "why": "Scattershot Burns every enemy. Strong but costs HP."
+   },
+   {
+    "name": "Assassin",
+    "from": "Rogue",
+    "why": "Best at stacking Bleed. Area damage needs gems, and lifesteal comes from gear."
+   }
+  ]
+ },
+ {
+  "tier": "B",
+  "entries": [
+   {
+    "name": "Sellsword",
+    "from": "Warrior",
+    "why": "Best single-target Rupture: guaranteed crit every turn, about 1.7x damage. Weak in groups."
+   },
+   {
+    "name": "Jester",
+    "from": "Bard",
+    "why": "Mockery hits every enemy and makes them Vulnerable. Low damage on its own."
+   },
+   {
+    "name": "Ranger",
+    "from": "Archer",
+    "why": "Hawk adds Bleed and Vulnerable by itself. Small numbers."
+   },
+   {
+    "name": "Gladiator",
+    "from": "Lancer",
+    "why": "Favor gives crits and damage. One target at a time."
+   },
+   {
+    "name": "Skald",
+    "from": "Bard",
+    "why": "Strong party buffs (Keen, Haste). Little damage alone."
+   },
+   {
+    "name": "Oracle",
+    "from": "Priest ultra",
+    "why": "Undoes damage and revives. Support first."
+   }
+  ]
+ },
+ {
+  "tier": "C",
+  "entries": [
+   {
+    "name": "Druid",
+    "from": "Mage",
+    "why": "Single-target Poison and Regen."
+   },
+   {
+    "name": "Priest",
+    "from": "Mage",
+    "why": "Healer. Take it only to reach the ultra classes at level 40."
+   },
+   {
+    "name": "Outlaw",
+    "from": "Rogue",
+    "why": "Blind and buff stealing. Little damage."
+   },
+   {
+    "name": "Duelist",
+    "from": "Rogue",
+    "why": "Strong one-on-one, poor against groups."
+   },
+   {
+    "name": "Knight",
+    "from": "Warrior",
+    "why": "Protects allies."
+   },
+   {
+    "name": "Herald",
+    "from": "Bard",
+    "why": "Gives allies extra actions."
+   },
+   {
+    "name": "Sentinel",
+    "from": "Lancer",
+    "why": "Defensive support."
+   }
+  ]
+ }
+]

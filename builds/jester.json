@@ -1,0 +1,249 @@
+{
+ "id": "jester",
+ "name": "Mocking Jester",
+ "class": "Bard \u2192 Jester",
+ "cls": "bard",
+ "super": "jester",
+ "weapon": "Lute",
+ "tier": "B",
+ "snapshot": "2026-11-22",
+ "summary": "Mockery hits every enemy and Taunts them. Taunted enemies also get Vulnerable.",
+ "gate": "g1",
+ "order": [
+  "i.chorus.s0",
+  "f342.s0",
+  "t124",
+  "i.grit.s0",
+  "i.grit.n0",
+  "f127.s0",
+  "t53",
+  "t36",
+  "t82",
+  "t80",
+  "t81",
+  "r.blight.e",
+  "r.blight.b",
+  "r.blight.m",
+  "t52",
+  "t41",
+  "t51",
+  "t33",
+  "t50",
+  "t40",
+  "t49",
+  "t30",
+  "t48",
+  "t39",
+  "t68",
+  "t69",
+  "r.hearth.e",
+  "r.hearth.b",
+  "r.hearth.bn",
+  "i.chorus.n0",
+  "t42",
+  "t83",
+  "f19.s0",
+  "f19.s1",
+  "f377.s1",
+  "f377.s0",
+  "f377.s2",
+  "f565.s0",
+  "t112",
+  "w.shadow.sig.s4",
+  "w.shadow.sig.s5",
+  "w.shadow.sig.n1",
+  "w.shadow.sig.s3",
+  "w.shadow.sig.n0",
+  "i.fletching.s0",
+  "f168.s0",
+  "f168.s2",
+  "i.shieldwork.s0",
+  "t22",
+  "i.focus.s0",
+  "i.focus.n0",
+  "f39.s1",
+  "i.constitution.n0",
+  "f637.s0",
+  "f637.s2",
+  "t2",
+  "t3",
+  "t1",
+  "t35",
+  "t47"
+ ],
+ "goals": [
+  "Night Song",
+  "Night Song",
+  "Night Song",
+  "Night Song",
+  "Night Song",
+  "Night Song",
+  "Night Song",
+  "Night Song",
+  "Night Song",
+  "Night Song",
+  "Night Song",
+  "Night Song",
+  "Night Song",
+  "Night Song",
+  "Kindred Fire",
+  "Kindred Fire",
+  "Kindred Fire",
+  "Kindred Fire",
+  "Kindred Fire",
+  "Kindred Fire",
+  "Kindred Fire",
+  "Kindred Fire",
+  "Kindred Fire",
+  "Kindred Fire",
+  "Kindred Fire",
+  "Kindred Fire",
+  "Kindred Fire",
+  "Kindred Fire",
+  "Kindred Fire",
+  "Encore",
+  "Sharp Focus",
+  "Sharp Focus",
+  "Sharp Focus",
+  "Sharp Focus",
+  "Executioner",
+  "Executioner",
+  "Executioner",
+  "Executioner",
+  "Executioner",
+  "Executioner",
+  "Executioner",
+  "Executioner",
+  "Hex",
+  "Hex",
+  "Spellfocus",
+  "Spellfocus",
+  "Spellfocus",
+  "Spellfocus",
+  "Spellfocus",
+  "Spellfocus",
+  "Spellfocus",
+  "Second Breath",
+  "Second Breath",
+  "filler",
+  "filler",
+  "filler",
+  "filler",
+  "filler",
+  "filler",
+  "filler"
+ ],
+ "statPick": {
+  "attr": "Spirit",
+  "why": "Every round stat node gives +2 to an attribute you choose. Spirit adds 1% damage per point to Mockery and Bag of Tricks, and more Energy. This path has 27 of them, so +54 Spirit."
+ },
+ "classTree": [
+  {
+   "node": "jester:ridicule:1",
+   "why": "Taunted and Mocked last longer."
+  },
+  {
+   "node": "jester:ridicule:2",
+   "why": "Taunted enemies also get Vulnerable for 2 turns."
+  },
+  {
+   "node": "jester:ridicule:3",
+   "why": "Max HP."
+  },
+  {
+   "node": "jester:ridicule:4",
+   "why": "Mockery hits every enemy."
+  },
+  {
+   "node": "jester:mayhem:1",
+   "why": "+10% damage."
+  },
+  {
+   "node": "jester:luck:1",
+   "why": "Dodge chance."
+  },
+  {
+   "node": "jester:luck:2",
+   "why": "Bag of Tricks uses two effects."
+  }
+ ],
+ "gear": [
+  {
+   "slot": "Weapon",
+   "item": "War Drummer's Lute",
+   "why": "+8-12% damage and a 50% chance to Mark.",
+   "alt": "Clarion Lute"
+  },
+  {
+   "slot": "Head",
+   "item": "Bloodfever Helm",
+   "why": "Lifesteal.",
+   "alt": "Sentinel's Sallet"
+  },
+  {
+   "slot": "Torso",
+   "item": "Stargazer's Robe",
+   "why": "Ward and status power.",
+   "alt": "Herald's Tabard"
+  },
+  {
+   "slot": "Feet",
+   "item": "Huntmaster's Boots",
+   "why": "Crit damage, and Keen on kills.",
+   "alt": "Gloaming Boots"
+  },
+  {
+   "slot": "Ring",
+   "item": "Bloodstone Ring",
+   "why": "Lifesteal.",
+   "alt": "Thumbguard Ring"
+  },
+  {
+   "slot": "Ring",
+   "item": "Gold Dust Ring",
+   "why": "Crit chance.",
+   "alt": "Ravenhead Ring"
+  },
+  {
+   "slot": "Amulet",
+   "item": "Hawk-Talon Pendant",
+   "why": "Crit chance.",
+   "alt": "Briar Knot"
+  }
+ ],
+ "chase": {
+  "item": "Spiral Lute",
+  "why": "Mythic lute: Inspire also gives Haste and Regen."
+ },
+ "gems": [
+  {
+   "skill": "Mockery",
+   "gems": [
+    "Echo",
+    "Momentum"
+   ],
+   "why": "Hits every enemy again next turn for free."
+  },
+  {
+   "skill": "Bag of Tricks",
+   "gems": [
+    "Echo"
+   ],
+   "why": "Twice the random effects."
+  }
+ ],
+ "rotation": [
+  {
+   "skill": "Rousing Chord",
+   "text": "Inspire for you and allies. Kindred Fire adds Keen. Does not end your turn."
+  },
+  {
+   "skill": "Mockery",
+   "text": "Hits every enemy, Taunts them, and Laughing Stock makes them Vulnerable."
+  },
+  {
+   "skill": "Bag of Tricks",
+   "text": "Random bonus: Haste, Blind, heal, Daze or double damage."
+  }
+ ]
+}

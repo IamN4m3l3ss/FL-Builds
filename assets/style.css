@@ -121,3 +121,25 @@ footer{font-size:.82rem;color:var(--faint)}
 .ks{font-size:.7rem;font-weight:600;color:var(--gold);border:1px solid currentColor;border-radius:99px;padding:0 6px}
 .mile.stat{background:var(--blood-soft);color:var(--ink)}
 .mile.stat b{font-family:var(--f-body);font-weight:600;font-size:.98rem}
+
+/* gems */
+.gemrow{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:4px}
+.gem{border:1px solid var(--line);border-radius:8px;background:var(--panel2);font-size:.85rem}
+.gem summary{cursor:pointer;padding:2px 10px;font-weight:600;color:var(--ink);list-style:none}
+.gem summary::-webkit-details-marker{display:none}
+.gem[open]{flex-basis:100%}
+.gem span{display:block;padding:4px 10px 8px;color:var(--muted)}
+
+/* tiers */
+.tier{color:var(--ink);border-color:transparent;font-weight:700}
+.t-S{background:#d4a017;color:#1b1718}.t-A{background:var(--blood);color:var(--blood-ink)}.t-B{background:#5b7fbf;color:#fff}.t-C{background:var(--node);color:var(--ink)}
+.tiers{display:flex;flex-direction:column;overflow:hidden}
+.trow{display:grid;grid-template-columns:3.4rem minmax(0,1fr);border-top:1px solid var(--line)}
+.trow:first-child{border-top:0}
+.trow .tl{display:flex;align-items:center;justify-content:center;font-family:var(--f-display);font-size:1.8rem}
+.trow .ents{display:flex;flex-wrap:wrap;gap:8px;padding:12px}
+.ent{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:6px 10px;min-width:0;max-width:100%;flex:1 1 230px}
+.ent b{font-weight:600}
+.ent .f{font-size:.78rem;color:var(--faint);margin-left:6px}
+.ent p{font-size:.84rem;color:var(--muted)}
+.ent a{text-decoration:none}

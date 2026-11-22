@@ -1,0 +1,253 @@
+[
+ {
+  "name": "Bloodprice",
+  "category": "cost",
+  "lines": [
+   "Blood cost"
+  ],
+  "costs": [
+   "8% HP per Energy"
+  ],
+  "needs": [
+   "Cost"
+  ],
+  "text": ""
+ },
+ {
+  "name": "Overload",
+  "category": "cost",
+  "lines": [
+   "+10% Power per extra Energy"
+  ],
+  "costs": [
+   "Overload"
+  ],
+  "needs": [
+   "Hit"
+  ],
+  "text": "Spends all your Energy. Each Energy past the skill's cost adds Power."
+ },
+ {
+  "name": "Burst",
+  "category": "payoff",
+  "lines": [
+   "Burst 4 per stack or turn"
+  ],
+  "costs": [
+   "+1 turn cooldown"
+  ],
+  "needs": [
+   "Hit",
+   "Debuff"
+  ],
+  "text": "Ends every status on the target. Deals damage for each stack or turn removed."
+ },
+ {
+  "name": "Contagion",
+  "category": "payoff",
+  "lines": [
+   "Spread"
+  ],
+  "costs": [],
+  "needs": [
+   "Debuff"
+  ],
+  "text": ""
+ },
+ {
+  "name": "Momentum",
+  "category": "payoff",
+  "lines": [
+   "Momentum"
+  ],
+  "costs": [
+   "+1 Energy cost"
+  ],
+  "needs": [
+   "Hit"
+  ],
+  "text": "Taking down an enemy gives you another action. Once a round."
+ },
+ {
+  "name": "Agility Gem",
+  "category": "scaling",
+  "lines": [
+   "Scales with Agility"
+  ],
+  "costs": [],
+  "needs": [],
+  "text": ""
+ },
+ {
+  "name": "Magic Gem",
+  "category": "scaling",
+  "lines": [
+   "Scales with Magic"
+  ],
+  "costs": [],
+  "needs": [],
+  "text": ""
+ },
+ {
+  "name": "Spirit Gem",
+  "category": "scaling",
+  "lines": [
+   "Scales with Spirit"
+  ],
+  "costs": [],
+  "needs": [],
+  "text": ""
+ },
+ {
+  "name": "Strength Gem",
+  "category": "scaling",
+  "lines": [
+   "Scales with Strength"
+  ],
+  "costs": [],
+  "needs": [],
+  "text": ""
+ },
+ {
+  "name": "Chain",
+  "category": "shape",
+  "lines": [
+   "Chains 2 times"
+  ],
+  "costs": [
+   "Power 70%",
+   "30% less Power per chain"
+  ],
+  "needs": [
+   "Projectile"
+  ],
+  "text": "Jumps to the next enemy after the hit."
+ },
+ {
+  "name": "Nova",
+  "category": "shape",
+  "lines": [
+   "Area"
+  ],
+  "costs": [
+   "Power 50%",
+   "+1 Energy cost"
+  ],
+  "needs": [
+   "Hit"
+  ],
+  "text": ""
+ },
+ {
+  "name": "Renew",
+  "category": "shape",
+  "lines": [
+   "Renew 4% max HP"
+  ],
+  "costs": [
+   "Power 75%"
+  ],
+  "needs": [],
+  "text": "Each use also heals your ally with the lowest % HP."
+ },
+ {
+  "name": "Charge",
+  "category": "timing",
+  "lines": [
+   "Charge",
+   "Power 170%"
+  ],
+  "costs": [
+   "Takes your next turn"
+  ],
+  "needs": [
+   "Hit"
+  ],
+  "text": "The skill goes off at your next turn instead of now."
+ },
+ {
+  "name": "Echo",
+  "category": "timing",
+  "lines": [
+   "Echo at 35% Power"
+  ],
+  "costs": [
+   "+1 turn cooldown"
+  ],
+  "needs": [],
+  "text": "The skill is used again at the start of your next turn. That use costs no Energy."
+ },
+ {
+  "name": "Retaliate",
+  "category": "timing",
+  "lines": [
+   "Retaliate",
+   "Power 150%"
+  ],
+  "costs": [
+   "Taunts every enemy"
+  ],
+  "needs": [
+   "Hit"
+  ],
+  "text": "The skill hits the first enemy that hits you. That hit cannot be dodged."
+ },
+ {
+  "name": "Build Up",
+  "category": "ultra",
+  "lines": [
+   "+10% Power per turn held full"
+  ],
+  "costs": [],
+  "needs": [],
+  "text": "10% more power for each of your turns that starts with your Energy full, until the skill is used."
+ },
+ {
+  "name": "Defiance",
+  "category": "ultra",
+  "lines": [
+   "Defiance"
+  ],
+  "costs": [
+   "Power 65%"
+  ],
+  "needs": [],
+  "text": "With your Energy full, a blow that would down you leaves you at 1 HP, and the Ultra skill goes off at once at the one who struck. Once a fight."
+ },
+ {
+  "name": "Head Start",
+  "category": "ultra",
+  "lines": [
+   "Full Energy at fight start"
+  ],
+  "costs": [
+   "Power 60%"
+  ],
+  "needs": [],
+  "text": "The fight starts with your Energy full."
+ },
+ {
+  "name": "Sacrifice",
+  "category": "ultra",
+  "lines": [
+   "Power 140%"
+  ],
+  "costs": [
+   "30% max HP"
+  ],
+  "needs": [],
+  "text": "The skill also costs 30% of your max HP. Never your last HP."
+ },
+ {
+  "name": "Uplift",
+  "category": "ultra",
+  "lines": [
+   "+3 Energy to every ally"
+  ],
+  "costs": [
+   "Power 70%"
+  ],
+  "needs": [],
+  "text": "After the skill, you and every ally gain 3 Energy."
+ }
+]

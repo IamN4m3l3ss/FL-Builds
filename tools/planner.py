@@ -91,22 +91,10 @@ def steiner(adj, owned, terms, tries=800, seed=1):
     return set(best)
 
 
-def main():
-    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('build')
-    ap.add_argument('--gate', required=True)
-    ap.add_argument('--targets', required=True)
-    ap.add_argument('--points', type=int, default=60)
-    ap.add_argument('--score', default='bleed=4,rupture=4,crit=3,vulnerable=2,max hp=2,heal you for 2%=2,marked=1,sunder=1,dodge=1')
-    ap.add_argument('--avoid', default='two-handed,fire,block,ward')
-    ap.add_argument('--stat-weight', type=float, default=1.5,
-                    help='score of a stat node (+2 to an attribute of your choice)')
-    ap.add_argument('--dry-run', action='store_true')
-    a = ap.parse_args()
-
+def plan(gate, names, points=60, weights=(), avoid=(), stat_weight=1.5):
+    """Return (order, goals, target_cost) for a build from one gate."""
     nodes, adj = load_tree()
     byname = {n['n']: i for i, n in nodes.items() if n.get('n') and n['k'] != 'start'}
-    names = [s.strip() for s in a.targets.split(',') if s.strip()]
     missing = [n for n in names if n not in byname]
     if missing:
         raise SystemExit(f'Unknown node names: {missing}')
@@ -119,12 +107,12 @@ def main():
                 adj[m].discard(k)
             adj[k] = set()
 
-    chosen = steiner(adj, {a.gate}, terms)
-    if len(chosen) > a.points:
-        raise SystemExit(f'Targets need {len(chosen)} points, more than the {a.points} available')
+    chosen = steiner(adj, {gate}, terms)
+    if len(chosen) > points:
+        raise ValueError(f'targets need {len(chosen)} points from {gate}')
 
     # allocation order: reach targets in the given priority, inside the chosen set
-    order, goals, tree = [], [], {a.gate}
+    order, goals, tree = [], [], {gate}
     for nm, t in zip(names, terms):
         if t in tree:
             continue
@@ -139,9 +127,6 @@ def main():
             order.append(p)
             goals.append(nm)
 
-    weights = [(k.strip(), float(v)) for k, v in (kv.split('=') for kv in a.score.split(','))]
-    avoid = [s.strip() for s in a.avoid.split(',') if s.strip()]
-
     def score(n):
         v = nodes[n]
         t = (v.get('d') or '').lower()
@@ -149,23 +134,46 @@ def main():
         if any(x in t for x in avoid):
             s -= 3
         if v['k'] == 'stat':
-            s += a.stat_weight
+            s += stat_weight
         if v['k'] == 'keystone':
             s = -99
         return s
 
-    while len(order) < a.points:
+    while len(order) < points:
         frontier = {y for x in tree for y in adj[x] if y not in tree}
         y = max(frontier, key=lambda n: (score(n), -len(n)))
         tree.add(y)
         order.append(y)
         goals.append('filler')
+    return order, goals, len(chosen)
 
-    for i, (n, g) in enumerate(zip(order, goals), 1):
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument('build')
+    ap.add_argument('--gate', required=True)
+    ap.add_argument('--targets', required=True)
+    ap.add_argument('--points', type=int, default=60)
+    ap.add_argument('--score', default='bleed=4,rupture=4,crit=3,vulnerable=2,max hp=2,heal you for 2%=2,marked=1,sunder=1,dodge=1')
+    ap.add_argument('--avoid', default='two-handed,fire,block,ward')
+    ap.add_argument('--stat-weight', type=float, default=1.5,
+                    help='score of a stat node (+2 to an attribute of your choice)')
+    ap.add_argument('--dry-run', action='store_true')
+    a = ap.parse_args()
+
+    names = [s.strip() for s in a.targets.split(',') if s.strip()]
+    weights = [(k.strip(), float(v)) for k, v in (kv.split('=') for kv in a.score.split(','))]
+    avoid = [s.strip() for s in a.avoid.split(',') if s.strip()]
+    try:
+        order, goals, cost = plan(a.gate, names, a.points, weights, avoid, a.stat_weight)
+    except ValueError as e:
+        raise SystemExit(str(e))
+    nodes, _ = load_tree()
+    for i, n in enumerate(order, 1):
         v = nodes[n]
         if v['k'] in ('notable', 'keystone'):
             print(f'{i:3} {v["n"]}')
-    print(f'targets cost {len(chosen)} points, {a.points - len(chosen)} filler')
+    print(f'targets cost {cost} points, {a.points - cost} filler')
 
     if not a.dry_run:
         p = ROOT / 'builds' / f'{a.build}.json'

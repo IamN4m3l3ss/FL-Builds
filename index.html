@@ -13,18 +13,30 @@
 <div class="wrap">
   <header>
     <h1>Fallen Lineage Builds</h1>
-    <p class="muted">Passive tree paths and gear, taken from the game's own data.</p>
+    <p class="muted">Passive tree paths, class trees, gear and gems for every class, taken from the game's own data.</p>
   </header>
-  <div class="builds" id="builds"></div>
+  <section>
+    <h2>Tier list: tower</h2>
+    <p class="muted">Ranked for the tower: groups of high-HP enemies, where you need area damage and lifesteal. Rankings come from the game's skill and item data, not from tested damage numbers.</p>
+    <div class="card tiers" id="tiers"></div>
+  </section>
+  <section>
+    <h2>Best build per class</h2>
+    <div class="builds" id="builds"></div>
+  </section>
   <footer>Fan-made. Not affiliated with the game's developers.</footer>
 </div>
 <script>
-fetch('builds/index.json').then(r=>r.json()).then(list=>{
+Promise.all([fetch('builds/index.json').then(r=>r.json()),fetch('builds/tiers.json').then(r=>r.json())]).then(([list,tiers])=>{
+  const link={};list.forEach(b=>link[b.class.split('→').pop().trim()]=b.id);
+  document.getElementById('tiers').innerHTML=tiers.map(t=>
+    `<div class="trow"><span class="tl t-${t.tier}">${t.tier}</span><div class="ents">${t.entries.map(e=>{
+      const name=link[e.name]?`<a href="build.html?id=${link[e.name]}"><b>${e.name}</b> →</a>`:`<b>${e.name}</b>`;
+      return `<div class="ent">${name}<span class="f">${e.from}</span><p>${e.why}</p></div>`}).join('')}</div></div>`).join('');
   document.getElementById('builds').innerHTML=list.map(b=>
     `<a class="card bcard" href="build.html?id=${encodeURIComponent(b.id)}">
-       <div class="meta"><span class="pill">${b.class}</span><span class="pill">${b.weapon}</span></div>
-       <h2>${b.name}</h2><p class="muted">${b.summary}</p></a>`).join('')+
-    `<div class="card bcard soon"><h2>More classes</h2><p>Coming as they get scanned.</p></div>`;
+       <div class="meta"><span class="pill tier t-${b.tier}">${b.tier} tier</span><span class="pill">${b.class}</span><span class="pill">${b.weapon}</span></div>
+       <h2>${b.name}</h2><p class="muted">${b.summary}</p></a>`).join('');
 });
 </script>
 </body>

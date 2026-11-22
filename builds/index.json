@@ -1,9 +1,50 @@
 [
  {
+  "id": "berserker",
+  "name": "Bloodstorm Berserker",
+  "class": "Warrior \u2192 Berserker",
+  "weapon": "Two swords",
+  "tier": "S",
+  "summary": "Frenzy Attacks hit every enemy twice, stack Bleed and lifesteal. Lunge pops Rupture on the whole group."
+ },
+ {
+  "id": "pyromancer",
+  "name": "Everburn Pyromancer",
+  "class": "Mage \u2192 Pyromancer",
+  "weapon": "Staff",
+  "tier": "S",
+  "summary": "Burn every enemy with Burn that never fades, then Detonate the whole group."
+ },
+ {
+  "id": "marksman",
+  "name": "Barrage Marksman",
+  "class": "Archer \u2192 Marksman",
+  "weapon": "Bow and quiver",
+  "tier": "S",
+  "summary": "Volley hits every enemy every turn with no cooldown. Steady Aim makes Aimed Shot a sure crit."
+ },
+ {
+  "id": "dragoon",
+  "name": "Skewer Dragoon",
+  "class": "Lancer \u2192 Dragoon",
+  "weapon": "Spear",
+  "tier": "A",
+  "summary": "Skewer spreads Bleed to every enemy, then Impale Sunders them all and they Rupture."
+ },
+ {
   "id": "bloodletter",
   "name": "Bloodletter Assassin",
   "class": "Rogue \u2192 Assassin",
-  "weapon": "Daggers",
-  "summary": "Attack from Hidden: every hit crits, stacks Bleed and pops it with Rupture."
+  "weapon": "Two daggers",
+  "tier": "A",
+  "summary": "Twin Cut spreads Bleed to every enemy, Mark for Death makes them all Rupture."
+ },
+ {
+  "id": "jester",
+  "name": "Mocking Jester",
+  "class": "Bard \u2192 Jester",
+  "weapon": "Lute",
+  "tier": "B",
+  "summary": "Mockery hits every enemy and Taunts them. Taunted enemies also get Vulnerable."
  }
 ]

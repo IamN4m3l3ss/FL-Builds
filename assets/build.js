@@ -11,11 +11,13 @@
     fetch('data/tree.json').then((r) => r.json()),
     fetch('data/items.json').then((r) => r.json()),
     fetch('data/classes.json').then((r) => r.json()).catch(() => null),
-  ]).then(([B, T, ITEMS, CLASSES]) => {
+    fetch('data/gems.json').then((r) => r.json()).catch(() => []),
+  ]).then(([B, T, ITEMS, CLASSES, GEMS]) => {
     document.title = B.name + ' · Fallen Lineage';
     $('name').textContent = B.name;
     $('summary').textContent = B.summary;
-    $('meta').innerHTML = [B.class, B.weapon].map((x) => `<span class="pill">${x}</span>`).join('');
+    $('meta').innerHTML = (B.tier ? `<span class="pill tier t-${B.tier}">${B.tier} tier</span>` : '') +
+      [B.class, B.weapon].map((x) => `<span class="pill">${x}</span>`).join('');
     $('snap').textContent = 'Data from ' + B.snapshot;
 
     const N = {}; T.nodes.forEach((n) => (N[n.id] = n));
@@ -148,6 +150,15 @@
           <span class="d">${n.text}</span>${p ? `<span class="w">${p.why}</span>` : ''}</span></div>`;
       }).join('')}</div>`).join('');
       $('ctree-sec').hidden = false;
+    }
+
+    /* skill gems */
+    if (B.gems && B.gems.length) {
+      const G = {}; GEMS.forEach((g) => (G[g.name] = g));
+      const tip = (g) => g ? [g.text, ...g.lines, ...g.costs.map((c) => 'Cost: ' + c)].filter(Boolean).join('<br>') : '';
+      $('gems').innerHTML = B.gems.map((s) => `<div class="gr"><span class="slot">Skill</span><span class="name">${s.skill}</span><span></span>
+        <span class="why"><span class="gemrow">${s.gems.map((n) => `<details class="gem"><summary>${n}</summary><span>${tip(G[n])}</span></details>`).join('')}</span>${s.why}</span></div>`).join('');
+      $('gems-sec').hidden = false;
     }
 
     /* rotation */
