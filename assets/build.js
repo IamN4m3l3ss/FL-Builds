@@ -1,10 +1,33 @@
-// Renders one build page from builds/<id>.json plus the shared tree and item data.
+// Renders one build page from builds/<id>.json plus the shared tree, item, class and gem data.
 (function () {
   const id = new URLSearchParams(location.search).get('id') || 'bloodletter';
   const $ = (s) => document.getElementById(s);
   const NS = 'http://www.w3.org/2000/svg';
   const mk = (t, a) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); return e; };
   const gold = (n) => Math.round(n).toLocaleString('en-US') + 'g';
+  const pct = (v) => (v > 0 ? '+' : '') + Math.round(v * 1000) / 10 + '%';
+  const BASE = { CritInc: 'crit chance', CritDamage: 'crit damage', StatusPower: 'status power', HPPct: 'max HP', Lifesteal: 'lifesteal',
+    Dodge: 'dodge', EnergyChance: 'Energy chance', HealIn: 'healing received', FireOut: 'fire damage', Block: 'block', Out: 'damage' };
+  function power(p) {
+    const [k, a, b, c] = p;
+    switch (k) {
+      case 'hit': return `${Math.round(c * 100)}% on hit: ${a} ${b}`;
+      case 'amp': return `${a} +${b} stack${b > 1 ? 's' : ''}`;
+      case 'versus': return `${pct(b)} vs ${a}`;
+      case 'crit': return `Crits: ${a} ${b}`;
+      case 'rider': return `${a} also gives ${b} ${c}`;
+      case 'react': return `${a} ${pct(b)}`;
+      case 'cap': return `${a} cap +${b}`;
+      case 'spread': return `${a} spreads`;
+      case 'opening': return `Fight start: ${a} ${b}`;
+      case 'takedown': return `On kill: ${a} ${b}`;
+      case 'execute': return `${pct(a)} vs low HP`;
+      case 'spot': return `Start: enemy gets ${a} ${b}`;
+      default: return [k, a, b].filter((x) => x != null).join(' ');
+    }
+  }
+  const baseLine = (b) => b[0] === 'Damage' ? `${b[1]}–${b[2]} damage` : b[0] === 'HP' ? `+${b[2]} HP` : b[0] === 'Armor' ? `+${b[2]} Armor`
+    : b[0] === 'Ward' ? `+${b[2]} Ward` : BASE[b[0]] ? `${pct(b[2])} ${BASE[b[0]]}` : b.join(' ');
 
   Promise.all([
     fetch(`builds/${encodeURIComponent(id)}.json`).then((r) => { if (!r.ok) throw new Error('No build called ' + id); return r.json(); }),
@@ -13,17 +36,27 @@
     fetch('data/classes.json').then((r) => r.json()).catch(() => null),
     fetch('data/gems.json').then((r) => r.json()).catch(() => []),
   ]).then(([B, T, ITEMS, CLASSES, GEMS]) => {
-    document.title = B.name + ' · Fallen Lineage';
+    document.title = B.name + ' · FL Builds';
     $('name').textContent = B.name;
     $('summary').textContent = B.summary;
-    $('meta').innerHTML = (B.tier ? `<span class="pill tier t-${B.tier}">${B.tier} tier</span>` : '') +
-      [B.class, B.weapon].map((x) => `<span class="pill">${x}</span>`).join('');
-    $('snap').textContent = 'Data from ' + B.snapshot;
+    $('meta').innerHTML = `<span class="tier ${B.tier}">${B.tier}</span>` + [B.class, B.weapon].map((x) => `<span class="chip">${x}</span>`).join('');
+    $('snap').textContent = 'Data from ' + B.snapshot + '.';
 
     const N = {}; T.nodes.forEach((n) => (N[n.id] = n));
     const ORDER = B.order, total = ORDER.length;
     const stepOf = {}; ORDER.forEach((nid, i) => (stepOf[nid] = i + 1));
     const majors = ORDER.filter((nid) => N[nid].k === 'notable' || N[nid].k === 'keystone');
+
+    /* overview */
+    const S = B.sim;
+    const ov = [
+      [S ? S.room.toFixed(1) : '—', 'turns per tower room'],
+      [S ? S.boss.toFixed(1) : '—', 'turns per 100k boss'],
+      [S && S.sustain != null ? (S.sustain >= 100 ? '100%+' : S.sustain.toFixed(0) + '%') : '—', 'healing per turn (max HP)'],
+      [S ? S.cap : '—', 'Bleed cap'],
+      [majors.length, 'notables and keystones'],
+    ];
+    $('overview').innerHTML = ov.map(([v, l]) => `<div class="ov"><b>${v}</b><span>${l}</span></div>`).join('');
 
     /* map */
     const svg = $('svg');
@@ -50,13 +83,12 @@
       c.addEventListener('click', () => stepOf[n.id] && go(stepOf[n.id]));
       gN.appendChild(c); dots[n.id] = c;
     });
-    // labels: try 8 spots around each node, take the first that does not overlap
     const FS = 72, boxes = [], marks = [];
     const clash = (b) => boxes.some((p) => !(b.x + b.w < p.x || p.x + p.w < b.x || b.y + b.h < p.y || p.y + p.h < b.y));
     const labels = [...majors.map((nid) => ({ nid, txt: N[nid].n, num: stepOf[nid] })), { nid: B.gate, txt: 'Start' }];
     labels.forEach((o) => { const n = N[o.nid]; boxes.push({ x: n.x - 55, y: n.y - 55, w: 110, h: 110 }); });
     labels.forEach((o) => {
-      const n = N[o.nid], w = o.txt.length * FS * 0.56, h = FS * 1.1, off = 70;
+      const n = N[o.nid], w = o.txt.length * FS * 0.52, h = FS * 1.1, off = 70;
       const spots = [[n.x + off, n.y - h / 2], [n.x - off - w, n.y - h / 2], [n.x - w / 2, n.y - off - h], [n.x - w / 2, n.y + off],
         [n.x + off, n.y - h - 20], [n.x + off, n.y + 20], [n.x - off - w, n.y - h - 20], [n.x - off - w, n.y + 20]];
       const [x, y] = spots.find(([x, y]) => !clash({ x, y, w, h })) || spots[0];
@@ -75,12 +107,12 @@
 
     /* milestones */
     let last = 0;
-    const statRow = B.statPick ? `<div class="mile fill stat"><span class="pt">+2</span><span><b>Round stat nodes: pick ${B.statPick.attr}</b><span class="d">${B.statPick.why}</span></span></div>` : '';
+    const statRow = B.statPick ? `<div class="mile stat"><span class="pt">+2</span><span><b>Round stat nodes: pick ${B.statPick.attr}</b><span class="d">${B.statPick.why}</span></span></div>` : '';
     $('miles').innerHTML = statRow + majors.map((nid) => {
       const n = N[nid], s = stepOf[nid]; last = s;
       return `<button class="mile" data-s="${s}"><span class="pt">${s}</span><span><b>${n.n}</b>${n.k === 'keystone' ? '<span class="ks">keystone</span>' : ''}
         <span class="d">${n.d}</span>${n.c ? `<span class="c">Drawback: ${n.c}</span>` : ''}</span></button>`;
-    }).join('') + (last < total ? `<div class="mile fill"><span class="pt">${last + 1}+</span><span>Spend the last ${total - last} points on the nodes next to the path shown on the map, mostly more stat nodes.</span></div>` : '');
+    }).join('') + (last < total ? `<div class="mile fill"><span class="pt">${last + 1}+</span><span>The last ${total - last} points go on the nodes next to the path shown on the map, mostly more stat nodes.</span></div>` : '');
     document.querySelectorAll('.mile[data-s]').forEach((m) => m.addEventListener('click', () => go(+m.dataset.s)));
 
     const step = $('step'); step.max = total;
@@ -96,7 +128,6 @@
     step.addEventListener('input', () => render(+step.value));
     render(total);
 
-    // pan and zoom
     let drag = null;
     const toSvg = (e) => { const r = svg.getBoundingClientRect(); return { x: vb.x + (e.clientX - r.left) / r.width * vb.w, y: vb.y + (e.clientY - r.top) / r.height * vb.h }; };
     svg.addEventListener('pointerdown', (e) => {
@@ -117,6 +148,22 @@
     svg.addEventListener('wheel', (e) => { e.preventDefault(); zoom(e.deltaY > 0 ? 1.15 : 1 / 1.15, toSvg(e)); }, { passive: false });
     $('zin').onclick = () => zoom(1 / 1.4); $('zout').onclick = () => zoom(1.4); $('zfit').onclick = () => { vb = { ...FIT }; setVB(); };
 
+    /* class tree */
+    const cls = CLASSES && CLASSES.classes.find((c) => c.id === B.cls);
+    const sup = cls && cls.supers.find((s) => s.id === B.super);
+    if (sup && B.classTree) {
+      const pick = {}; B.classTree.forEach((p, i) => (pick[p.node] = i + 1));
+      $('ctree-title').textContent = sup.name + ' tree';
+      $('ctree').innerHTML = sup.branches.map((br) => {
+        const used = br.nodes.some((n) => pick[n.id]);
+        return `<div class="panel br${used ? '' : ' skip'}"><h3>${br.name}</h3>${br.nodes.map((n) => {
+          const p = pick[n.id];
+          return `<div class="cn${p ? ' on' : ''}"><span class="cnum">${p || ''}</span><span><b>${n.name}</b>${n.type === 'capstone' ? ' <span class="ks">capstone</span>' : ''}
+            <span class="d">${n.text || ''}</span></span></div>`;
+        }).join('')}</div>`;
+      }).join('');
+    } else { $('class').hidden = true; }
+
     /* gear */
     const I = {}; ITEMS.forEach((it) => { if (!I[it.name] || it.market) I[it.name] = it; });
     const cheapest = (it) => {
@@ -124,45 +171,45 @@
       for (const [t, v] of Object.entries(it.market)) if (!best || v.low < best.low) best = { low: v.low, tier: Math.round(+t) };
       return best;
     };
-    $('gear').innerHTML = B.gear.map((g) => {
-      const it = I[g.item] || { name: g.item, rarity: 'common' }, c = cheapest(it), a = cheapest(I[g.alt]);
-      return `<div class="gr"><span class="slot">${g.slot}</span><span class="name r-${it.rarity}">${it.name}</span>
-        <span class="price">${c ? `<span class="num">${gold(c.low)}</span> <span class="muted">T${c.tier}</span>` : '<span class="muted">not listed</span>'}</span>
-        <span class="why">${g.why}</span>
-        ${g.alt ? `<span class="alt">Cheaper: ${g.alt}${a ? ' · ' + gold(a.low) : ''}</span>` : ''}</div>`;
+    $('equip').innerHTML = B.gear.map((g) => {
+      const it = I[g.item] || { name: g.item, rarity: 'common' }, c = cheapest(it);
+      const fx = [...(it.power || []).map(power), ...(it.base || []).filter((b) => b[0] !== 'Damage').map(baseLine)];
+      return `<div class="panel slot"><span class="sl">${g.slot}</span><div>
+        <div class="nm"><span class="r-${it.rarity}">${it.name}</span><span class="pr">${c ? `${gold(c.low)} <small>T${c.tier}</small>` : '<small>not listed</small>'}</span></div>
+        ${g.why ? `<div class="muted">${g.why}</div>` : ''}
+        <div class="fx">${fx.map((f) => `<span>${f}</span>`).join('')}</div>
+        ${g.alt ? `<div class="alt">Cheaper: ${g.alt}</div>` : ''}</div></div>`;
     }).join('');
 
-    if (B.chase && I[B.chase.item]) {
-      const it = I[B.chase.item], c = cheapest(it);
-      $('gear').insertAdjacentHTML('beforeend', `<div class="gr"><span class="slot">Goal</span><span class="name r-${it.rarity}">${it.name}</span>
-        <span class="price"><span class="muted">${c ? gold(c.low) : 'not listed'}</span></span><span class="why">${B.chase.why}</span></div>`);
-    }
-
-    /* class tree (super class branches) */
-    const cls = CLASSES && CLASSES.classes.find((c) => c.id === B.cls);
-    const sup = cls && cls.supers.find((s) => s.id === B.super);
-    if (sup && B.classTree) {
-      const pick = {}; B.classTree.forEach((p, i) => (pick[p.node] = { n: i + 1, why: p.why }));
-      $('ctree-title').textContent = sup.name + ' tree';
-      $('ctree').innerHTML = sup.branches.map((br) => `<div class="card br"><h3>${br.name}</h3>${br.nodes.map((n) => {
-        const p = pick[n.id];
-        return `<div class="cn${p ? ' on' : ''}"><span class="cnum">${p ? p.n : ''}</span><span><b>${n.name}</b>${n.type === 'capstone' ? ' <span class="ks">capstone</span>' : ''}
-          <span class="d">${n.text}</span>${p ? `<span class="w">${p.why}</span>` : ''}</span></div>`;
-      }).join('')}</div>`).join('');
-      $('ctree-sec').hidden = false;
-    }
-
-    /* skill gems */
+    /* gems */
     if (B.gems && B.gems.length) {
       const G = {}; GEMS.forEach((g) => (G[g.name] = g));
       const tip = (g) => g ? [g.text, ...g.lines, ...g.costs.map((c) => 'Cost: ' + c)].filter(Boolean).join('<br>') : '';
-      $('gems').innerHTML = B.gems.map((s) => `<div class="gr"><span class="slot">Skill</span><span class="name">${s.skill}</span><span></span>
-        <span class="why"><span class="gemrow">${s.gems.map((n) => `<details class="gem"><summary>${n}</summary><span>${tip(G[n])}</span></details>`).join('')}</span>${s.why}</span></div>`).join('');
-      $('gems-sec').hidden = false;
-    }
+      $('gemlist').innerHTML = B.gems.map((s) => `<div class="gr"><span class="sk">${s.skill}</span>
+        <div class="gemrow">${s.gems.map((n) => `<details class="gem"><summary>${n}</summary><span>${tip(G[n])}</span></details>`).join('')}</div>
+        ${s.why ? `<span></span><span class="muted">${s.why}</span>` : ''}</div>`).join('');
+    } else { $('gems').hidden = true; }
 
     /* rotation */
-    $('rot').innerHTML = B.rotation.map((r) => `<li class="card"><b>${r.skill}</b><span>${r.text}</span></li>`).join('');
+    $('rot').innerHTML = B.rotation.map((r) => `<li class="panel"><b>${r.skill}</b><span>${r.text}</span></li>`).join('');
+
+    /* simulation */
+    if (S) {
+      $('simnote').textContent = 'Level 60, max gear, averaged over 300 simulated fights. Tower room: 4 enemies with 30k HP. Boss: one enemy with 100k HP. Healing assumes Blood Rite also heals from Rupture, which the game text implies but has not been tested.';
+      const bossDiff = [
+        S.boss_super && S.boss_super !== B.super ? `Super class: ${S.boss_super}` : '',
+        S.boss_add && S.boss_add.length ? `Add ${S.boss_add.join(', ')}` : '',
+        S.boss_drop && S.boss_drop.length ? `Drop ${S.boss_drop.join(', ')}` : '',
+        S.boss_gear && S.boss_gear.length ? `Swap in ${S.boss_gear.join(', ')}` : '',
+      ].filter(Boolean);
+      $('simgrid').innerHTML =
+        `<div class="panel simcard"><span class="label">Tower room</span><span class="big">${S.room.toFixed(1)} <small>turns</small></span>
+          <span class="muted">Ruptures pop at ${S.roomPop} stacks on average. Healing ${S.sustain >= 100 ? 'over 100%' : S.sustain.toFixed(0) + '%'} of max HP per turn.</span></div>
+         <div class="panel simcard"><span class="label">Boss (100k HP)</span><span class="big">${S.boss.toFixed(1)} <small>turns</small></span>
+          <span class="muted">${bossDiff.length ? 'Best boss setup changes: ' + bossDiff.join('. ') + '.' : 'Same setup works best.'}</span></div>`;
+    } else {
+      $('simlink').hidden = true; $('sim').hidden = true;
+    }
   }).catch((err) => {
     $('name').textContent = 'Build not found';
     $('summary').textContent = err.message + '. Go back to all builds and pick one from the list.';

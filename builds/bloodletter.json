@@ -1,13 +1,14 @@
 {
  "id": "bloodletter",
  "name": "Bloodletter Assassin",
- "class": "Rogue \u2192 Assassin",
  "cls": "rogue",
  "super": "assassin",
+ "class": "Rogue \u2192 Assassin",
  "weapon": "Two daggers",
  "tier": "A",
  "snapshot": "2026-11-22",
- "summary": "Twin Cut spreads Bleed to every enemy, Mark for Death makes them all Rupture.",
+ "simulated": true,
+ "summary": "Simulated best Bleed build for Rogue: clears a 4-enemy tower room in 3.0 turns while healing over 100% of max HP per turn.",
  "gate": "g6",
  "order": [
   "t34",
@@ -32,44 +33,44 @@
   "r.rending.an",
   "r.rending.b",
   "r.rending.bn",
-  "t53",
-  "t42",
-  "t54",
-  "t21",
-  "t57",
-  "t55",
-  "t56",
-  "t86",
-  "k.gale",
   "t78",
   "t79",
   "r.ambush.e",
   "r.ambush.a",
   "r.ambush.an",
-  "r.ambush.m",
   "k.blood",
+  "i.grit.n0",
   "f39.s1",
   "i.constitution.n0",
-  "i.grit.n0",
   "f127.s0",
   "i.grit.s0",
   "w.blood.1.s1",
   "w.blood.sig.s3",
-  "w.blood.sig.s7",
-  "w.blood.sig.s8",
-  "w.blood.sig.s6",
-  "w.blood.sig.s2",
   "w.blood.sig.s1",
   "w.blood.sig.s0",
-  "t83",
-  "t15",
-  "t20",
-  "t19",
+  "w.blood.sig.s2",
+  "w.blood.sig.s6",
+  "w.blood.sig.s8",
+  "w.blood.sig.s7",
+  "t16",
+  "t17",
   "t82",
+  "t50",
+  "t18",
+  "t15",
+  "t14",
+  "t13",
   "t80",
-  "t32",
-  "t31",
-  "t14"
+  "t53",
+  "t40",
+  "t73",
+  "f1026.s0",
+  "f1026.s1",
+  "f1026.s2",
+  "f488.s0",
+  "f488.s1",
+  "f488.s2",
+  "f1136.s2"
  ],
  "goals": [
   "Open Wounds",
@@ -94,25 +95,25 @@
   "Rending",
   "Impaling Wound",
   "Impaling Wound",
-  "Windborne",
-  "Windborne",
-  "Windborne",
-  "Windborne",
-  "Windborne",
-  "Windborne",
-  "Windborne",
-  "Windborne",
-  "Windborne",
   "Unseen Blade",
   "Unseen Blade",
   "Unseen Blade",
   "Unseen Blade",
   "Unseen Blade",
-  "Fading Step",
   "Blood Rite",
-  "Second Breath",
-  "Second Breath",
   "Red Harvest",
+  "Second Breath",
+  "Second Breath",
+  "filler",
+  "filler",
+  "filler",
+  "filler",
+  "filler",
+  "filler",
+  "filler",
+  "filler",
+  "filler",
+  "filler",
   "filler",
   "filler",
   "filler",
@@ -135,145 +136,138 @@
  ],
  "statPick": {
   "attr": "Spirit",
-  "why": "Every round stat node gives +2 to an attribute you choose. Spirit gives +1% status power per point, and status power makes Bleed and Rupture hit harder. This path has 30 of them, so +60 Spirit."
+  "why": "Every round stat node gives +2 to an attribute you choose. Spirit is +1% status power per point, which scales every Bleed tick and Rupture. This path has 25 of them, so +50 Spirit."
  },
  "classTree": [
   {
-   "node": "assassin:contract:1",
-   "why": "Needed to reach Death Sentence."
-  },
-  {
-   "node": "assassin:contract:2",
-   "why": "Mark for Death gives Vulnerable, which sets off Rupture."
-  },
-  {
    "node": "assassin:shadows:1",
-   "why": "Needed to reach From the Shadows."
+   "why": "Hidden from you lasts 1 turn longer"
   },
   {
    "node": "assassin:shadows:2",
-   "why": "+40% damage while Hidden, and your hits cannot be dodged."
+   "why": "40% increased damage while you have Hidden. Your hits while you have Hidden cannot be dodged."
   },
   {
    "node": "assassin:shadows:3",
-   "why": "Needed to reach Vanish."
+   "why": "+10% crit damage"
   },
   {
    "node": "assassin:shadows:4",
-   "why": "Every kill makes you Hidden again."
+   "why": "When your hit takes down an enemy, you get Hidden for 1 turn."
   },
   {
    "node": "assassin:venom:1",
-   "why": "+10% status power."
+   "why": "+10% status power"
+  },
+  {
+   "node": "assassin:venom:2",
+   "why": "Your hits against enemies with Marked put 2 Poison on them."
+  },
+  {
+   "node": "assassin:venom:3",
+   "why": "Each time you put Poison on an enemy, that enemy gets 1 extra Poison"
+  },
+  {
+   "node": "assassin:venom:4",
+   "why": "An enemy that reaches 8 Poison from you takes nature damage equal to 20% of that enemy's max HP. 8% against bosses. That Poison then ends."
   }
  ],
  "gear": [
   {
    "slot": "Weapon",
-   "item": "Red Widow's Fang",
-   "why": "Every Bleed you apply gets 2 extra stacks.",
-   "alt": "Bloodletter Dagger"
+   "item": "Gloaming Knife"
   },
   {
    "slot": "Off-hand",
-   "item": "Crimson Fang",
-   "why": "30% Bleed on hit, +15% against Bleeding enemies. Both daggers' powers count.",
-   "alt": "Bloodletter Dagger"
-  },
-  {
-   "slot": "Amulet",
-   "item": "Maul Band",
-   "why": "Crits apply Vulnerable, which sets off Rupture.",
-   "alt": "Huntsman's Medallion"
-  },
-  {
-   "slot": "Torso",
-   "item": "Bloodfever Harness",
-   "why": "Rupture hits 30% harder.",
-   "alt": "Wyrmtooth Coat"
+   "item": "Red Widow's Fang"
   },
   {
    "slot": "Head",
-   "item": "Bloodfever Helm",
-   "why": "Lifesteal.",
-   "alt": "Wyrm Knight's Helm"
+   "item": "Wyrmtooth Helm"
   },
   {
-   "slot": "Ring",
-   "item": "Bloodstone Ring",
-   "why": "Lifesteal.",
-   "alt": "Bloodiron Ring"
-  },
-  {
-   "slot": "Ring",
-   "item": "Red Widow's Band",
-   "why": "Bleed cap +5 and status power.",
-   "alt": "Bloodiron Ring"
+   "slot": "Torso",
+   "item": "Bloodfever Harness"
   },
   {
    "slot": "Feet",
-   "item": "Nightwhisper Boots",
-   "why": "Start every fight Hidden, so your first Attack crits.",
-   "alt": "Astren Shoes"
+   "item": "Frostmere Boots"
+  },
+  {
+   "slot": "Amulet",
+   "item": "Dawnshard"
+  },
+  {
+   "slot": "Ring",
+   "item": "Viper Coil"
+  },
+  {
+   "slot": "Ring",
+   "item": "Giant's Tooth"
   }
  ],
- "chase": {
-  "item": "Serpent Coil",
-  "why": "Mythic ring: lifesteal, and every Bleed you apply also gives Vulnerable, so it pops at once."
- },
  "gems": [
-  {
-   "skill": "Twin Cut",
-   "gems": [
-    "Nova",
-    "Contagion",
-    "Echo"
-   ],
-   "why": "Bleed on every enemy, and it casts again free next turn."
-  },
   {
    "skill": "Deep Cut",
    "gems": [
     "Nova",
-    "Echo",
-    "Momentum"
-   ],
-   "why": "Doubles every enemy's Bleed, twice."
+    "Echo"
+   ]
+  },
+  {
+   "skill": "Twin Cut",
+   "gems": [
+    "Nova",
+    "Echo"
+   ]
   },
   {
    "skill": "Mark for Death",
    "gems": [
     "Contagion",
     "Echo"
-   ],
-   "why": "Vulnerable on every enemy, so they all Rupture."
-  },
-  {
-   "skill": "Execute",
-   "gems": [
-    "Nova",
-    "Momentum",
-    "Overload"
-   ],
-   "why": "Finishes the whole group. Kills give more actions."
+   ]
   }
  ],
  "rotation": [
   {
    "skill": "Twin Cut",
-   "text": "Bleed on every enemy. Echo casts it again next turn."
+   "text": "Two hits that can Bleed every enemy."
   },
   {
    "skill": "Deep Cut",
-   "text": "Doubles every enemy's Bleed."
+   "text": "Doubles the Bleed on every enemy, up to 10."
   },
   {
-   "skill": "Mark for Death",
-   "text": "Vulnerable on every enemy, so they all Rupture. You become Hidden."
+   "skill": "Attack",
+   "text": "Free. Adds Bleed from your weapon."
   },
   {
-   "skill": "Attack or Execute",
-   "text": "Crit from Hidden, or Execute the group below 60% HP."
+   "skill": "Mark for Death to pop",
+   "text": "Death Sentence puts Vulnerable on every enemy, so it Ruptures. You become Hidden. Use it once enemies are near 9+ stacks."
   }
- ]
+ ],
+ "sim": {
+  "room": 3.0,
+  "boss": 3.72,
+  "roomPop": 10.7,
+  "bossPop": 11.7,
+  "sustain": 100,
+  "bossSustain": 100,
+  "cap": 12,
+  "sp": 1.02,
+  "boss_super": "assassin",
+  "boss_add": [
+   "Impaler",
+   "Sharp Focus"
+  ],
+  "boss_drop": [],
+  "boss_gear": [
+   "Crimson Fang",
+   "Wyrm Knight's Helm",
+   "Nightwhisper Boots",
+   "Maul Band",
+   "Red Widow's Band"
+  ]
+ }
 }

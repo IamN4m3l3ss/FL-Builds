@@ -1,11 +1,45 @@
 [
  {
-  "id": "berserker",
+  "id": "lancer",
+  "name": "Skewer Dragoon",
+  "class": "Lancer \u2192 Dragoon",
+  "weapon": "Spear",
+  "tier": "S",
+  "summary": "Simulated best Bleed build for Lancer: clears a 4-enemy tower room in 3.0 turns while healing over 100% of max HP per turn.",
+  "simulated": true,
+  "sim": {
+   "room": 3.0,
+   "boss": 8.65,
+   "sustain": 100
+  }
+ },
+ {
+  "id": "warrior",
   "name": "Bloodstorm Berserker",
   "class": "Warrior \u2192 Berserker",
-  "weapon": "Two swords",
+  "weapon": "Two sword",
   "tier": "S",
-  "summary": "Frenzy Attacks hit every enemy twice, stack Bleed and lifesteal. Lunge pops Rupture on the whole group."
+  "summary": "Simulated best Bleed build for Warrior: clears a 4-enemy tower room in 4.0 turns while healing over 100% of max HP per turn.",
+  "simulated": true,
+  "sim": {
+   "room": 4.0,
+   "boss": 4.29,
+   "sustain": 100
+  }
+ },
+ {
+  "id": "archer",
+  "name": "Barbed Ranger",
+  "class": "Archer \u2192 Ranger",
+  "weapon": "Bow",
+  "tier": "S",
+  "summary": "Simulated best Bleed build for Archer: clears a 4-enemy tower room in 6.5 turns while healing over 100% of max HP per turn.",
+  "simulated": true,
+  "sim": {
+   "room": 6.46,
+   "boss": 7.59,
+   "sustain": 100
+  }
  },
  {
   "id": "pyromancer",
@@ -13,23 +47,8 @@
   "class": "Mage \u2192 Pyromancer",
   "weapon": "Staff",
   "tier": "S",
-  "summary": "Burn every enemy with Burn that never fades, then Detonate the whole group."
- },
- {
-  "id": "marksman",
-  "name": "Barrage Marksman",
-  "class": "Archer \u2192 Marksman",
-  "weapon": "Bow and quiver",
-  "tier": "S",
-  "summary": "Volley hits every enemy every turn with no cooldown. Steady Aim makes Aimed Shot a sure crit."
- },
- {
-  "id": "dragoon",
-  "name": "Skewer Dragoon",
-  "class": "Lancer \u2192 Dragoon",
-  "weapon": "Spear",
-  "tier": "A",
-  "summary": "Skewer spreads Bleed to every enemy, then Impale Sunders them all and they Rupture."
+  "summary": "Burn every enemy with Burn that never fades, then Detonate the whole group.",
+  "simulated": false
  },
  {
   "id": "bloodletter",
@@ -37,7 +56,13 @@
   "class": "Rogue \u2192 Assassin",
   "weapon": "Two daggers",
   "tier": "A",
-  "summary": "Twin Cut spreads Bleed to every enemy, Mark for Death makes them all Rupture."
+  "summary": "Simulated best Bleed build for Rogue: clears a 4-enemy tower room in 3.0 turns while healing over 100% of max HP per turn.",
+  "simulated": true,
+  "sim": {
+   "room": 3.0,
+   "boss": 3.72,
+   "sustain": 100
+  }
  },
  {
   "id": "jester",
@@ -45,6 +70,7 @@
   "class": "Bard \u2192 Jester",
   "weapon": "Lute",
   "tier": "B",
-  "summary": "Mockery hits every enemy and Taunts them. Taunted enemies also get Vulnerable."
+  "summary": "Mockery hits every enemy and Taunts them. Taunted enemies also get Vulnerable.",
+  "simulated": false
  }
 ]

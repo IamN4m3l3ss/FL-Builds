@@ -3,25 +3,45 @@
   "tier": "S",
   "entries": [
    {
+    "name": "Ranger",
+    "from": "Archer",
+    "why": "Proven to floor 35. The hawk keeps hitting, stacking Bleed and healing you through lifesteal."
+   },
+   {
+    "name": "Dragoon",
+    "from": "Lancer",
+    "why": "Fastest simulated tower room: Sunder pops Rupture on every enemy, Spearhead stacks extra Bleed."
+   },
+   {
     "name": "Berserker",
     "from": "Warrior",
-    "why": "Attacks hit every enemy while Frenzied, with lifesteal. Best tower sustain and area damage."
+    "why": "Attacks hit every enemy while Frenzied, with lifesteal. Best tower sustain."
+   },
+   {
+    "name": "Sellsword",
+    "from": "Warrior",
+    "why": "Fastest simulated boss kill: a sure crit every turn sets off Rupture."
    },
    {
     "name": "Pyromancer",
     "from": "Mage",
-    "why": "Burn on every enemy every turn, then Detonate. Area damage with no crits needed."
-   },
-   {
-    "name": "Marksman",
-    "from": "Archer",
-    "why": "Volley hits every enemy every turn with no cooldown."
+    "why": "Burn on every enemy every turn, then Detonate. Not simulated yet."
    }
   ]
  },
  {
   "tier": "A",
   "entries": [
+   {
+    "name": "Assassin",
+    "from": "Rogue",
+    "why": "Best at stacking Bleed. Hidden plus Unseen Blade gives sure crits."
+   },
+   {
+    "name": "Marksman",
+    "from": "Archer",
+    "why": "Volley hits every enemy every turn. Not simulated for hit damage yet."
+   },
    {
     "name": "Zealot",
     "from": "Priest ultra",
@@ -31,21 +51,6 @@
     "name": "Seraph",
     "from": "Priest ultra",
     "why": "Level 40+. Area damage plus full-party heals and revives."
-   },
-   {
-    "name": "Dragoon",
-    "from": "Lancer",
-    "why": "Reliable Sunder triggers for Rupture on every enemy. No built-in lifesteal."
-   },
-   {
-    "name": "Gunner",
-    "from": "Archer",
-    "why": "Scattershot Burns every enemy. Strong but costs HP."
-   },
-   {
-    "name": "Assassin",
-    "from": "Rogue",
-    "why": "Best at stacking Bleed. Area damage needs gems, and lifesteal comes from gear."
    }
   ]
  },
@@ -53,24 +58,24 @@
   "tier": "B",
   "entries": [
    {
-    "name": "Sellsword",
-    "from": "Warrior",
-    "why": "Best single-target Rupture: guaranteed crit every turn, about 1.7x damage. Weak in groups."
+    "name": "Gladiator",
+    "from": "Lancer",
+    "why": "Bloodsport adds Bleed, Favor adds crits. One target at a time."
+   },
+   {
+    "name": "Outlaw",
+    "from": "Rogue",
+    "why": "Rob gives Haste. Works with Bleed but lacks a Rupture trigger."
+   },
+   {
+    "name": "Gunner",
+    "from": "Archer",
+    "why": "Scattershot Burns every enemy. Costs HP."
    },
    {
     "name": "Jester",
     "from": "Bard",
-    "why": "Mockery hits every enemy and makes them Vulnerable. Low damage on its own."
-   },
-   {
-    "name": "Ranger",
-    "from": "Archer",
-    "why": "Hawk adds Bleed and Vulnerable by itself. Small numbers."
-   },
-   {
-    "name": "Gladiator",
-    "from": "Lancer",
-    "why": "Favor gives crits and damage. One target at a time."
+    "why": "Mockery hits every enemy and makes them Vulnerable. Low damage alone."
    },
    {
     "name": "Skald",
@@ -88,6 +93,11 @@
   "tier": "C",
   "entries": [
    {
+    "name": "Duelist",
+    "from": "Rogue",
+    "why": "Strong one-on-one, poor against groups."
+   },
+   {
     "name": "Druid",
     "from": "Mage",
     "why": "Single-target Poison and Regen."
@@ -95,17 +105,7 @@
    {
     "name": "Priest",
     "from": "Mage",
-    "why": "Healer. Take it only to reach the ultra classes at level 40."
-   },
-   {
-    "name": "Outlaw",
-    "from": "Rogue",
-    "why": "Blind and buff stealing. Little damage."
-   },
-   {
-    "name": "Duelist",
-    "from": "Rogue",
-    "why": "Strong one-on-one, poor against groups."
+    "why": "Healer. Take it to reach the ultra classes at level 40."
    },
    {
     "name": "Knight",

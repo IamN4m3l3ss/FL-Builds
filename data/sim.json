@@ -1,0 +1,572 @@
+{
+ "rogue": {
+  "room": {
+   "turns": 3.0,
+   "fitness": 3.0,
+   "sustain": 1251.9,
+   "avg_pop_stacks": 10.7,
+   "super": "assassin",
+   "branches": [
+    "shadows",
+    "venom"
+   ],
+   "notables": [
+    "Blood Rite",
+    "Haemorrhage",
+    "Impaling Wound",
+    "Open Wounds",
+    "Rending",
+    "Unseen Blade"
+   ],
+   "stat": "Spirit",
+   "gate": "g6",
+   "tree_cost": 42,
+   "weapon": "Gloaming Knife",
+   "offweapon": "Red Widow's Fang",
+   "head": "Wyrmtooth Helm",
+   "torso": "Bloodfever Harness",
+   "feet": "Frostmere Boots",
+   "amulet": "Dawnshard",
+   "rings": [
+    "Viper Coil",
+    "Giant's Tooth"
+   ],
+   "offhand": null,
+   "gems": {
+    "deep_cut": [
+     "Nova",
+     "Echo"
+    ],
+    "twin_cut": [
+     "Nova",
+     "Echo"
+    ],
+    "mark_for_death": [
+     "Contagion",
+     "Echo"
+    ]
+   },
+   "lifesteal_ok": true,
+   "status_power": 1.02,
+   "bleed_cap": 12
+  },
+  "boss": {
+   "turns": 3.72,
+   "fitness": 3.72,
+   "sustain": 816.5,
+   "avg_pop_stacks": 11.7,
+   "super": "assassin",
+   "branches": [
+    "shadows",
+    "venom"
+   ],
+   "notables": [
+    "Blood Rite",
+    "Haemorrhage",
+    "Impaler",
+    "Impaling Wound",
+    "Open Wounds",
+    "Rending",
+    "Sharp Focus",
+    "Unseen Blade"
+   ],
+   "stat": "Spirit",
+   "gate": "g6",
+   "tree_cost": 48,
+   "weapon": "Crimson Fang",
+   "offweapon": "Red Widow's Fang",
+   "head": "Wyrm Knight's Helm",
+   "torso": "Bloodfever Harness",
+   "feet": "Nightwhisper Boots",
+   "amulet": "Maul Band",
+   "rings": [
+    "Giant's Tooth",
+    "Red Widow's Band"
+   ],
+   "offhand": null,
+   "gems": {
+    "twin_cut": [
+     "Contagion",
+     "Echo"
+    ],
+    "mark_for_death": [
+     "Contagion",
+     "Echo"
+    ],
+    "deep_cut": [
+     "Contagion",
+     "Echo"
+    ]
+   },
+   "lifesteal_ok": true,
+   "status_power": 0.99,
+   "bleed_cap": 17.0
+  }
+ },
+ "warrior": {
+  "room": {
+   "turns": 4.0,
+   "fitness": 4.0,
+   "sustain": 1122.1,
+   "avg_pop_stacks": 9.2,
+   "super": "berserker",
+   "branches": [
+    "pain",
+    "rampage"
+   ],
+   "notables": [
+    "Blood Rite",
+    "Glass Edge",
+    "Haemorrhage",
+    "Impaling Wound",
+    "Keen Eye",
+    "Open Wounds",
+    "Rending",
+    "Sharp Focus",
+    "Windborne"
+   ],
+   "stat": "Spirit",
+   "gate": "g6",
+   "tree_cost": 51,
+   "weapon": "The Fang",
+   "offweapon": "Gloomthorn",
+   "head": "Wyrmtooth Helm",
+   "torso": "Deshret",
+   "feet": "Wyrm Knight's Sabatons",
+   "amulet": "Maul Band",
+   "rings": [
+    "Red Widow's Band",
+    "Giant's Tooth"
+   ],
+   "offhand": null,
+   "gems": {
+    "blood_frenzy": [
+     "Echo"
+    ],
+    "lunge": [
+     "Nova",
+     "Echo"
+    ]
+   },
+   "lifesteal_ok": true,
+   "status_power": 0.84,
+   "bleed_cap": 17.0
+  },
+  "boss": {
+   "turns": 4.29,
+   "fitness": 4.29,
+   "sustain": 731.0,
+   "avg_pop_stacks": 6.1,
+   "super": "sellsword",
+   "branches": [
+    "forms",
+    "survivor"
+   ],
+   "notables": [
+    "Blood Rite",
+    "Glass Edge",
+    "Haemorrhage",
+    "Impaler",
+    "Impaling Wound",
+    "Keen Eye",
+    "Open Wounds",
+    "Rending",
+    "Sunder Line",
+    "Unseen Blade",
+    "Windborne"
+   ],
+   "stat": "Spirit",
+   "gate": "g6",
+   "tree_cost": 60,
+   "weapon": "The Fang",
+   "offweapon": "Gloomthorn",
+   "head": "Wyrmtooth Helm",
+   "torso": "Bloodfever Harness",
+   "feet": "Nightwhisper Boots",
+   "amulet": "Maul Band",
+   "rings": [
+    "Giant's Tooth",
+    "Red Widow's Band"
+   ],
+   "offhand": null,
+   "gems": {
+    "lunge": [
+     "Contagion",
+     "Echo"
+    ],
+    "pommel_strike": [
+     "Echo"
+    ]
+   },
+   "lifesteal_ok": true,
+   "status_power": 0.76,
+   "bleed_cap": 17.0
+  }
+ },
+ "lancer": {
+  "room": {
+   "turns": 3.0,
+   "fitness": 3.0,
+   "sustain": 1561.6,
+   "avg_pop_stacks": 14.1,
+   "super": "dragoon",
+   "branches": [
+    "hunt",
+    "spearhead"
+   ],
+   "notables": [
+    "Blood Rite",
+    "Haemorrhage",
+    "Keen Eye",
+    "Open Wounds",
+    "Rending",
+    "Sunder Line"
+   ],
+   "stat": "Spirit",
+   "gate": "g6",
+   "tree_cost": 46,
+   "weapon": "Gatecrusher Halberd",
+   "offweapon": null,
+   "head": "Wyrm Knight's Helm",
+   "torso": "Bloodfever Harness",
+   "feet": "Galestride Boots",
+   "amulet": "The White Scale",
+   "rings": [
+    "Bloodiron Ring",
+    "Red Widow's Band"
+   ],
+   "offhand": null,
+   "gems": {
+    "skewer": [
+     "Contagion",
+     "Echo"
+    ],
+    "impale": [
+     "Contagion"
+    ]
+   },
+   "lifesteal_ok": true,
+   "status_power": 0.92,
+   "bleed_cap": 17.0
+  },
+  "boss": {
+   "turns": 8.65,
+   "fitness": 8.65,
+   "sustain": 339.6,
+   "avg_pop_stacks": 7.3,
+   "super": "dragoon",
+   "branches": [
+    "hunt",
+    "spearhead"
+   ],
+   "notables": [
+    "Blood Rite",
+    "Glass Edge",
+    "Haemorrhage",
+    "Impaler",
+    "Impaling Wound",
+    "Keen Eye",
+    "Open Wounds",
+    "Rending",
+    "Unseen Blade",
+    "Windborne"
+   ],
+   "stat": "Spirit",
+   "gate": "g6",
+   "tree_cost": 55,
+   "weapon": "Sunwing Spear",
+   "offweapon": null,
+   "head": "Wyrmtooth Helm",
+   "torso": "Bloodfever Harness",
+   "feet": "Nightwhisper Boots",
+   "amulet": "Maul Band",
+   "rings": [
+    "Giant's Tooth",
+    "Serpent Coil"
+   ],
+   "offhand": null,
+   "gems": {
+    "skewer": [
+     "Contagion",
+     "Echo"
+    ],
+    "impale": [
+     "Nova",
+     "Contagion",
+     "Echo"
+    ],
+    "leap": [
+     "Nova"
+    ]
+   },
+   "lifesteal_ok": true,
+   "status_power": 0.84,
+   "bleed_cap": 12
+  }
+ },
+ "archer": {
+  "room": {
+   "turns": 6.46,
+   "fitness": 6.46,
+   "sustain": 599.1,
+   "avg_pop_stacks": 15.0,
+   "super": "ranger",
+   "branches": [
+    "falconry",
+    "traps"
+   ],
+   "notables": [
+    "Blood Rite",
+    "Glass Edge",
+    "Haemorrhage",
+    "Impaling Wound",
+    "Open Wounds",
+    "Rending",
+    "Unseen Blade",
+    "Windborne"
+   ],
+   "stat": "Spirit",
+   "gate": "g6",
+   "tree_cost": 53,
+   "weapon": "Venomstring Bow",
+   "offweapon": null,
+   "head": "Wyrm Knight's Helm",
+   "torso": "Deshret",
+   "feet": "Nightwhisper Boots",
+   "amulet": "The Storm Coin",
+   "rings": [
+    "Red Widow's Band",
+    "Bloodiron Ring"
+   ],
+   "offhand": "Serrated Quiver",
+   "gems": {
+    "snare_trap": [
+     "Echo"
+    ],
+    "aimed_shot": [
+     "Nova",
+     "Echo"
+    ]
+   },
+   "lifesteal_ok": true,
+   "status_power": 1.08,
+   "bleed_cap": 17.0
+  },
+  "boss": {
+   "turns": 7.59,
+   "fitness": 7.59,
+   "sustain": 367.5,
+   "avg_pop_stacks": 6.3,
+   "super": "ranger",
+   "branches": [
+    "falconry",
+    "traps"
+   ],
+   "notables": [
+    "Blood Rite",
+    "Glass Edge",
+    "Haemorrhage",
+    "Impaler",
+    "Impaling Wound",
+    "Keen Eye",
+    "Keen Senses",
+    "Open Wounds",
+    "Rending",
+    "Sharp Focus",
+    "Windborne"
+   ],
+   "stat": "Spirit",
+   "gate": "g6",
+   "tree_cost": 59,
+   "weapon": "Antler Bow",
+   "offweapon": null,
+   "head": "Wyrmtooth Helm",
+   "torso": "Bloodfever Harness",
+   "feet": "Galestride Boots",
+   "amulet": "Dawnshard",
+   "rings": [
+    "Giant's Tooth",
+    "Bloodiron Ring"
+   ],
+   "offhand": "Serrated Quiver",
+   "gems": {
+    "snare_trap": [
+     "Contagion",
+     "Echo"
+    ],
+    "aimed_shot": [
+     "Echo"
+    ]
+   },
+   "lifesteal_ok": true,
+   "status_power": 0.72,
+   "bleed_cap": 12
+  }
+ },
+ "bard": {
+  "room": {
+   "turns": 21.95,
+   "fitness": 21.95,
+   "sustain": 152.2,
+   "avg_pop_stacks": 2.9,
+   "super": "skald",
+   "branches": [
+    "epic",
+    "lore"
+   ],
+   "notables": [
+    "Blood Rite",
+    "Glass Edge",
+    "Haemorrhage",
+    "Impaling Wound",
+    "Keen Eye",
+    "Open Wounds",
+    "Rending",
+    "Windborne"
+   ],
+   "stat": "Spirit",
+   "gate": "g6",
+   "tree_cost": 47,
+   "weapon": "Clarion Lute",
+   "offweapon": null,
+   "head": "Wyrm Knight's Helm",
+   "torso": "Deshret",
+   "feet": "Astren Shoes",
+   "amulet": "Venomheart Locket",
+   "rings": [
+    "Serpent Coil",
+    "Bloodiron Ring"
+   ],
+   "offhand": null,
+   "gems": {},
+   "lifesteal_ok": true,
+   "status_power": 1.04,
+   "bleed_cap": 12
+  },
+  "boss": {
+   "turns": 40.0,
+   "fitness": 40.0,
+   "sustain": 16.7,
+   "avg_pop_stacks": 2.1,
+   "super": "jester",
+   "branches": [
+    "luck",
+    "ridicule"
+   ],
+   "notables": [
+    "Blood Rite",
+    "Glass Edge",
+    "Haemorrhage",
+    "Hunter's Mark",
+    "Impaler",
+    "Impaling Wound",
+    "Keen Eye",
+    "Sharp Focus",
+    "Tailwind",
+    "Windborne"
+   ],
+   "stat": "Spirit",
+   "gate": "g6",
+   "tree_cost": 57,
+   "weapon": "Clarion Lute",
+   "offweapon": null,
+   "head": "Wyrm Knight's Helm",
+   "torso": "Huntmaster's Coat",
+   "feet": "Hawk Rider's Greaves",
+   "amulet": "Rimewarden Torc",
+   "rings": [
+    "Serpent Coil",
+    "Quickdraw Ring"
+   ],
+   "offhand": null,
+   "gems": {},
+   "lifesteal_ok": true,
+   "status_power": 0.71,
+   "bleed_cap": 12
+  }
+ },
+ "mage": {
+  "room": {
+   "turns": 21.79,
+   "fitness": 21.79,
+   "sustain": 153.5,
+   "avg_pop_stacks": 2.9,
+   "super": "pyromancer",
+   "branches": [
+    "inferno",
+    "overheat"
+   ],
+   "notables": [
+    "Blood Rite",
+    "Glass Edge",
+    "Haemorrhage",
+    "Impaling Wound",
+    "Keen Eye",
+    "Open Wounds",
+    "Rending",
+    "Windborne"
+   ],
+   "stat": "Spirit",
+   "gate": "g6",
+   "tree_cost": 47,
+   "weapon": "Pyre Queen's Staff",
+   "offweapon": null,
+   "head": "Wyrm Knight's Helm",
+   "torso": "Deshret",
+   "feet": "Astren Shoes",
+   "amulet": "Briar Knot",
+   "rings": [
+    "Serpent Coil",
+    "Bloodiron Ring"
+   ],
+   "offhand": null,
+   "gems": {
+    "firebolt": [
+     "Echo"
+    ]
+   },
+   "lifesteal_ok": true,
+   "status_power": 1.13,
+   "bleed_cap": 12
+  },
+  "boss": {
+   "turns": 40.0,
+   "fitness": 40.0,
+   "sustain": 15.8,
+   "avg_pop_stacks": 3.3,
+   "super": "pyromancer",
+   "branches": [
+    "inferno",
+    "volatile"
+   ],
+   "notables": [
+    "Blood Rite",
+    "Haemorrhage",
+    "Hunter's Mark",
+    "Impaling Wound",
+    "Open Wounds",
+    "Tailwind",
+    "Unseen Blade",
+    "Windborne"
+   ],
+   "stat": "Agility",
+   "gate": "g1",
+   "tree_cost": 58,
+   "weapon": "Pyre Queen's Staff",
+   "offweapon": null,
+   "head": "Frostmere Crown",
+   "torso": "Deshret",
+   "feet": "Wyrmtooth Greaves",
+   "amulet": "Rimewarden Torc",
+   "rings": [
+    "Serpent Coil",
+    "Glacier Ring"
+   ],
+   "offhand": null,
+   "gems": {},
+   "lifesteal_ok": true,
+   "status_power": 0.34,
+   "bleed_cap": 12
+  }
+ }
+}

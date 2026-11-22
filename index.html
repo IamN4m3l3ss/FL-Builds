@@ -4,39 +4,70 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Fallen Lineage Builds</title>
-<meta name="description" content="Passive tree paths and gear for Fallen Lineage builds, read from the game's own data.">
+<meta name="description" content="Best build for every Fallen Lineage class, found by simulating thousands of tower fights.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Balthazar&family=Source+Sans+3:wght@400;600;700&family=Source+Code+Pro:wght@500&display=swap">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 <div class="wrap">
-  <header>
+  <div class="top"><a class="brand" href="./">FL Builds</a><a href="https://github.com/IamN4m3l3ss/FL-Builds">GitHub</a></div>
+
+  <header class="hero">
     <h1>Fallen Lineage Builds</h1>
-    <p class="muted">Passive tree paths, class trees, gear and gems for every class, taken from the game's own data.</p>
+    <p>The best build for every class, found by simulating thousands of tower fights with formulas measured in game.</p>
   </header>
+
   <section>
-    <h2>Tier list: tower</h2>
-    <p class="muted">Ranked for the tower: groups of high-HP enemies, where you need area damage and lifesteal. Rankings come from the game's skill and item data, not from tested damage numbers.</p>
-    <div class="card tiers" id="tiers"></div>
+    <div class="sechead"><h2>Pick your class</h2></div>
+    <div class="crests" id="crests"></div>
   </section>
+
+  <section id="sim">
+    <div class="sechead">
+      <h2>Simulated tower fights</h2>
+      <p>Each Bleed build fought a tower room (4 enemies, 30k HP each) and a floor-35 boss (100k HP) at level 60 with max gear. Sustain is healing per turn as a share of max HP; tower builds need about 15%.</p>
+    </div>
+    <div class="panel tablewrap"><table>
+      <thead><tr><th>Build</th><th>Room</th><th></th><th>Boss</th><th>Sustain</th></tr></thead>
+      <tbody id="simrows"></tbody>
+    </table></div>
+    <p class="note">Measured in game: Rupture = 1.25 × n(n+3)/2 × level scale × (1 + status power), level scale = 1 + 0.08 × (level − 1). Assumed: hit damage scaled from a level-26 Attack, max HP 900, and how item bonuses stack. Mage and Bard builds are not simulated yet.</p>
+  </section>
+
   <section>
-    <h2>Best build per class</h2>
-    <div class="builds" id="builds"></div>
+    <div class="sechead"><h2>Tier list: tower</h2><p>Every super class, for groups of high-HP enemies where healing keeps you alive.</p></div>
+    <div class="panel tiers" id="tiers"></div>
   </section>
-  <footer>Fan-made. Not affiliated with the game's developers.</footer>
+
+  <footer>Fan-made. Not affiliated with the game's developers. Data from a game client snapshot, 22 Nov 2026.</footer>
 </div>
 <script>
-Promise.all([fetch('builds/index.json').then(r=>r.json()),fetch('builds/tiers.json').then(r=>r.json())]).then(([list,tiers])=>{
-  const link={};list.forEach(b=>link[b.class.split('→').pop().trim()]=b.id);
-  document.getElementById('tiers').innerHTML=tiers.map(t=>
-    `<div class="trow"><span class="tl t-${t.tier}">${t.tier}</span><div class="ents">${t.entries.map(e=>{
-      const name=link[e.name]?`<a href="build.html?id=${link[e.name]}"><b>${e.name}</b> →</a>`:`<b>${e.name}</b>`;
-      return `<div class="ent">${name}<span class="f">${e.from}</span><p>${e.why}</p></div>`}).join('')}</div></div>`).join('');
-  document.getElementById('builds').innerHTML=list.map(b=>
-    `<a class="card bcard" href="build.html?id=${encodeURIComponent(b.id)}">
-       <div class="meta"><span class="pill tier t-${b.tier}">${b.tier} tier</span><span class="pill">${b.class}</span><span class="pill">${b.weapon}</span></div>
-       <h2>${b.name}</h2><p class="muted">${b.summary}</p></a>`).join('');
+Promise.all([fetch('builds/index.json').then(r => r.json()), fetch('builds/tiers.json').then(r => r.json())]).then(([list, tiers]) => {
+  const link = {}; list.forEach(b => link[b.class.split('→').pop().trim()] = b.id);
+  const t = (x, d = 1) => x == null ? '—' : x.toFixed(d);
+  document.getElementById('crests').innerHTML = list.map(b => {
+    const [cls, sup] = b.class.split('→').map(s => s.trim());
+    const stats = b.sim
+      ? `<div class="stat"><b>${t(b.sim.room)}</b><span>turns per room</span></div><div class="stat"><b>${t(b.sim.boss)}</b><span>turns per boss</span></div>`
+      : `<div class="stat"><b>—</b><span>not simulated yet</span></div><div class="stat"><b>${b.weapon}</b><span>weapon</span></div>`;
+    return `<a class="panel crest" href="build.html?id=${encodeURIComponent(b.id)}">
+      <div class="row"><span class="tier ${b.tier}">${b.tier}</span><span class="cls">${cls}</span></div>
+      <span class="sup">${sup} · ${b.name}</span>
+      <p>${b.summary}</p>
+      <div class="stats">${stats}</div></a>`;
+  }).join('');
+  const sims = list.filter(b => b.sim).sort((a, b) => a.sim.room - b.sim.room);
+  const worst = Math.max(...sims.map(b => b.sim.room), 1);
+  document.getElementById('simrows').innerHTML = sims.map(b =>
+    `<tr><td><a href="build.html?id=${b.id}">${b.name}</a><br><span class="muted">${b.class}</span></td>
+     <td class="n">${t(b.sim.room)} turns</td><td style="width:30%"><div class="bar"><i style="width:${(b.sim.room / worst * 100).toFixed(0)}%"></i></div></td>
+     <td class="n">${t(b.sim.boss)} turns</td><td class="n">${b.sim.sustain == null ? '—' : b.sim.sustain >= 100 ? '100%+' : b.sim.sustain.toFixed(0) + '%'}</td></tr>`).join('');
+  document.getElementById('tiers').innerHTML = tiers.map(row =>
+    `<div class="trow"><span class="tl ${row.tier}">${row.tier}</span><div class="ents">${row.entries.map(e => {
+      const nm = link[e.name] ? `<a href="build.html?id=${link[e.name]}"><b>${e.name}</b> →</a>` : `<b>${e.name}</b>`;
+      return `<div class="ent">${nm}<span class="f">${e.from}</span><p>${e.why}</p></div>`;
+    }).join('')}</div></div>`).join('');
 });
 </script>
 </body>

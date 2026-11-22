@@ -1,12 +1,13 @@
 {
  "id": "jester",
  "name": "Mocking Jester",
- "class": "Bard \u2192 Jester",
  "cls": "bard",
  "super": "jester",
+ "class": "Bard \u2192 Jester",
  "weapon": "Lute",
  "tier": "B",
  "snapshot": "2026-11-22",
+ "simulated": false,
  "summary": "Mockery hits every enemy and Taunts them. Taunted enemies also get Vulnerable.",
  "gate": "g1",
  "order": [
@@ -54,10 +55,10 @@
   "w.shadow.sig.n1",
   "w.shadow.sig.s3",
   "w.shadow.sig.n0",
-  "i.fletching.s0",
-  "f168.s0",
-  "f168.s2",
-  "i.shieldwork.s0",
+  "t1",
+  "t2",
+  "t3",
+  "g2",
   "t22",
   "i.focus.s0",
   "i.focus.n0",
@@ -65,11 +66,11 @@
   "i.constitution.n0",
   "f637.s0",
   "f637.s2",
-  "t2",
-  "t3",
-  "t1",
-  "t35",
-  "t47"
+  "t4",
+  "t5",
+  "t6",
+  "t19",
+  "t78"
  ],
  "goals": [
   "Night Song",
@@ -135,111 +136,91 @@
  ],
  "statPick": {
   "attr": "Spirit",
-  "why": "Every round stat node gives +2 to an attribute you choose. Spirit adds 1% damage per point to Mockery and Bag of Tricks, and more Energy. This path has 27 of them, so +54 Spirit."
+  "why": "Every round stat node gives +2 to an attribute you choose. Spirit scales this build's main damage. This path has 30 of them, so +60 Spirit."
  },
  "classTree": [
   {
    "node": "jester:ridicule:1",
-   "why": "Taunted and Mocked last longer."
+   "why": "Taunted and Mocked from you last 1 turn longer"
   },
   {
    "node": "jester:ridicule:2",
-   "why": "Taunted enemies also get Vulnerable for 2 turns."
+   "why": "Each time you give an enemy Taunted, that enemy also gets Vulnerable for 2 turns."
   },
   {
    "node": "jester:ridicule:3",
-   "why": "Max HP."
+   "why": "8% increased max HP"
   },
   {
    "node": "jester:ridicule:4",
-   "why": "Mockery hits every enemy."
+   "why": "Mockery hits every enemy. Each enemy takes 60% of the damage."
   },
   {
    "node": "jester:mayhem:1",
-   "why": "+10% damage."
+   "why": "10% increased damage"
   },
   {
    "node": "jester:luck:1",
-   "why": "Dodge chance."
+   "why": "+3% dodge chance"
   },
   {
    "node": "jester:luck:2",
-   "why": "Bag of Tricks uses two effects."
+   "why": "Bag of Tricks uses two effects at random."
   }
  ],
  "gear": [
   {
    "slot": "Weapon",
-   "item": "War Drummer's Lute",
-   "why": "+8-12% damage and a 50% chance to Mark.",
-   "alt": "Clarion Lute"
+   "item": "War Drummer's Lute"
   },
   {
    "slot": "Head",
-   "item": "Bloodfever Helm",
-   "why": "Lifesteal.",
-   "alt": "Sentinel's Sallet"
+   "item": "Bloodfever Helm"
   },
   {
    "slot": "Torso",
-   "item": "Stargazer's Robe",
-   "why": "Ward and status power.",
-   "alt": "Herald's Tabard"
+   "item": "Stargazer's Robe"
   },
   {
    "slot": "Feet",
-   "item": "Huntmaster's Boots",
-   "why": "Crit damage, and Keen on kills.",
-   "alt": "Gloaming Boots"
+   "item": "Huntmaster's Boots"
   },
   {
    "slot": "Ring",
-   "item": "Bloodstone Ring",
-   "why": "Lifesteal.",
-   "alt": "Thumbguard Ring"
+   "item": "Bloodstone Ring"
   },
   {
    "slot": "Ring",
-   "item": "Gold Dust Ring",
-   "why": "Crit chance.",
-   "alt": "Ravenhead Ring"
+   "item": "Gold Dust Ring"
   },
   {
    "slot": "Amulet",
-   "item": "Hawk-Talon Pendant",
-   "why": "Crit chance.",
-   "alt": "Briar Knot"
+   "item": "Hawk-Talon Pendant"
   }
  ],
- "chase": {
-  "item": "Spiral Lute",
-  "why": "Mythic lute: Inspire also gives Haste and Regen."
- },
  "gems": [
   {
    "skill": "Mockery",
    "gems": [
     "Echo",
     "Momentum"
-   ],
-   "why": "Hits every enemy again next turn for free."
+   ]
   },
   {
    "skill": "Bag of Tricks",
    "gems": [
     "Echo"
-   ],
-   "why": "Twice the random effects."
+   ]
   }
  ],
  "rotation": [
   {
    "skill": "Rousing Chord",
-   "text": "Inspire for you and allies. Kindred Fire adds Keen. Does not end your turn."
+   "text": "Inspire for you and allies. Kindred Fire adds Keen."
   },
   {
    "skill": "Mockery",
-   "text": "Hits every enemy, Taunts them, and Laughing Stock makes them Vulnerable."
+   "text": "Hits every enemy, Taunts them, and they get Vulnerable."
   },
   {
    "skill": "Bag of Tricks",

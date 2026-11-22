@@ -5,54 +5,63 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Fallen Lineage Build</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Balthazar&family=Source+Sans+3:wght@400;600;700&family=Source+Code+Pro:wght@500&display=swap">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+<div class="secbar"><nav>
+  <a class="home" href="./">FL Builds</a>
+  <a href="#tree">Passive tree</a><a href="#class">Class tree</a><a href="#gear">Gear</a><a href="#gems">Gems</a><a href="#rotation">Rotation</a><a href="#sim" id="simlink">Simulation</a>
+</nav></div>
 <div class="wrap">
-  <div class="top"><a href="./">← All builds</a><span class="muted" id="snap"></span></div>
-  <header>
+  <header class="bhead">
     <div class="meta" id="meta"></div>
     <h1 id="name">Loading…</h1>
-    <p class="muted" id="summary"></p>
+    <p id="summary"></p>
   </header>
 
-  <section>
-    <h2>Passive tree</h2>
+  <div class="panel overview" id="overview"></div>
+
+  <section id="tree">
+    <div class="sechead"><h2>Passive tree</h2><p>60 points. Numbers show the point where each notable unlocks. Tap a row to jump the map there.</p></div>
     <div class="treegrid">
       <div class="mapcol">
-        <div class="card map">
+        <div class="panel map">
           <svg id="svg" role="img" aria-label="Passive tree with the build path in red"></svg>
           <div class="ctrl"><button id="zin" aria-label="Zoom in">+</button><button id="zout" aria-label="Zoom out">−</button><button id="zfit">Fit</button></div>
         </div>
-        <div class="card slider"><label for="step" class="muted">Points</label><input type="range" id="step" min="0" max="60" value="60"><span class="num" id="stepn"></span></div>
+        <div class="panel slider"><label for="step" class="label">Points</label><input type="range" id="step" min="0" max="60" value="60"><span class="num" id="stepn"></span></div>
       </div>
-      <div class="card miles" id="miles"></div>
+      <div class="panel miles" id="miles"></div>
     </div>
   </section>
 
-  <section id="ctree-sec" hidden>
-    <h2 id="ctree-title">Class tree</h2>
-    <p class="muted">Take the numbered nodes in order. Each branch unlocks from the top down.</p>
+  <section id="class">
+    <div class="sechead"><h2 id="ctree-title">Class tree</h2><p>Take the numbered nodes in order. Each branch unlocks from the top.</p></div>
     <div class="ctree" id="ctree"></div>
   </section>
 
-  <section>
-    <h2>Gear</h2>
-    <p class="muted">Tier and grade only raise an item's first stat (damage or armor), so the effects listed here are the same at every tier. The price shown is the cheapest tier; on weapons, a higher tier is worth paying for.</p>
-    <div class="card gear" id="gear"></div>
+  <section id="gear">
+    <div class="sechead"><h2>Gear</h2><p>Max rolls. Tier and grade only raise an item's first stat, so the effects are the same at every tier. Prices are the cheapest listing when the market was scanned.</p></div>
+    <div class="equip" id="equip"></div>
   </section>
 
-  <section id="gems-sec" hidden>
-    <h2>Skill gems</h2>
-    <p class="muted">Up to 3 gems per skill once the Gemcutter is upgraded. Tap a gem to read what it does.</p>
-    <div class="card gear" id="gems"></div>
+  <section id="gems">
+    <div class="sechead"><h2>Skill gems</h2><p>Up to 3 per skill with the Gemcutter upgraded. Tap a gem to read it.</p></div>
+    <div class="panel gems" id="gemlist"></div>
   </section>
 
-  <section>
-    <h2>Rotation</h2>
+  <section id="rotation">
+    <div class="sechead"><h2>Rotation</h2></div>
     <ol class="rot" id="rot"></ol>
   </section>
+
+  <section id="sim">
+    <div class="sechead"><h2>Simulation</h2><p id="simnote"></p></div>
+    <div class="simgrid" id="simgrid"></div>
+  </section>
+
+  <footer>Fan-made. Not affiliated with the game's developers. <span id="snap"></span></footer>
 </div>
 <script src="assets/build.js"></script>
 </body>

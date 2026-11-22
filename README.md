@@ -33,3 +33,13 @@ Site: https://iamn4m3l3ss.github.io/FL-Builds/
 `python3 tools/extract.py items <dump.bin>` rewrites `data/items.json` from a memory dump taken with the market open.
 `tools/extract.py find <dump.bin> "<name>"` prints any game table with that name, which is how new data such as
 class skills gets located.
+
+## Simulator
+
+`python3 tools/sim.py` searches thousands of Bleed builds per class (super class, class-tree branches, notables,
+gear, gems, stat pick) in a simulated tower room (4 × 30k HP) and a 100k-HP boss at level 60, then writes
+`data/sim.json`. `python3 tools/make_builds.py` turns the winners into the build pages.
+
+Measured in game (training dummy):
+`Rupture = 1.25 × n(n+3)/2 × U × LevelScale × (1 + status power)`, `LevelScale = 1 + 0.08 × (level − 1)`.
+Assumed: hit damage scaled from a level-26 Attack, max HP 900, Blood Rite heals from Rupture, item bonuses multiply.
