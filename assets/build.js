@@ -10,7 +10,8 @@
     fetch(`builds/${encodeURIComponent(id)}.json`).then((r) => { if (!r.ok) throw new Error('No build called ' + id); return r.json(); }),
     fetch('data/tree.json').then((r) => r.json()),
     fetch('data/items.json').then((r) => r.json()),
-  ]).then(([B, T, ITEMS]) => {
+    fetch('data/classes.json').then((r) => r.json()).catch(() => null),
+  ]).then(([B, T, ITEMS, CLASSES]) => {
     document.title = B.name + ' · Fallen Lineage';
     $('name').textContent = B.name;
     $('summary').textContent = B.summary;
@@ -76,7 +77,7 @@
       const n = N[nid], s = stepOf[nid]; last = s;
       return `<button class="mile" data-s="${s}"><span class="pt">${s}</span><span><b>${n.n}</b>${n.k === 'keystone' ? '<span class="ks">keystone</span>' : ''}
         <span class="d">${n.d}</span>${n.c ? `<span class="c">Drawback: ${n.c}</span>` : ''}</span></button>`;
-    }).join('') + (last < total ? `<div class="mile fill"><span class="pt">${last + 1}+</span><span>Spend the last ${total - last} points on the crit and Bleed nodes next to the path (shown on the map).</span></div>` : '');
+    }).join('') + (last < total ? `<div class="mile fill"><span class="pt">${last + 1}+</span><span>Spend the last ${total - last} points on the status power and crit chance nodes next to the path (shown on the map).</span></div>` : '');
     document.querySelectorAll('.mile[data-s]').forEach((m) => m.addEventListener('click', () => go(+m.dataset.s)));
 
     const step = $('step'); step.max = total;
@@ -127,6 +128,26 @@
         <span class="why">${g.why}</span>
         ${g.alt ? `<span class="alt">Cheaper: ${g.alt}${a ? ' · ' + gold(a.low) : ''}</span>` : ''}</div>`;
     }).join('');
+
+    if (B.chase && I[B.chase.item]) {
+      const it = I[B.chase.item], c = cheapest(it);
+      $('gear').insertAdjacentHTML('beforeend', `<div class="gr"><span class="slot">Goal</span><span class="name r-${it.rarity}">${it.name}</span>
+        <span class="price"><span class="muted">${c ? gold(c.low) : 'not listed'}</span></span><span class="why">${B.chase.why}</span></div>`);
+    }
+
+    /* class tree (super class branches) */
+    const cls = CLASSES && CLASSES.classes.find((c) => c.id === B.cls);
+    const sup = cls && cls.supers.find((s) => s.id === B.super);
+    if (sup && B.classTree) {
+      const pick = {}; B.classTree.forEach((p, i) => (pick[p.node] = { n: i + 1, why: p.why }));
+      $('ctree-title').textContent = sup.name + ' tree';
+      $('ctree').innerHTML = sup.branches.map((br) => `<div class="card br"><h3>${br.name}</h3>${br.nodes.map((n) => {
+        const p = pick[n.id];
+        return `<div class="cn${p ? ' on' : ''}"><span class="cnum">${p ? p.n : ''}</span><span><b>${n.name}</b>${n.type === 'capstone' ? ' <span class="ks">capstone</span>' : ''}
+          <span class="d">${n.text}</span>${p ? `<span class="w">${p.why}</span>` : ''}</span></div>`;
+      }).join('')}</div>`).join('');
+      $('ctree-sec').hidden = false;
+    }
 
     /* rotation */
     $('rot').innerHTML = B.rotation.map((r) => `<li class="card"><b>${r.skill}</b><span>${r.text}</span></li>`).join('');

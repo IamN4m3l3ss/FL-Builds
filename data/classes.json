@@ -1,0 +1,2549 @@
+{
+ "classes": [
+  {
+   "id": "archer",
+   "name": "Archer",
+   "weapon": "Bow",
+   "skills": [
+    {
+     "id": "aimed_shot",
+     "name": "Aimed Shot",
+     "level": null,
+     "energy": 2.0,
+     "cooldown": 0.0,
+     "text": "Deals {1} physical damage. Scales with Agility. 75% more crit chance. Costs 2 Energy."
+    },
+    {
+     "id": "pinning_shot",
+     "name": "Pinning Shot",
+     "level": 10.0,
+     "energy": 1.0,
+     "cooldown": 0.0,
+     "text": "Deals {1} physical damage. Scales with Agility. A target with Slow loses Slow and gets 3 Daze. Any other target gets Slow for 2 turns. Costs 1 Energy."
+    }
+   ],
+   "supers": [
+    {
+     "id": "gunner",
+     "name": "Gunner",
+     "side": "Chaotic",
+     "skills": [
+      {
+       "id": "blast",
+       "name": "Blast",
+       "level": 20.0,
+       "energy": 2.0,
+       "cooldown": 1.0,
+       "text": "Deals {1} physical damage. Scales with Agility. +50% crit damage. 15% chance to misfire. A misfire deals no damage and costs you 5% of your max HP. Costs 2 Energy."
+      },
+      {
+       "id": "scattershot",
+       "name": "Scattershot",
+       "level": 30.0,
+       "energy": 3.0,
+       "cooldown": 3.0,
+       "text": "Deals {1} fire damage to every enemy. Scales with Agility. Puts 1 Burn on every enemy hit. You lose 5% of your max HP. Costs 3 Energy."
+      }
+     ],
+     "branches": [
+      {
+       "name": "Flame",
+       "nodes": [
+        {
+         "id": "gunner:flame:1",
+         "name": "Gunner Flame I",
+         "type": "small",
+         "text": "10% increased fire damage"
+        },
+        {
+         "id": "gunner:flame:2",
+         "name": "Hot Shot",
+         "type": "notable",
+         "text": "Blast and Scattershot also put 2 Burn on each target."
+        },
+        {
+         "id": "gunner:flame:3",
+         "name": "Gunner Flame II",
+         "type": "small",
+         "text": "Each time you put Burn on an enemy, that enemy gets 1 extra Burn"
+        },
+        {
+         "id": "gunner:flame:4",
+         "name": "Thunderclap",
+         "type": "capstone",
+         "text": "100% increased damage with Scattershot. Scattershot gives every enemy 3 Daze. Scattershot's cooldown is 2 turns longer."
+        }
+       ]
+      },
+      {
+       "name": "Risk",
+       "nodes": [
+        {
+         "id": "gunner:gamble:1",
+         "name": "Gunner Risk I",
+         "type": "small",
+         "text": "10% increased crit chance"
+        },
+        {
+         "id": "gunner:gamble:2",
+         "name": "Double or Nothing",
+         "type": "notable",
+         "text": "+10% chance for Blast to misfire. 40% increased damage with Blast."
+        },
+        {
+         "id": "gunner:gamble:3",
+         "name": "Gunner Risk II",
+         "type": "small",
+         "text": "+10% crit damage"
+        },
+        {
+         "id": "gunner:gamble:4",
+         "name": "Lucky Shot",
+         "type": "capstone",
+         "text": "A misfire gives back the Energy. A misfire gives you Lucky."
+        }
+       ]
+      },
+      {
+       "name": "Rough",
+       "nodes": [
+        {
+         "id": "gunner:rough:1",
+         "name": "Gunner Rough I",
+         "type": "small",
+         "text": "8% increased max HP"
+        },
+        {
+         "id": "gunner:rough:2",
+         "name": "Out of Sight",
+         "type": "notable",
+         "text": "Scattershot gives you Hidden for 1 turn."
+        },
+        {
+         "id": "gunner:rough:3",
+         "name": "Gunner Rough II",
+         "type": "small",
+         "text": "+10 Armor"
+        },
+        {
+         "id": "gunner:rough:4",
+         "name": "Reload",
+         "type": "capstone",
+         "text": "Once a round, after Blast, you can use Blast again right away for 1 Energy."
+        }
+       ]
+      }
+     ],
+     "ultras": []
+    },
+    {
+     "id": "ranger",
+     "name": "Ranger",
+     "side": "Neutral",
+     "skills": [
+      {
+       "id": "call_hawk",
+       "name": "Call Hawk",
+       "level": 20.0,
+       "energy": 2.0,
+       "cooldown": 4.0,
+       "text": "A hawk joins the fight and acts after each of your turns. Each hawk hit deals {1} physical damage. Scales with Agility. Each hawk hit has a 50% chance to put 1 Bleed on the target. Costs 2 Energy."
+      },
+      {
+       "id": "snare_trap",
+       "name": "Snare Trap",
+       "level": 30.0,
+       "energy": 2.0,
+       "cooldown": 3.0,
+       "text": "The target gets Snared. Costs 2 Energy."
+      }
+     ],
+     "branches": [
+      {
+       "name": "Falconry",
+       "nodes": [
+        {
+         "id": "ranger:falconry:1",
+         "name": "Ranger Falconry I",
+         "type": "small",
+         "text": "10% increased hawk damage"
+        },
+        {
+         "id": "ranger:falconry:2",
+         "name": "Talons",
+         "type": "notable",
+         "text": "Hawk hits give the target Vulnerable for 1 turn."
+        },
+        {
+         "id": "ranger:falconry:3",
+         "name": "Ranger Falconry II",
+         "type": "small",
+         "text": "5% increased crit chance"
+        },
+        {
+         "id": "ranger:falconry:4",
+         "name": "Bond",
+         "type": "capstone",
+         "text": "The hawk acts twice a round."
+        }
+       ]
+      },
+      {
+       "name": "Traps",
+       "nodes": [
+        {
+         "id": "ranger:traps:1",
+         "name": "Ranger Traps I",
+         "type": "small",
+         "text": "10% increased damage against enemies with Snared. 10% increased damage against enemies with Daze"
+        },
+        {
+         "id": "ranger:traps:2",
+         "name": "Barbed",
+         "type": "notable",
+         "text": "Snare Trap also puts 3 Bleed on the target."
+        },
+        {
+         "id": "ranger:traps:3",
+         "name": "Ranger Traps II",
+         "type": "small",
+         "text": "+10% status power"
+        },
+        {
+         "id": "ranger:traps:4",
+         "name": "Minefield",
+         "type": "capstone",
+         "text": "Every enemy starts each fight with Snared."
+        }
+       ]
+      },
+      {
+       "name": "Wilds",
+       "nodes": [
+        {
+         "id": "ranger:wilds:1",
+         "name": "Ranger Wilds I",
+         "type": "small",
+         "text": "8% increased max HP"
+        },
+        {
+         "id": "ranger:wilds:2",
+         "name": "Forager",
+         "type": "notable",
+         "text": "You start each fight with Regen for 3 turns."
+        },
+        {
+         "id": "ranger:wilds:3",
+         "name": "Ranger Wilds II",
+         "type": "small",
+         "text": "10% increased healing received"
+        },
+        {
+         "id": "ranger:wilds:4",
+         "name": "Camouflage",
+         "type": "capstone",
+         "text": "You get Hidden for 2 turns at the start of each fight. You get Hidden for 1 turn when your hit takes down an enemy."
+        }
+       ]
+      }
+     ],
+     "ultras": []
+    },
+    {
+     "id": "marksman",
+     "name": "Marksman",
+     "side": "Lawful",
+     "skills": [
+      {
+       "id": "volley",
+       "name": "Volley",
+       "level": 20.0,
+       "energy": 3.0,
+       "cooldown": 2.0,
+       "text": "Deals {1} physical damage to every enemy. Scales with Agility. Costs 3 Energy."
+      },
+      {
+       "id": "steady_aim",
+       "name": "Steady Aim",
+       "level": 30.0,
+       "energy": 1.0,
+       "cooldown": 3.0,
+       "text": "You get Keen for 2 turns. You get Steady. Costs 1 Energy."
+      }
+     ],
+     "branches": [
+      {
+       "name": "Drill",
+       "nodes": [
+        {
+         "id": "marksman:drill:1",
+         "name": "Marksman Drill I",
+         "type": "small",
+         "text": "10% increased damage with Volley"
+        },
+        {
+         "id": "marksman:drill:2",
+         "name": "Covering Fire",
+         "type": "notable",
+         "text": "Volley gives every enemy Slow for 1 turn."
+        },
+        {
+         "id": "marksman:drill:3",
+         "name": "Marksman Drill II",
+         "type": "small",
+         "text": "+10% crit damage"
+        },
+        {
+         "id": "marksman:drill:4",
+         "name": "Barrage",
+         "type": "capstone",
+         "text": "Volley has no cooldown."
+        }
+       ]
+      },
+      {
+       "name": "Precision",
+       "nodes": [
+        {
+         "id": "marksman:precision:1",
+         "name": "Marksman Precision I",
+         "type": "small",
+         "text": "+10% crit damage"
+        },
+        {
+         "id": "marksman:precision:2",
+         "name": "Bullseye",
+         "type": "notable",
+         "text": "Your critical hits ignore Armor."
+        },
+        {
+         "id": "marksman:precision:3",
+         "name": "Marksman Precision II",
+         "type": "small",
+         "text": "10% increased crit chance"
+        },
+        {
+         "id": "marksman:precision:4",
+         "name": "Deadeye",
+         "type": "capstone",
+         "text": "After Steady Aim, Aimed Shot is a critical hit and deals 30% more damage."
+        }
+       ]
+      },
+      {
+       "name": "Discipline",
+       "nodes": [
+        {
+         "id": "marksman:discipline:1",
+         "name": "Marksman Discipline I",
+         "type": "small",
+         "text": "+1 Energy at the start of each fight"
+        },
+        {
+         "id": "marksman:discipline:2",
+         "name": "Conserve",
+         "type": "notable",
+         "text": "Skills cost 1 less Energy this turn."
+        },
+        {
+         "id": "marksman:discipline:3",
+         "name": "Marksman Discipline II",
+         "type": "small",
+         "text": "8% increased max HP"
+        },
+        {
+         "id": "marksman:discipline:4",
+         "name": "By the Book",
+         "type": "capstone",
+         "text": "Each turn you use a different action than the last, you get 1 Drilled. Up to 3 Drilled."
+        }
+       ]
+      }
+     ],
+     "ultras": []
+    }
+   ]
+  },
+  {
+   "id": "bard",
+   "name": "Bard",
+   "weapon": "Lute",
+   "skills": [
+    {
+     "id": "rousing_chord",
+     "name": "Rousing Chord",
+     "level": null,
+     "energy": 1.0,
+     "cooldown": 0.0,
+     "text": "You and every ally get Inspire for 2 turns. Costs 1 Energy. Once a round, a song for your allies does not end your turn."
+    },
+    {
+     "id": "lullaby",
+     "name": "Lullaby",
+     "level": 10.0,
+     "energy": 2.0,
+     "cooldown": 3.0,
+     "text": "The target gets Asleep for 3 turns. Costs 2 Energy."
+    }
+   ],
+   "supers": [
+    {
+     "id": "jester",
+     "name": "Jester",
+     "side": "Chaotic",
+     "skills": [
+      {
+       "id": "mockery",
+       "name": "Mockery",
+       "level": 20.0,
+       "energy": 1.0,
+       "cooldown": 2.0,
+       "text": "Deals {1} shadow damage. Scales with Spirit. The target gets Taunted for 1 turn. The target gets Mocked for 1 turn. Costs 1 Energy."
+      },
+      {
+       "id": "bag_of_tricks",
+       "name": "Bag of Tricks",
+       "level": 30.0,
+       "energy": 1.0,
+       "cooldown": 1.0,
+       "text": "Deals {1} shadow damage. Scales with Spirit. Then one of five effects at random: the target gets 3 Daze; every ally gets Haste for 2 turns; every enemy gets Blind for 2 turns; the damage again; every ally heals for 10% of max HP. Costs 1 Energy."
+      }
+     ],
+     "branches": [
+      {
+       "name": "Luck",
+       "nodes": [
+        {
+         "id": "jester:luck:1",
+         "name": "Jester Luck I",
+         "type": "small",
+         "text": "+3% dodge chance"
+        },
+        {
+         "id": "jester:luck:2",
+         "name": "Lucky Draw",
+         "type": "notable",
+         "text": "Bag of Tricks uses two effects at random."
+        },
+        {
+         "id": "jester:luck:3",
+         "name": "Jester Luck II",
+         "type": "small",
+         "text": "+5% chance to gain 1 extra Energy each turn"
+        },
+        {
+         "id": "jester:luck:4",
+         "name": "Wild Card",
+         "type": "capstone",
+         "text": "Each other skill you use also has one Bag of Tricks effect at random."
+        }
+       ]
+      },
+      {
+       "name": "Ridicule",
+       "nodes": [
+        {
+         "id": "jester:ridicule:1",
+         "name": "Jester Ridicule I",
+         "type": "small",
+         "text": "Taunted and Mocked from you last 1 turn longer"
+        },
+        {
+         "id": "jester:ridicule:2",
+         "name": "Laughing Stock",
+         "type": "notable",
+         "text": "Each time you give an enemy Taunted, that enemy also gets Vulnerable for 2 turns."
+        },
+        {
+         "id": "jester:ridicule:3",
+         "name": "Jester Ridicule II",
+         "type": "small",
+         "text": "8% increased max HP"
+        },
+        {
+         "id": "jester:ridicule:4",
+         "name": "Center Stage",
+         "type": "capstone",
+         "text": "Mockery hits every enemy. Each enemy takes 60% of the damage."
+        }
+       ]
+      },
+      {
+       "name": "Mayhem",
+       "nodes": [
+        {
+         "id": "jester:mayhem:1",
+         "name": "Jester Mayhem I",
+         "type": "small",
+         "text": "10% increased damage"
+        },
+        {
+         "id": "jester:mayhem:2",
+         "name": "Pratfall",
+         "type": "notable",
+         "text": "When you dodge, the attacker gets 2 Daze. Once a round."
+        },
+        {
+         "id": "jester:mayhem:3",
+         "name": "Jester Mayhem II",
+         "type": "small",
+         "text": "+3% dodge chance"
+        },
+        {
+         "id": "jester:mayhem:4",
+         "name": "Topsy-Turvy",
+         "type": "capstone",
+         "text": "At the start of each round, one buff on an enemy and one harmful status on an ally swap places."
+        }
+       ]
+      }
+     ],
+     "ultras": []
+    },
+    {
+     "id": "skald",
+     "name": "Skald",
+     "side": "Neutral",
+     "skills": [
+      {
+       "id": "verse",
+       "name": "Verse",
+       "level": 20.0,
+       "energy": 1.0,
+       "cooldown": 0.0,
+       "text": "Counts the Skald's Verses. Up to 3."
+      },
+      {
+       "id": "saga",
+       "name": "Saga",
+       "level": 30.0,
+       "energy": 1.0,
+       "cooldown": 3.0,
+       "text": "Deals {1} shadow damage. Scales with Spirit. 20% more damage for each Verse you have. You get 1 Verse. You and every ally get Saga for 2 turns. You and every ally get Keen for 2 turns. Costs 1 Energy."
+      }
+     ],
+     "branches": [
+      {
+       "name": "Epic",
+       "nodes": [
+        {
+         "id": "skald:epic:1",
+         "name": "Skald Epic I",
+         "type": "small",
+         "text": "10% increased healing done"
+        },
+        {
+         "id": "skald:epic:2",
+         "name": "Long Verse",
+         "type": "notable",
+         "text": "Up to 4 Verses instead of 3. The Finale also gives Haste for 1 turn."
+        },
+        {
+         "id": "skald:epic:3",
+         "name": "Skald Epic II",
+         "type": "small",
+         "text": "20% increased damage with Saga"
+        },
+        {
+         "id": "skald:epic:4",
+         "name": "Endless Saga",
+         "type": "capstone",
+         "text": "The Finale does not use up the Verses. Every third Verse is the Finale."
+        }
+       ]
+      },
+      {
+       "name": "Lore",
+       "nodes": [
+        {
+         "id": "skald:lore:1",
+         "name": "Skald Lore I",
+         "type": "small",
+         "text": "+10% status power"
+        },
+        {
+         "id": "skald:lore:2",
+         "name": "Warning",
+         "type": "notable",
+         "text": "When you reach 3 Verses, every ally gets Fortify for 1 turn."
+        },
+        {
+         "id": "skald:lore:3",
+         "name": "Skald Lore II",
+         "type": "small",
+         "text": "10% increased crit chance"
+        },
+        {
+         "id": "skald:lore:4",
+         "name": "Legend",
+         "type": "capstone",
+         "text": "You start each fight with 2 Verses."
+        }
+       ]
+      },
+      {
+       "name": "Chant",
+       "nodes": [
+        {
+         "id": "skald:chant:1",
+         "name": "Skald Chant I",
+         "type": "small",
+         "text": "8% increased max HP"
+        },
+        {
+         "id": "skald:chant:2",
+         "name": "War Chant",
+         "type": "notable",
+         "text": "Each Verse deals 8 shadow damage instead of 4."
+        },
+        {
+         "id": "skald:chant:3",
+         "name": "Skald Chant II",
+         "type": "small",
+         "text": "+10 Ward"
+        },
+        {
+         "id": "skald:chant:4",
+         "name": "Saga's End",
+         "type": "capstone",
+         "text": "The Finale also deals 30 holy damage to every enemy. Scales with Spirit."
+        }
+       ]
+      }
+     ],
+     "ultras": []
+    },
+    {
+     "id": "herald",
+     "name": "Herald",
+     "side": "Lawful",
+     "skills": [
+      {
+       "id": "command",
+       "name": "Command",
+       "level": 20.0,
+       "energy": 3.0,
+       "cooldown": 3.0,
+       "text": "An ally or you acts once more right away. That action gives no Energy. Costs 3 Energy."
+      },
+      {
+       "id": "decree",
+       "name": "Decree",
+       "level": 30.0,
+       "energy": 2.0,
+       "cooldown": 2.0,
+       "text": "Deals {1} holy damage. Scales with Spirit. The target gets Sentenced for 2 turns. You and every ally get Decree for 2 turns. Ends one control status on each of you. Costs 2 Energy."
+      }
+     ],
+     "branches": [
+      {
+       "name": "Authority",
+       "nodes": [
+        {
+         "id": "herald:authority:1",
+         "name": "Herald Authority I",
+         "type": "small",
+         "text": "+5% chance to gain 1 extra Energy each turn"
+        },
+        {
+         "id": "herald:authority:2",
+         "name": "Rally",
+         "type": "notable",
+         "text": "Command also gives the ally Inspire for 1 turn."
+        },
+        {
+         "id": "herald:authority:3",
+         "name": "Herald Authority II",
+         "type": "small",
+         "text": "+1 Energy at the start of each fight"
+        },
+        {
+         "id": "herald:authority:4",
+         "name": "Chain of Command",
+         "type": "capstone",
+         "text": "Command works on two allies. Command's cooldown is 1 turn longer."
+        }
+       ]
+      },
+      {
+       "name": "Law",
+       "nodes": [
+        {
+         "id": "herald:law:1",
+         "name": "Herald Law I",
+         "type": "small",
+         "text": "Decree from you lasts 1 turn longer"
+        },
+        {
+         "id": "herald:law:2",
+         "name": "Due Process",
+         "type": "notable",
+         "text": "Decree also gives Fortify for 1 turn."
+        },
+        {
+         "id": "herald:law:3",
+         "name": "Herald Law II",
+         "type": "small",
+         "text": "20% increased damage with Decree"
+        },
+        {
+         "id": "herald:law:4",
+         "name": "Martial Law",
+         "type": "capstone",
+         "text": "While an ally has Decree from you, enemies cannot get buffs."
+        }
+       ]
+      },
+      {
+       "name": "Banner",
+       "nodes": [
+        {
+         "id": "herald:banner:1",
+         "name": "Herald Banner I",
+         "type": "small",
+         "text": "5% increased damage"
+        },
+        {
+         "id": "herald:banner:2",
+         "name": "Colours",
+         "type": "notable",
+         "text": "Every ally starts each fight with Inspire for 1 turn."
+        },
+        {
+         "id": "herald:banner:3",
+         "name": "Herald Banner II",
+         "type": "small",
+         "text": "8% increased max HP"
+        },
+        {
+         "id": "herald:banner:4",
+         "name": "Standard Bearer",
+         "type": "capstone",
+         "text": "Until you go down, every ally has Banner."
+        }
+       ]
+      }
+     ],
+     "ultras": []
+    }
+   ]
+  },
+  {
+   "id": "lancer",
+   "name": "Lancer",
+   "weapon": "Spear",
+   "skills": [
+    {
+     "id": "impale",
+     "name": "Impale",
+     "level": null,
+     "energy": 2.0,
+     "cooldown": 0.0,
+     "text": "Deals {1} physical damage. Scales with Strength. The target gets Sunder for 2 turns. Costs 2 Energy."
+    },
+    {
+     "id": "hold_the_line",
+     "name": "Hold the Line",
+     "level": 10.0,
+     "energy": 2.0,
+     "cooldown": 3.0,
+     "text": "Every enemy gets Taunted for 1 turn. Every enemy gets Fear for 1 turn. You get Fortify for 2 turns. Costs 2 Energy."
+    }
+   ],
+   "supers": [
+    {
+     "id": "gladiator",
+     "name": "Gladiator",
+     "side": "Chaotic",
+     "skills": [
+      {
+       "id": "crowd_pleaser",
+       "name": "Crowd Pleaser",
+       "level": 20.0,
+       "energy": 2.0,
+       "cooldown": 2.0,
+       "text": "Deals {1} physical damage. Scales with Strength. You get 1 Favor, 2 on a critical hit. Costs 2 Energy."
+      },
+      {
+       "id": "spear_throw",
+       "name": "Spear Throw",
+       "level": 30.0,
+       "energy": 2.0,
+       "cooldown": 1.0,
+       "text": "Deals {1} physical damage. Scales with Strength. Uses up all your Favor. 10% more damage per Favor used up. The target gets 5 Daze if you used up 5 Favor. Costs 2 Energy."
+      }
+     ],
+     "branches": [
+      {
+       "name": "Showman",
+       "nodes": [
+        {
+         "id": "gladiator:showman:1",
+         "name": "Gladiator Showman I",
+         "type": "small",
+         "text": "Up to 6 Favor instead of 5"
+        },
+        {
+         "id": "gladiator:showman:2",
+         "name": "Roar of the Crowd",
+         "type": "notable",
+         "text": "The first time you reach full Favor in a fight, every ally gets Inspire for 2 turns."
+        },
+        {
+         "id": "gladiator:showman:3",
+         "name": "Gladiator Showman II",
+         "type": "small",
+         "text": "10% increased crit chance"
+        },
+        {
+         "id": "gladiator:showman:4",
+         "name": "Glory",
+         "type": "capstone",
+         "text": "Spear Throw uses up only half of your Favor."
+        }
+       ]
+      },
+      {
+       "name": "Brawl",
+       "nodes": [
+        {
+         "id": "gladiator:brawl:1",
+         "name": "Gladiator Brawl I",
+         "type": "small",
+         "text": "+10 Armor"
+        },
+        {
+         "id": "gladiator:brawl:2",
+         "name": "Come at Me",
+         "type": "notable",
+         "text": "Crowd Pleaser also gives the target Taunted for 1 turn."
+        },
+        {
+         "id": "gladiator:brawl:3",
+         "name": "Gladiator Brawl II",
+         "type": "small",
+         "text": "8% increased max HP"
+        },
+        {
+         "id": "gladiator:brawl:4",
+         "name": "Bring It",
+         "type": "capstone",
+         "text": "You get 1 Favor each time a hit lands on you."
+        }
+       ]
+      },
+      {
+       "name": "Bloodsport",
+       "nodes": [
+        {
+         "id": "gladiator:bloodsport:1",
+         "name": "Gladiator Bloodsport I",
+         "type": "small",
+         "text": "10% increased damage against enemies with Bleed"
+        },
+        {
+         "id": "gladiator:bloodsport:2",
+         "name": "Grand Entrance",
+         "type": "notable",
+         "text": "You get 3 Favor with your first hit in each fight."
+        },
+        {
+         "id": "gladiator:bloodsport:3",
+         "name": "Gladiator Bloodsport II",
+         "type": "small",
+         "text": "Each time you put Bleed on an enemy, that enemy gets 1 extra Bleed"
+        },
+        {
+         "id": "gladiator:bloodsport:4",
+         "name": "Thumbs Down",
+         "type": "capstone",
+         "text": "Spear Throw with 5 Favor takes down an enemy below 30% HP. Does not work on bosses."
+        }
+       ]
+      }
+     ],
+     "ultras": []
+    },
+    {
+     "id": "dragoon",
+     "name": "Dragoon",
+     "side": "Neutral",
+     "skills": [
+      {
+       "id": "leap",
+       "name": "Leap",
+       "level": 20.0,
+       "energy": 2.0,
+       "cooldown": 2.0,
+       "text": "Deals {1} physical damage. Scales with Strength. Also hits the enemy behind the target for 60% of the damage. Both get Sunder for 1 turn. Costs 2 Energy."
+      },
+      {
+       "id": "skewer",
+       "name": "Skewer",
+       "level": 30.0,
+       "energy": 3.0,
+       "cooldown": 3.0,
+       "text": "Deals {1} physical damage. Scales with Strength. Deals 30% more damage against beasts and bosses. Puts 3 Bleed on the target. Costs 3 Energy."
+      }
+     ],
+     "branches": [
+      {
+       "name": "Sky",
+       "nodes": [
+        {
+         "id": "dragoon:sky:1",
+         "name": "Dragoon Sky I",
+         "type": "small",
+         "text": "10% increased damage with Leap"
+        },
+        {
+         "id": "dragoon:sky:2",
+         "name": "High Ground",
+         "type": "notable",
+         "text": "Leap gives you Airborne."
+        },
+        {
+         "id": "dragoon:sky:3",
+         "name": "Dragoon Sky II",
+         "type": "small",
+         "text": "5% increased crit chance"
+        },
+        {
+         "id": "dragoon:sky:4",
+         "name": "Dive",
+         "type": "capstone",
+         "text": "Leap's cooldown ends whenever an enemy goes down."
+        }
+       ]
+      },
+      {
+       "name": "Hunt",
+       "nodes": [
+        {
+         "id": "dragoon:hunt:1",
+         "name": "Dragoon Hunt I",
+         "type": "small",
+         "text": "10% increased damage against beasts and bosses"
+        },
+        {
+         "id": "dragoon:hunt:2",
+         "name": "Weak Point",
+         "type": "notable",
+         "text": "Skewer ignores 50% of the target's Armor."
+        },
+        {
+         "id": "dragoon:hunt:3",
+         "name": "Dragoon Hunt II",
+         "type": "small",
+         "text": "10% increased crit chance"
+        },
+        {
+         "id": "dragoon:hunt:4",
+         "name": "Dragonbane",
+         "type": "capstone",
+         "text": "20% increased damage against bosses. Skewer also gives the target Vulnerable for 2 turns."
+        }
+       ]
+      },
+      {
+       "name": "Spearhead",
+       "nodes": [
+        {
+         "id": "dragoon:spearhead:1",
+         "name": "Dragoon Spearhead I",
+         "type": "small",
+         "text": "The enemy behind your target takes 70% of the damage instead of 60%"
+        },
+        {
+         "id": "dragoon:spearhead:2",
+         "name": "Run Through",
+         "type": "notable",
+         "text": "The enemy behind your target takes the full damage."
+        },
+        {
+         "id": "dragoon:spearhead:3",
+         "name": "Dragoon Spearhead II",
+         "type": "small",
+         "text": "Each time you put Bleed on an enemy, that enemy gets 1 extra Bleed"
+        },
+        {
+         "id": "dragoon:spearhead:4",
+         "name": "Deep Impale",
+         "type": "capstone",
+         "text": "Impale also hits the enemy behind the target for 60% of the damage."
+        }
+       ]
+      }
+     ],
+     "ultras": []
+    },
+    {
+     "id": "sentinel",
+     "name": "Sentinel",
+     "side": "Lawful",
+     "skills": [
+      {
+       "id": "shield_wall",
+       "name": "Shield Wall",
+       "level": 20.0,
+       "energy": 2.0,
+       "cooldown": 3.0,
+       "text": "You and every ally get Fortify for 2 turns. You get Rallying for 2 turns. Costs 2 Energy."
+      },
+      {
+       "id": "vigil",
+       "name": "Vigil",
+       "level": 30.0,
+       "energy": 2.0,
+       "cooldown": 2.0,
+       "text": "Strikes every enemy that attacks an ally, before the attack lands."
+      }
+     ],
+     "branches": [
+      {
+       "name": "Formation",
+       "nodes": [
+        {
+         "id": "sentinel:formation:1",
+         "name": "Sentinel Formation I",
+         "type": "small",
+         "text": ""
+        },
+        {
+         "id": "sentinel:formation:2",
+         "name": "Ranks",
+         "type": "notable",
+         "text": ""
+        },
+        {
+         "id": "sentinel:formation:3",
+         "name": "Sentinel Formation II",
+         "type": "small",
+         "text": ""
+        },
+        {
+         "id": "sentinel:formation:4",
+         "name": "Phalanx",
+         "type": "capstone",
+         "text": "Shield Wall also gives every ally 1 Counter."
+        }
+       ]
+      },
+      {
+       "name": "Watch",
+       "nodes": [
+        {
+         "id": "sentinel:watch:1",
+         "name": "Sentinel Watch I",
+         "type": "small",
+         "text": ""
+        },
+        {
+         "id": "sentinel:watch:2",
+         "name": "Watchful",
+         "type": "notable",
+         "text": "Vigil lasts 2 turns."
+        },
+        {
+         "id": "sentinel:watch:3",
+         "name": "Sentinel Watch II",
+         "type": "small",
+         "text": "10% increased crit chance"
+        },
+        {
+         "id": "sentinel:watch:4",
+         "name": "Interrupt",
+         "type": "capstone",
+         "text": "A Vigil strike that is a critical hit stops the enemy's attack."
+        }
+       ]
+      },
+      {
+       "name": "Discipline",
+       "nodes": [
+        {
+         "id": "sentinel:discipline:1",
+         "name": "Sentinel Discipline I",
+         "type": "small",
+         "text": "8% increased max HP"
+        },
+        {
+         "id": "sentinel:discipline:2",
+         "name": "Iron Discipline",
+         "type": "notable",
+         "text": "You cannot get Fear or Taunted."
+        },
+        {
+         "id": "sentinel:discipline:3",
+         "name": "Sentinel Discipline II",
+         "type": "small",
+         "text": ""
+        },
+        {
+         "id": "sentinel:discipline:4",
+         "name": "Unmovable",
+         "type": "capstone",
+         "text": "While above 50% HP, no hit takes more than 20% of your max HP."
+        }
+       ]
+      }
+     ],
+     "ultras": []
+    }
+   ]
+  },
+  {
+   "id": "mage",
+   "name": "Mage",
+   "weapon": "Staff",
+   "skills": [
+    {
+     "id": "firebolt",
+     "name": "Firebolt",
+     "level": null,
+     "energy": 2.0,
+     "cooldown": 0.0,
+     "text": "Deals {1} fire damage. Scales with Magic. Puts 2 Burn on the target. Costs 2 Energy."
+    },
+    {
+     "id": "fire_wall",
+     "name": "Fire Wall",
+     "level": 10.0,
+     "energy": 2.0,
+     "cooldown": 3.0,
+     "text": "Every enemy gets Fire Wall for 3 turns. Costs 2 Energy."
+    }
+   ],
+   "supers": [
+    {
+     "id": "pyromancer",
+     "name": "Pyromancer",
+     "side": "Chaotic",
+     "skills": [
+      {
+       "id": "ignite",
+       "name": "Ignite",
+       "level": 20.0,
+       "energy": 2.0,
+       "cooldown": 1.0,
+       "text": "Puts 2 Burn on every enemy. You get 1 Heat. Costs 2 Energy."
+      },
+      {
+       "id": "detonate",
+       "name": "Detonate",
+       "level": 30.0,
+       "energy": 3.0,
+       "cooldown": 3.0,
+       "text": "Uses up the target's Burn. Deals {1} fire damage + {2} per Burn used up. Scales with Magic. Half of the Burn goes to the other enemies. Costs 3 Energy."
+      }
+     ],
+     "branches": [
+      {
+       "name": "Inferno",
+       "nodes": [
+        {
+         "id": "pyromancer:inferno:1",
+         "name": "Pyromancer Inferno I",
+         "type": "small",
+         "text": "10% increased fire damage"
+        },
+        {
+         "id": "pyromancer:inferno:2",
+         "name": "Kindling",
+         "type": "notable",
+         "text": "Each time you put Burn on an enemy, that enemy gets 1 extra Burn."
+        },
+        {
+         "id": "pyromancer:inferno:3",
+         "name": "Pyromancer Inferno II",
+         "type": "small",
+         "text": "Burn from you can go up to 15 instead of 10"
+        },
+        {
+         "id": "pyromancer:inferno:4",
+         "name": "Spreading Fire",
+         "type": "capstone",
+         "text": "When an enemy with Burn goes down, that Burn goes to every other enemy."
+        }
+       ]
+      },
+      {
+       "name": "Overheat",
+       "nodes": [
+        {
+         "id": "pyromancer:overheat:1",
+         "name": "Pyromancer Overheat I",
+         "type": "small",
+         "text": "Up to 7 Heat instead of 5"
+        },
+        {
+         "id": "pyromancer:overheat:2",
+         "name": "Burning Soul",
+         "type": "notable",
+         "text": "50% more crit chance with fire hits while at full Heat."
+        },
+        {
+         "id": "pyromancer:overheat:3",
+         "name": "Pyromancer Overheat II",
+         "type": "small",
+         "text": "+10% fire resistance"
+        },
+        {
+         "id": "pyromancer:overheat:4",
+         "name": "Phoenix",
+         "type": "capstone",
+         "text": "Once a fight, when you go down while you have Burn, you come back at 40% HP. Your Burn ends. Every enemy gets 4 Burn."
+        }
+       ]
+      },
+      {
+       "name": "Volatile",
+       "nodes": [
+        {
+         "id": "pyromancer:volatile:1",
+         "name": "Pyromancer Volatile I",
+         "type": "small",
+         "text": "10% increased damage against enemies with Burn"
+        },
+        {
+         "id": "pyromancer:volatile:2",
+         "name": "Chain Reaction",
+         "type": "notable",
+         "text": "Detonate's cooldown ends when Detonate takes down an enemy."
+        },
+        {
+         "id": "pyromancer:volatile:3",
+         "name": "Pyromancer Volatile II",
+         "type": "small",
+         "text": "+1 Energy at the start of each fight"
+        },
+        {
+         "id": "pyromancer:volatile:4",
+         "name": "Meltdown",
+         "type": "capstone",
+         "text": ""
+        }
+       ]
+      }
+     ],
+     "ultras": []
+    },
+    {
+     "id": "druid",
+     "name": "Druid",
+     "side": "Neutral",
+     "skills": [
+      {
+       "id": "thornroot",
+       "name": "Thornroot",
+       "level": 20.0,
+       "energy": 2.0,
+       "cooldown": 2.0,
+       "text": "Deals {1} nature damage. Scales with Magic. Puts 3 Poison on the target. The target gets Slow for 2 turns. Costs 2 Energy."
+      },
+      {
+       "id": "wild_growth",
+       "name": "Wild Growth",
+       "level": 30.0,
+       "energy": 2.0,
+       "cooldown": 3.0,
+       "text": "You and every ally get Regen for 3 turns. Costs 2 Energy."
+      }
+     ],
+     "branches": [
+      {
+       "name": "Decay",
+       "nodes": [
+        {
+         "id": "druid:decay:1",
+         "name": "Druid Decay I",
+         "type": "small",
+         "text": "+10% status power"
+        },
+        {
+         "id": "druid:decay:2",
+         "name": "Rot",
+         "type": "notable",
+         "text": "30% reduced healing received."
+        },
+        {
+         "id": "druid:decay:3",
+         "name": "Druid Decay II",
+         "type": "small",
+         "text": "Each time you put Poison on an enemy, that enemy gets 1 extra Poison"
+        },
+        {
+         "id": "druid:decay:4",
+         "name": "Cycle",
+         "type": "capstone",
+         "text": ""
+        }
+       ]
+      },
+      {
+       "name": "Growth",
+       "nodes": [
+        {
+         "id": "druid:growth:1",
+         "name": "Druid Growth I",
+         "type": "small",
+         "text": "10% increased healing done"
+        },
+        {
+         "id": "druid:growth:2",
+         "name": "Deep Roots",
+         "type": "notable",
+         "text": "Each time you give an ally Regen, that ally also gets Fortify for 2 turns."
+        },
+        {
+         "id": "druid:growth:3",
+         "name": "Druid Growth II",
+         "type": "small",
+         "text": "Regen from you lasts 1 turn longer"
+        },
+        {
+         "id": "druid:growth:4",
+         "name": "Evergreen",
+         "type": "capstone",
+         "text": "Regen from you heals 100% more on allies below 50% HP."
+        }
+       ]
+      },
+      {
+       "name": "Balance",
+       "nodes": [
+        {
+         "id": "druid:balance:1",
+         "name": "Druid Balance I",
+         "type": "small",
+         "text": "5% increased damage"
+        },
+        {
+         "id": "druid:balance:2",
+         "name": "Equilibrium",
+         "type": "notable",
+         "text": "After you heal, you get Poised. After you deal damage, you get Mending."
+        },
+        {
+         "id": "druid:balance:3",
+         "name": "Druid Balance II",
+         "type": "small",
+         "text": "+5% chance to gain 1 extra Energy each turn"
+        },
+        {
+         "id": "druid:balance:4",
+         "name": "Harmony",
+         "type": "capstone",
+         "text": ""
+        }
+       ]
+      }
+     ],
+     "ultras": []
+    },
+    {
+     "id": "priest",
+     "name": "Priest",
+     "side": "Lawful",
+     "skills": [
+      {
+       "id": "mend",
+       "name": "Mend",
+       "level": 20.0,
+       "energy": 2.0,
+       "cooldown": 1.0,
+       "text": "Heals an ally for {1}. Scales with Magic. Ends one harmful status on the ally. Costs 2 Energy."
+      },
+      {
+       "id": "smite",
+       "name": "Smite",
+       "level": 30.0,
+       "energy": 3.0,
+       "cooldown": 2.0,
+       "text": "Deals {1} holy damage. Scales with Magic. The target gets Blind for 2 turns. Your ally with the lowest % HP heals for 30% of the damage. Costs 3 Energy."
+      }
+     ],
+     "branches": [
+      {
+       "name": "Devotion",
+       "nodes": [
+        {
+         "id": "priest:devotion:1",
+         "name": "Priest Devotion I",
+         "type": "small",
+         "text": ""
+        },
+        {
+         "id": "priest:devotion:2",
+         "name": "Saving Grace",
+         "type": "notable",
+         "text": "Healing you give past max HP becomes Shield. Up to 20% of max HP."
+        },
+        {
+         "id": "priest:devotion:3",
+         "name": "Priest Devotion II",
+         "type": "small",
+         "text": "+1 Energy at the start of each fight"
+        },
+        {
+         "id": "priest:devotion:4",
+         "name": "Prayer",
+         "type": "capstone",
+         "text": "Mend heals every ally for 60% of the healing."
+        }
+       ]
+      },
+      {
+       "name": "Doctrine",
+       "nodes": [
+        {
+         "id": "priest:doctrine:1",
+         "name": "Priest Doctrine I",
+         "type": "small",
+         "text": "10% increased holy damage"
+        },
+        {
+         "id": "priest:doctrine:2",
+         "name": "Penance",
+         "type": "notable",
+         "text": "20% increased holy damage against enemies with Blind."
+        },
+        {
+         "id": "priest:doctrine:3",
+         "name": "Priest Doctrine II",
+         "type": "small",
+         "text": "10% increased crit chance"
+        },
+        {
+         "id": "priest:doctrine:4",
+         "name": "Wrath",
+         "type": "capstone",
+         "text": "Smite's heal goes to every ally."
+        }
+       ]
+      },
+      {
+       "name": "Sanctuary",
+       "nodes": [
+        {
+         "id": "priest:sanctuary:1",
+         "name": "Priest Sanctuary I",
+         "type": "small",
+         "text": "+10 Ward"
+        },
+        {
+         "id": "priest:sanctuary:2",
+         "name": "Ward of Faith",
+         "type": "notable",
+         "text": "Mend also gives the ally Fortify for 1 turn."
+        },
+        {
+         "id": "priest:sanctuary:3",
+         "name": "Priest Sanctuary II",
+         "type": "small",
+         "text": ""
+        },
+        {
+         "id": "priest:sanctuary:4",
+         "name": "Resurrection",
+         "type": "capstone",
+         "text": ""
+        }
+       ]
+      }
+     ],
+     "ultras": [
+      {
+       "id": "zealot",
+       "name": "Zealot",
+       "side": "Chaotic",
+       "skills": [
+        {
+         "id": "searing_brand",
+         "name": "Searing Brand",
+         "level": 40.0,
+         "energy": 2.0,
+         "cooldown": 1.0,
+         "text": "Deals {1} holy damage. Scales with Magic. The target gets Branded for 3 turns. Costs 2 Energy."
+        },
+        {
+         "id": "kindle",
+         "name": "Kindle",
+         "level": 50.0,
+         "energy": 0.0,
+         "cooldown": 2.0,
+         "text": "Costs 12% of your max HP. You gain 2 Energy and get Fervent. You act again, once a round."
+        }
+       ],
+       "ultraSkill": {
+        "id": "pillar_of_fire",
+        "name": "Pillar of Fire",
+        "level": 40.0,
+        "energy": 6.0,
+        "cooldown": 0.0,
+        "text": "Ultra skill. Deals {1} holy damage. Scales with Magic. 50% more damage against Branded enemies. You heal for 30% of the damage."
+       },
+       "branches": [
+        {
+         "name": "Brand",
+         "nodes": [
+          {
+           "id": "zealot:brand:1",
+           "name": "Zealot Brand I",
+           "type": "small",
+           "text": "10% increased holy damage"
+          },
+          {
+           "id": "zealot:brand:2",
+           "name": "Deep Brand",
+           "type": "notable",
+           "text": "15% increased holy damage against Branded enemies."
+          },
+          {
+           "id": "zealot:brand:3",
+           "name": "Zealot Brand II",
+           "type": "small",
+           "text": "10% increased crit chance"
+          },
+          {
+           "id": "zealot:brand:4",
+           "name": "Wildfire Brand",
+           "type": "capstone",
+           "text": "Searing Brand hits every enemy."
+          }
+         ]
+        },
+        {
+         "name": "Kindle",
+         "nodes": [
+          {
+           "id": "zealot:kindle:1",
+           "name": "Zealot Kindle I",
+           "type": "small",
+           "text": "8% increased max HP"
+          },
+          {
+           "id": "zealot:kindle:2",
+           "name": "Iron Faith",
+           "type": "notable",
+           "text": "Kindle also gives you Fortify for 1 turn."
+          },
+          {
+           "id": "zealot:kindle:3",
+           "name": "Zealot Kindle II",
+           "type": "small",
+           "text": "Fervent is 40% more damage"
+          },
+          {
+           "id": "zealot:kindle:4",
+           "name": "Ever Burning",
+           "type": "capstone",
+           "text": "Kindle has no cooldown."
+          }
+         ]
+        },
+        {
+         "name": "Ardour",
+         "nodes": [
+          {
+           "id": "zealot:fervor:1",
+           "name": "Zealot Ardour I",
+           "type": "small",
+           "text": "10% increased healing done"
+          },
+          {
+           "id": "zealot:fervor:2",
+           "name": "Cauterise",
+           "type": "notable",
+           "text": "Smite heals for 40% of its damage."
+          },
+          {
+           "id": "zealot:fervor:3",
+           "name": "Zealot Ardour II",
+           "type": "small",
+           "text": "Zeal burns for 50% of the HP healed"
+          },
+          {
+           "id": "zealot:fervor:4",
+           "name": "Holy War",
+           "type": "capstone",
+           "text": "When Zeal burns, your ally with the lowest % HP heals for 25% of that damage."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "oracle",
+       "name": "Oracle",
+       "side": "Neutral",
+       "skills": [
+        {
+         "id": "foretell",
+         "name": "Foretell",
+         "level": 40.0,
+         "energy": 2.0,
+         "cooldown": 1.0,
+         "text": "An ally gets Foretold for 2 turns. Costs 2 Energy."
+        },
+        {
+         "id": "doom",
+         "name": "Doom",
+         "level": 50.0,
+         "energy": 2.0,
+         "cooldown": 2.0,
+         "text": "An enemy gets Doomed for 2 turns. When it ends, the enemy takes {1} holy damage. Scales with Magic. Costs 2 Energy."
+        }
+       ],
+       "ultraSkill": {
+        "id": "unwritten",
+        "name": "Unwritten",
+        "level": 40.0,
+        "energy": 6.0,
+        "cooldown": 0.0,
+        "text": "Ultra skill. Every ally goes back to the HP it had when its last turn began. A fallen ally stands up with that HP. Every ally gets Foretold. Every enemy gets Doomed for 1 turn, then takes {1} holy damage. Scales with Magic."
+       },
+       "branches": [
+        {
+         "name": "Foresight",
+         "nodes": [
+          {
+           "id": "oracle:foresight:1",
+           "name": "Oracle Foresight I",
+           "type": "small",
+           "text": "+10% crit damage"
+          },
+          {
+           "id": "oracle:foresight:2",
+           "name": "Second Sight",
+           "type": "notable",
+           "text": "Foretold holds for 2 hits."
+          },
+          {
+           "id": "oracle:foresight:3",
+           "name": "Oracle Foresight II",
+           "type": "small",
+           "text": "+1 Energy at the start of each fight"
+          },
+          {
+           "id": "oracle:foresight:4",
+           "name": "Shared Vision",
+           "type": "capstone",
+           "text": "Foretell gives Foretold to every ally."
+          }
+         ]
+        },
+        {
+         "name": "Doom",
+         "nodes": [
+          {
+           "id": "oracle:doom:1",
+           "name": "Oracle Doom I",
+           "type": "small",
+           "text": "10% increased holy damage"
+          },
+          {
+           "id": "oracle:doom:2",
+           "name": "Foreboding",
+           "type": "notable",
+           "text": "Doom also gives Weak for 2 turns."
+          },
+          {
+           "id": "oracle:doom:3",
+           "name": "Oracle Doom II",
+           "type": "small",
+           "text": "Doom deals 20% more damage"
+          },
+          {
+           "id": "oracle:doom:4",
+           "name": "Chain of Fate",
+           "type": "capstone",
+           "text": "Doom also falls on every other enemy for half the damage."
+          }
+         ]
+        },
+        {
+         "name": "Fate",
+         "nodes": [
+          {
+           "id": "oracle:fate:1",
+           "name": "Oracle Fate I",
+           "type": "small",
+           "text": "8% increased max HP"
+          },
+          {
+           "id": "oracle:fate:2",
+           "name": "Omen",
+           "type": "notable",
+           "text": "Each prophecy that comes true heals your ally with the lowest % HP for 8% of its max HP."
+          },
+          {
+           "id": "oracle:fate:3",
+           "name": "Oracle Fate II",
+           "type": "small",
+           "text": "10% increased healing done"
+          },
+          {
+           "id": "oracle:fate:4",
+           "name": "Clean Page",
+           "type": "capstone",
+           "text": "Unwritten also ends every ally's cooldowns."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "seraph",
+       "name": "Seraph",
+       "side": "Lawful",
+       "skills": [
+        {
+         "id": "sheltering_wing",
+         "name": "Sheltering Wing",
+         "level": 40.0,
+         "energy": 2.0,
+         "cooldown": 2.0,
+         "text": "Heals an ally for {1}. Scales with Magic. The ally gets a Shield of 10% of your max HP. Costs 2 Energy."
+        },
+        {
+         "id": "feather_storm",
+         "name": "Feather Storm",
+         "level": 50.0,
+         "energy": 2.0,
+         "cooldown": 2.0,
+         "text": "Deals {1} holy damage to every enemy. Scales with Magic. 30% more damage for each Feather you have. Uses up your Feathers. Every enemy gets Blind for 1 turn. Costs 2 Energy."
+        }
+       ],
+       "ultraSkill": {
+        "id": "dawnfall",
+        "name": "Dawnfall",
+        "level": 40.0,
+        "energy": 6.0,
+        "cooldown": 0.0,
+        "text": "Ultra skill. Deals {1} holy damage to every enemy. Scales with Magic. Every ally heals 35% of its max HP and loses its harmful statuses. Every fallen ally stands up with 30% of its max HP."
+       },
+       "branches": [
+        {
+         "name": "Mercy",
+         "nodes": [
+          {
+           "id": "seraph:mercy:1",
+           "name": "Seraph Mercy I",
+           "type": "small",
+           "text": "10% increased healing done"
+          },
+          {
+           "id": "seraph:mercy:2",
+           "name": "Under the Wing",
+           "type": "notable",
+           "text": "Sheltering Wing also gives Regen for 2 turns."
+          },
+          {
+           "id": "seraph:mercy:3",
+           "name": "Seraph Mercy II",
+           "type": "small",
+           "text": "Sheltering Wing's Shield is 5% of your max HP larger"
+          },
+          {
+           "id": "seraph:mercy:4",
+           "name": "Six Wings",
+           "type": "capstone",
+           "text": "Sheltering Wing heals and shields every ally for 60%."
+          }
+         ]
+        },
+        {
+         "name": "Light",
+         "nodes": [
+          {
+           "id": "seraph:light:1",
+           "name": "Seraph Light I",
+           "type": "small",
+           "text": "10% increased holy damage"
+          },
+          {
+           "id": "seraph:light:2",
+           "name": "Afterglow",
+           "type": "notable",
+           "text": "Feather Storm leaves you 2 Feathers."
+          },
+          {
+           "id": "seraph:light:3",
+           "name": "Seraph Light II",
+           "type": "small",
+           "text": "+1 to the most Feathers you can have"
+          },
+          {
+           "id": "seraph:light:4",
+           "name": "Searing Light",
+           "type": "capstone",
+           "text": "With full Feathers, Smite also deals half its damage to every other enemy."
+          }
+         ]
+        },
+        {
+         "name": "Wings",
+         "nodes": [
+          {
+           "id": "seraph:wings:1",
+           "name": "Seraph Wings I",
+           "type": "small",
+           "text": "8% increased max HP"
+          },
+          {
+           "id": "seraph:wings:2",
+           "name": "Lift",
+           "type": "notable",
+           "text": "Takes 15% less physical damage."
+          },
+          {
+           "id": "seraph:wings:3",
+           "name": "Seraph Wings II",
+           "type": "small",
+           "text": "Dawnfall heals 10% of max HP more"
+          },
+          {
+           "id": "seraph:wings:4",
+           "name": "Dawnbringer",
+           "type": "capstone",
+           "text": "After Dawnfall every ally gets Regen and Fortify for 2 turns."
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rogue",
+   "name": "Rogue",
+   "weapon": "Daggers",
+   "skills": [
+    {
+     "id": "twin_cut",
+     "name": "Twin Cut",
+     "level": null,
+     "energy": 2.0,
+     "cooldown": 0.0,
+     "text": "Hits twice. Each hit deals {1} physical damage. Scales with Agility. Each hit has a 50% chance to put 1 Bleed on the target. Costs 2 Energy."
+    },
+    {
+     "id": "deep_cut",
+     "name": "Deep Cut",
+     "level": 10.0,
+     "energy": 1.0,
+     "cooldown": 1.0,
+     "text": "Deals {1} physical damage. Scales with Agility. Doubles the target's Bleed, up to 10. Costs 1 Energy."
+    }
+   ],
+   "supers": [
+    {
+     "id": "outlaw",
+     "name": "Outlaw",
+     "side": "Chaotic",
+     "skills": [
+      {
+       "id": "pocket_sand",
+       "name": "Pocket Sand",
+       "level": 20.0,
+       "energy": 1.0,
+       "cooldown": 2.0,
+       "text": "The target gets Blind for 2 turns. 50% chance the target gets Silence for 1 turn. Costs 1 Energy."
+      },
+      {
+       "id": "rob",
+       "name": "Rob",
+       "level": 30.0,
+       "energy": 2.0,
+       "cooldown": 2.0,
+       "text": "Hits twice. Each hit deals {1} physical damage. Scales with Agility. Takes one buff from the target for you. You get Haste for 1 turn if the target had no buff. Costs 2 Energy."
+      }
+     ],
+     "branches": [
+      {
+       "name": "Dirty",
+       "nodes": [
+        {
+         "id": "outlaw:dirty:1",
+         "name": "Outlaw Dirty I",
+         "type": "small",
+         "text": "Blind from you lasts 1 turn longer"
+        },
+        {
+         "id": "outlaw:dirty:2",
+         "name": "Kick Them Down",
+         "type": "notable",
+         "text": "30% increased damage against enemies with Blind. 30% increased damage against enemies with a control status."
+        },
+        {
+         "id": "outlaw:dirty:3",
+         "name": "Outlaw Dirty II",
+         "type": "small",
+         "text": "10% increased crit chance"
+        },
+        {
+         "id": "outlaw:dirty:4",
+         "name": "No Rules",
+         "type": "capstone",
+         "text": "Your hits cannot be blocked."
+        }
+       ]
+      },
+      {
+       "name": "Thief",
+       "nodes": [
+        {
+         "id": "outlaw:thief:1",
+         "name": "Outlaw Thief I",
+         "type": "small",
+         "text": "10% increased gold from fights"
+        },
+        {
+         "id": "outlaw:thief:2",
+         "name": "Light Fingers",
+         "type": "notable",
+         "text": "Rob takes every buff from the target."
+        },
+        {
+         "id": "outlaw:thief:3",
+         "name": "Outlaw Thief II",
+         "type": "small",
+         "text": "+2% dodge chance"
+        },
+        {
+         "id": "outlaw:thief:4",
+         "name": "Pickpocket",
+         "type": "capstone",
+         "text": "Your Attack takes one buff from the target."
+        }
+       ]
+      },
+      {
+       "name": "Getaway",
+       "nodes": [
+        {
+         "id": "outlaw:getaway:1",
+         "name": "Outlaw Getaway I",
+         "type": "small",
+         "text": "+3% dodge chance"
+        },
+        {
+         "id": "outlaw:getaway:2",
+         "name": "Escape Artist",
+         "type": "notable",
+         "text": "Once a fight, when a hit leaves you below 50% HP, you get Hidden for 2 turns. You also get Haste for 2 turns."
+        },
+        {
+         "id": "outlaw:getaway:3",
+         "name": "Outlaw Getaway II",
+         "type": "small",
+         "text": "10% increased healing received"
+        },
+        {
+         "id": "outlaw:getaway:4",
+         "name": "Slippery",
+         "type": "capstone",
+         "text": "When you dodge, you get Hidden for 1 turn."
+        }
+       ]
+      }
+     ],
+     "ultras": []
+    },
+    {
+     "id": "assassin",
+     "name": "Assassin",
+     "side": "Neutral",
+     "skills": [
+      {
+       "id": "mark_for_death",
+       "name": "Mark for Death",
+       "level": 20.0,
+       "energy": 1.0,
+       "cooldown": 2.0,
+       "text": "The target gets Marked for 3 turns. The target gets Curse for 3 turns. You get Hidden for 1 turn. Costs 1 Energy."
+      },
+      {
+       "id": "execute",
+       "name": "Execute",
+       "level": 30.0,
+       "energy": 3.0,
+       "cooldown": 3.0,
+       "text": "Deals {1} physical damage. Scales with Agility. Deals 50% more damage against a target with Marked below 40% HP. If the target goes down, you get Hidden for 2 turns and gain 2 Energy. Costs 3 Energy."
+      }
+     ],
+     "branches": [
+      {
+       "name": "Shadows",
+       "nodes": [
+        {
+         "id": "assassin:shadows:1",
+         "name": "Assassin Shadows I",
+         "type": "small",
+         "text": "Hidden from you lasts 1 turn longer"
+        },
+        {
+         "id": "assassin:shadows:2",
+         "name": "From the Shadows",
+         "type": "notable",
+         "text": "40% increased damage while you have Hidden. Your hits while you have Hidden cannot be dodged."
+        },
+        {
+         "id": "assassin:shadows:3",
+         "name": "Assassin Shadows II",
+         "type": "small",
+         "text": "+10% crit damage"
+        },
+        {
+         "id": "assassin:shadows:4",
+         "name": "Vanish",
+         "type": "capstone",
+         "text": "When your hit takes down an enemy, you get Hidden for 1 turn."
+        }
+       ]
+      },
+      {
+       "name": "Contract",
+       "nodes": [
+        {
+         "id": "assassin:contract:1",
+         "name": "Assassin Contract I",
+         "type": "small",
+         "text": "10% increased damage against enemies with Marked"
+        },
+        {
+         "id": "assassin:contract:2",
+         "name": "Death Sentence",
+         "type": "notable",
+         "text": "Mark for Death also gives the target Vulnerable for 2 turns."
+        },
+        {
+         "id": "assassin:contract:3",
+         "name": "Assassin Contract II",
+         "type": "small",
+         "text": "10% increased crit chance"
+        },
+        {
+         "id": "assassin:contract:4",
+         "name": "No Witnesses",
+         "type": "capstone",
+         "text": "Execute's bonus damage works below 60% HP instead of 40%."
+        }
+       ]
+      },
+      {
+       "name": "Venom",
+       "nodes": [
+        {
+         "id": "assassin:venom:1",
+         "name": "Assassin Venom I",
+         "type": "small",
+         "text": "+10% status power"
+        },
+        {
+         "id": "assassin:venom:2",
+         "name": "Envenom",
+         "type": "notable",
+         "text": "Your hits against enemies with Marked put 2 Poison on them."
+        },
+        {
+         "id": "assassin:venom:3",
+         "name": "Assassin Venom II",
+         "type": "small",
+         "text": "Each time you put Poison on an enemy, that enemy gets 1 extra Poison"
+        },
+        {
+         "id": "assassin:venom:4",
+         "name": "Lethal Dose",
+         "type": "capstone",
+         "text": "An enemy that reaches 8 Poison from you takes nature damage equal to 20% of that enemy's max HP. 8% against bosses. That Poison then ends."
+        }
+       ]
+      }
+     ],
+     "ultras": []
+    },
+    {
+     "id": "duelist",
+     "name": "Duelist",
+     "side": "Lawful",
+     "skills": [
+      {
+       "id": "challenge",
+       "name": "Challenge",
+       "level": 20.0,
+       "energy": 1.0,
+       "cooldown": 3.0,
+       "text": "You and the target get Duel for 3 turns. The target can only attack you. You act again right away. Costs 1 Energy."
+      },
+      {
+       "id": "riposte",
+       "name": "Riposte",
+       "level": 30.0,
+       "energy": 2.0,
+       "cooldown": 2.0,
+       "text": "+30% dodge chance until the next turn. A dodged melee attack is answered with a Counter that uses up none. Counters deal 50% more damage."
+      }
+     ],
+     "branches": [
+      {
+       "name": "Code",
+       "nodes": [
+        {
+         "id": "duelist:code:1",
+         "name": "Duelist Code I",
+         "type": "small",
+         "text": "Duel from you lasts 1 turn longer"
+        },
+        {
+         "id": "duelist:code:2",
+         "name": "Satisfaction",
+         "type": "notable",
+         "text": "When your Duel opponent goes down, you get Keen for 2 turns. Challenge's cooldown ends."
+        },
+        {
+         "id": "duelist:code:3",
+         "name": "Duelist Code II",
+         "type": "small",
+         "text": "10% increased damage against your Duel opponent"
+        },
+        {
+         "id": "duelist:code:4",
+         "name": "Single Combat",
+         "type": "capstone",
+         "text": "Counter also triggers on ranged attacks from your Duel opponent."
+        }
+       ]
+      },
+      {
+       "name": "Dance",
+       "nodes": [
+        {
+         "id": "duelist:dance:1",
+         "name": "Duelist Dance I",
+         "type": "small",
+         "text": "10% increased crit chance"
+        },
+        {
+         "id": "duelist:dance:2",
+         "name": "Flourish",
+         "type": "notable",
+         "text": "Next hit deals 20% more damage."
+        },
+        {
+         "id": "duelist:dance:3",
+         "name": "Duelist Dance II",
+         "type": "small",
+         "text": "+2% dodge chance"
+        },
+        {
+         "id": "duelist:dance:4",
+         "name": "Unending",
+         "type": "capstone",
+         "text": "Counter is not used up while you have Duel."
+        }
+       ]
+      },
+      {
+       "name": "Precision",
+       "nodes": [
+        {
+         "id": "duelist:precision:1",
+         "name": "Duelist Precision I",
+         "type": "small",
+         "text": "+15% crit damage while Single-Wield"
+        },
+        {
+         "id": "duelist:precision:2",
+         "name": "Find the Gap",
+         "type": "notable",
+         "text": "Your hits ignore 50% of your Duel opponent's Armor."
+        },
+        {
+         "id": "duelist:precision:3",
+         "name": "Duelist Precision II",
+         "type": "small",
+         "text": "+3% dodge chance"
+        },
+        {
+         "id": "duelist:precision:4",
+         "name": "Final Lesson",
+         "type": "capstone",
+         "text": "Your hits against your Duel opponent below 25% HP are critical hits."
+        }
+       ]
+      }
+     ],
+     "ultras": []
+    }
+   ]
+  },
+  {
+   "id": "warrior",
+   "name": "Warrior",
+   "weapon": "Sword",
+   "skills": [
+    {
+     "id": "lunge",
+     "name": "Lunge",
+     "level": null,
+     "energy": 2.0,
+     "cooldown": 0.0,
+     "text": "Deals {1} physical damage. Scales with Strength. Cannot be dodged. The target gets Vulnerable for 2 turns. Costs 2 Energy."
+    },
+    {
+     "id": "pommel_strike",
+     "name": "Pommel Strike",
+     "level": 10.0,
+     "energy": 1.0,
+     "cooldown": 1.0,
+     "text": "Deals {1} physical damage. Scales with Strength. A target with Vulnerable loses Vulnerable and gets 3 Daze. Any other target gets Vulnerable for 1 turn. Costs 1 Energy."
+    }
+   ],
+   "supers": [
+    {
+     "id": "berserker",
+     "name": "Berserker",
+     "side": "Chaotic",
+     "skills": [
+      {
+       "id": "blood_frenzy",
+       "name": "Blood Frenzy",
+       "level": 20.0,
+       "energy": 0.0,
+       "cooldown": 3.0,
+       "text": "Costs 15% of your max HP. You get Frenzy for 3 turns."
+      },
+      {
+       "id": "reckless_swing",
+       "name": "Reckless Swing",
+       "level": 30.0,
+       "energy": 2.0,
+       "cooldown": 1.0,
+       "text": "Deals {1} physical damage. Scales with Strength. 1% more damage per 2% of max HP you are missing. You get Overextended for 1 turn. Costs 2 Energy."
+      }
+     ],
+     "branches": [
+      {
+       "name": "Fury",
+       "nodes": [
+        {
+         "id": "berserker:fury:1",
+         "name": "Berserker Fury I",
+         "type": "small",
+         "text": "10% increased damage while below 50% HP"
+        },
+        {
+         "id": "berserker:fury:2",
+         "name": "Vampiric Frenzy",
+         "type": "notable",
+         "text": "+15% lifesteal while you have Frenzy."
+        },
+        {
+         "id": "berserker:fury:3",
+         "name": "Berserker Fury II",
+         "type": "small",
+         "text": "10% increased crit chance"
+        },
+        {
+         "id": "berserker:fury:4",
+         "name": "Undying Rage",
+         "type": "capstone",
+         "text": "Once a fight, while you have Frenzy, damage that would take you down leaves you at 1 HP. When Frenzy ends, you lose 10% of max HP."
+        }
+       ]
+      },
+      {
+       "name": "Pain",
+       "nodes": [
+        {
+         "id": "berserker:pain:1",
+         "name": "Berserker Pain I",
+         "type": "small",
+         "text": "8% increased max HP"
+        },
+        {
+         "id": "berserker:pain:2",
+         "name": "Scar Tissue",
+         "type": "notable",
+         "text": "A hit that takes 10% or more of your max HP gives you Fortify for 1 turn."
+        },
+        {
+         "id": "berserker:pain:3",
+         "name": "Berserker Pain II",
+         "type": "small",
+         "text": "+10 Armor"
+        },
+        {
+         "id": "berserker:pain:4",
+         "name": "Pain Engine",
+         "type": "capstone",
+         "text": "Gain 1 Energy for each 15% of max HP you lose. Up to 2 Energy a round."
+        }
+       ]
+      },
+      {
+       "name": "Rampage",
+       "nodes": [
+        {
+         "id": "berserker:rampage:1",
+         "name": "Berserker Rampage I",
+         "type": "small",
+         "text": "10% increased damage while Dual-Wield"
+        },
+        {
+         "id": "berserker:rampage:2",
+         "name": "Onslaught",
+         "type": "notable",
+         "text": "When your hit takes down an enemy, you act once more right away. Once a round."
+        },
+        {
+         "id": "berserker:rampage:3",
+         "name": "Berserker Rampage II",
+         "type": "small",
+         "text": "10% increased damage against enemies below 50% HP"
+        },
+        {
+         "id": "berserker:rampage:4",
+         "name": "Rampage",
+         "type": "capstone",
+         "text": "Reckless Swing hits every enemy. Each enemy takes 70% of the damage."
+        }
+       ]
+      }
+     ],
+     "ultras": []
+    },
+    {
+     "id": "sellsword",
+     "name": "Sellsword",
+     "side": "Neutral",
+     "skills": [
+      {
+       "id": "contract",
+       "name": "Contract",
+       "level": 20.0,
+       "energy": 1.0,
+       "cooldown": 3.0,
+       "text": "Takes 30% more damage from the Sellsword and 15% increased damage from its allies. When this enemy goes down, the Sellsword gets 2 Energy and heals 10% of max HP."
+      },
+      {
+       "id": "stance_shift",
+       "name": "Stance Shift",
+       "level": 30.0,
+       "energy": 0.0,
+       "cooldown": 1.0,
+       "text": "Takes Striking Stance, or swaps between Striking Stance and Guarding Stance. Gain 1 Energy. The first one in a fight does not end your turn."
+      }
+     ],
+     "branches": [
+      {
+       "name": "Bounty",
+       "nodes": [
+        {
+         "id": "sellsword:bounty:1",
+         "name": "Sellsword Bounty I",
+         "type": "small",
+         "text": "Contract from you lasts 1 turn longer"
+        },
+        {
+         "id": "sellsword:bounty:2",
+         "name": "Double Pay",
+         "type": "notable",
+         "text": "When an enemy with Contract goes down, you gain 1 extra Energy. Contract's cooldown ends."
+        },
+        {
+         "id": "sellsword:bounty:3",
+         "name": "Sellsword Bounty II",
+         "type": "small",
+         "text": "10% increased damage against enemies with Marked"
+        },
+        {
+         "id": "sellsword:bounty:4",
+         "name": "Blood Money",
+         "type": "capstone",
+         "text": "When any enemy goes down, your Contract moves to the enemy with the most HP."
+        }
+       ]
+      },
+      {
+       "name": "Forms",
+       "nodes": [
+        {
+         "id": "sellsword:forms:1",
+         "name": "Sellsword Forms I",
+         "type": "small",
+         "text": "10% increased damage while in Striking Stance"
+        },
+        {
+         "id": "sellsword:forms:2",
+         "name": "Opening",
+         "type": "notable",
+         "text": "Next hit is a critical hit."
+        },
+        {
+         "id": "sellsword:forms:3",
+         "name": "Sellsword Forms II",
+         "type": "small",
+         "text": "+10% block chance while in Guarding Stance"
+        },
+        {
+         "id": "sellsword:forms:4",
+         "name": "Both Hands",
+         "type": "capstone",
+         "text": "You have Striking Stance and Guarding Stance at once. Stance Shift gives 2 Energy instead of 1."
+        }
+       ]
+      },
+      {
+       "name": "Survivor",
+       "nodes": [
+        {
+         "id": "sellsword:survivor:1",
+         "name": "Sellsword Survivor I",
+         "type": "small",
+         "text": "8% increased max HP"
+        },
+        {
+         "id": "sellsword:survivor:2",
+         "name": "Second Wind",
+         "type": "notable",
+         "text": "Once a fight, when you drop below 40% HP, you heal for 25% of max HP. You also get Haste for 2 turns."
+        },
+        {
+         "id": "sellsword:survivor:3",
+         "name": "Sellsword Survivor II",
+         "type": "small",
+         "text": "10% increased healing received"
+        },
+        {
+         "id": "sellsword:survivor:4",
+         "name": "Paid in Full",
+         "type": "capstone",
+         "text": "Each enemy that goes down heals you for 8% of max HP."
+        }
+       ]
+      }
+     ],
+     "ultras": []
+    },
+    {
+     "id": "knight",
+     "name": "Knight",
+     "side": "Lawful",
+     "skills": [
+      {
+       "id": "vow_of_protection",
+       "name": "Vow of Protection",
+       "level": 20.0,
+       "energy": 2.0,
+       "cooldown": 2.0,
+       "text": "An ally gets Guarded by you for 2 turns. You get Fortify for 1 turn. Costs 2 Energy."
+      },
+      {
+       "id": "judgement",
+       "name": "Judgement",
+       "level": 30.0,
+       "energy": 3.0,
+       "cooldown": 2.0,
+       "text": "Deals {1} holy damage. Scales with Strength. Deals 30% more damage against a target with Oathbroken. The target gets Blind for 1 turn. Costs 3 Energy."
+      }
+     ],
+     "branches": [
+      {
+       "name": "Bulwark",
+       "nodes": [
+        {
+         "id": "knight:bulwark:1",
+         "name": "Knight Bulwark I",
+         "type": "small",
+         "text": "+10% block chance"
+        },
+        {
+         "id": "knight:bulwark:2",
+         "name": "Unbroken",
+         "type": "notable",
+         "text": "You take 20% less damage while an ally has Guarded from you."
+        },
+        {
+         "id": "knight:bulwark:3",
+         "name": "Knight Bulwark II",
+         "type": "small",
+         "text": "15% increased Shield received"
+        },
+        {
+         "id": "knight:bulwark:4",
+         "name": "Never Yield",
+         "type": "capstone",
+         "text": "Once a fight, a hit that would take you down leaves you at 1 HP. You then get Fortify for 2 turns and Steadfast for 2 turns."
+        }
+       ]
+      },
+      {
+       "name": "Oath",
+       "nodes": [
+        {
+         "id": "knight:oath:1",
+         "name": "Knight Oath I",
+         "type": "small",
+         "text": "Guarded from you lasts 1 turn longer"
+        },
+        {
+         "id": "knight:oath:2",
+         "name": "Shared Oath",
+         "type": "notable",
+         "text": "Vow of Protection also gives the ally Shield equal to 10% of your max HP."
+        },
+        {
+         "id": "knight:oath:3",
+         "name": "Knight Oath II",
+         "type": "small",
+         "text": "10% increased healing received"
+        },
+        {
+         "id": "knight:oath:4",
+         "name": "Oath of All",
+         "type": "capstone",
+         "text": "Vow of Protection gives every ally Guarded for 1 turn. Vow of Protection's cooldown is 1 turn longer."
+        }
+       ]
+      },
+      {
+       "name": "Crusade",
+       "nodes": [
+        {
+         "id": "knight:crusade:1",
+         "name": "Knight Crusade I",
+         "type": "small",
+         "text": "10% increased holy damage"
+        },
+        {
+         "id": "knight:crusade:2",
+         "name": "Righteous",
+         "type": "notable",
+         "text": "25% increased damage against enemies with Blind."
+        },
+        {
+         "id": "knight:crusade:3",
+         "name": "Knight Crusade II",
+         "type": "small",
+         "text": "10% increased crit chance"
+        },
+        {
+         "id": "knight:crusade:4",
+         "name": "Crusader",
+         "type": "capstone",
+         "text": "Your Attack deals holy damage. +4 base damage to your Attack. Your Attack gives the target Blind for 1 turn."
+        }
+       ]
+      }
+     ],
+     "ultras": []
+    }
+   ]
+  }
+ ]
+}

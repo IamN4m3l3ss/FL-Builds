@@ -105,3 +105,17 @@ section{display:flex;flex-direction:column;gap:14px}
 .bcard.soon{border-style:dashed;color:var(--faint)}
 footer{font-size:.82rem;color:var(--faint)}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* class tree */
+[hidden]{display:none!important}
+.ctree{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:760px){.ctree{grid-template-columns:minmax(0,1fr)}}
+.br{padding:14px;display:flex;flex-direction:column;gap:8px}
+.cn{display:grid;grid-template-columns:1.8rem minmax(0,1fr);gap:8px;padding:8px;border-radius:8px;color:var(--faint)}
+.cn.on{background:var(--blood-soft);color:var(--ink)}
+.cn .cnum{font-family:var(--f-display);font-size:1.3rem;color:var(--blood);line-height:1.1;text-align:center}
+.cn b{font-weight:600}
+.cn .d{display:block;font-size:.85rem}
+.cn.on .d{color:var(--muted)}
+.cn .w{display:block;font-size:.82rem;color:var(--blood)}
+.ks{font-size:.7rem;font-weight:600;color:var(--gold);border:1px solid currentColor;border-radius:99px;padding:0 6px}
