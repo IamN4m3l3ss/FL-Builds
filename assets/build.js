@@ -30,7 +30,7 @@
     const ids = [B.gate, ...ORDER];
     const xs = ids.map((i) => N[i].x), ys = ids.map((i) => N[i].y);
     const FIT = (() => {
-      const x0 = Math.min(...xs) - 200, x1 = Math.max(...xs) + 650, y0 = Math.min(...ys) - 160, y1 = Math.max(...ys) + 160;
+      const x0 = Math.min(...xs) - 650, x1 = Math.max(...xs) + 650, y0 = Math.min(...ys) - 160, y1 = Math.max(...ys) + 160;
       const s = Math.max(x1 - x0, y1 - y0);
       return { x: (x0 + x1) / 2 - s / 2, y: (y0 + y1) / 2 - s / 2, w: s, h: s };
     })();
