@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fallen Lineage Build</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a href="./">← All builds</a><span class="muted" id="snap"></span></div>
+  <header>
+    <div class="meta" id="meta"></div>
+    <h1 id="name">Loading…</h1>
+    <p class="muted" id="summary"></p>
+  </header>
+
+  <section>
+    <h2>Passive tree</h2>
+    <div class="treegrid">
+      <div class="mapcol">
+        <div class="card map">
+          <svg id="svg" role="img" aria-label="Passive tree with the build path in red"></svg>
+          <div class="ctrl"><button id="zin" aria-label="Zoom in">+</button><button id="zout" aria-label="Zoom out">−</button><button id="zfit">Fit</button></div>
+        </div>
+        <div class="card slider"><label for="step" class="muted">Points</label><input type="range" id="step" min="0" max="60" value="60"><span class="num" id="stepn"></span></div>
+      </div>
+      <div class="card miles" id="miles"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Gear</h2>
+    <div class="card gear" id="gear"></div>
+  </section>
+
+  <section>
+    <h2>Rotation</h2>
+    <ol class="rot" id="rot"></ol>
+  </section>
+</div>
+<script src="assets/build.js"></script>
+</body>
+</html>

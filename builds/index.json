@@ -1,0 +1,9 @@
+[
+ {
+  "id": "bloodletter",
+  "name": "Bloodletter Assassin",
+  "class": "Assassin",
+  "weapon": "Daggers",
+  "summary": "Stack Bleed on one target, then pop it all at once with Rupture."
+ }
+]

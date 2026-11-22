@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fallen Lineage Builds</title>
+<meta name="description" content="Passive tree paths and gear for Fallen Lineage builds, read from the game's own data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Fallen Lineage Builds</h1>
+    <p class="muted">Passive tree paths and gear, taken from the game's own data.</p>
+  </header>
+  <div class="builds" id="builds"></div>
+  <footer>Fan-made. Not affiliated with the game's developers.</footer>
+</div>
+<script>
+fetch('builds/index.json').then(r=>r.json()).then(list=>{
+  document.getElementById('builds').innerHTML=list.map(b=>
+    `<a class="card bcard" href="build.html?id=${encodeURIComponent(b.id)}">
+       <div class="meta"><span class="pill">${b.class}</span><span class="pill">${b.weapon}</span></div>
+       <h2>${b.name}</h2><p class="muted">${b.summary}</p></a>`).join('')+
+    `<div class="card bcard soon"><h2>More classes</h2><p>Coming as they get scanned.</p></div>`;
+});
+</script>
+</body>
+</html>
