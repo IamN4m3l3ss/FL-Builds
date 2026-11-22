@@ -73,11 +73,12 @@
 
     /* milestones */
     let last = 0;
-    $('miles').innerHTML = majors.map((nid) => {
+    const statRow = B.statPick ? `<div class="mile fill stat"><span class="pt">+2</span><span><b>Round stat nodes: pick ${B.statPick.attr}</b><span class="d">${B.statPick.why}</span></span></div>` : '';
+    $('miles').innerHTML = statRow + majors.map((nid) => {
       const n = N[nid], s = stepOf[nid]; last = s;
       return `<button class="mile" data-s="${s}"><span class="pt">${s}</span><span><b>${n.n}</b>${n.k === 'keystone' ? '<span class="ks">keystone</span>' : ''}
         <span class="d">${n.d}</span>${n.c ? `<span class="c">Drawback: ${n.c}</span>` : ''}</span></button>`;
-    }).join('') + (last < total ? `<div class="mile fill"><span class="pt">${last + 1}+</span><span>Spend the last ${total - last} points on the status power and crit chance nodes next to the path (shown on the map).</span></div>` : '');
+    }).join('') + (last < total ? `<div class="mile fill"><span class="pt">${last + 1}+</span><span>Spend the last ${total - last} points on the nodes next to the path shown on the map, mostly more stat nodes.</span></div>` : '');
     document.querySelectorAll('.mile[data-s]').forEach((m) => m.addEventListener('click', () => go(+m.dataset.s)));
 
     const step = $('step'); step.max = total;

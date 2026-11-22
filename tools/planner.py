@@ -99,6 +99,8 @@ def main():
     ap.add_argument('--points', type=int, default=60)
     ap.add_argument('--score', default='bleed=4,rupture=4,crit=3,vulnerable=2,max hp=2,heal you for 2%=2,marked=1,sunder=1,dodge=1')
     ap.add_argument('--avoid', default='two-handed,fire,block,ward')
+    ap.add_argument('--stat-weight', type=float, default=1.5,
+                    help='score of a stat node (+2 to an attribute of your choice)')
     ap.add_argument('--dry-run', action='store_true')
     a = ap.parse_args()
 
@@ -147,7 +149,7 @@ def main():
         if any(x in t for x in avoid):
             s -= 3
         if v['k'] == 'stat':
-            s += 1.5
+            s += a.stat_weight
         if v['k'] == 'keystone':
             s = -99
         return s

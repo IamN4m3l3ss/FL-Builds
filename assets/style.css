@@ -119,3 +119,5 @@ footer{font-size:.82rem;color:var(--faint)}
 .cn.on .d{color:var(--muted)}
 .cn .w{display:block;font-size:.82rem;color:var(--blood)}
 .ks{font-size:.7rem;font-weight:600;color:var(--gold);border:1px solid currentColor;border-radius:99px;padding:0 6px}
+.mile.stat{background:var(--blood-soft);color:var(--ink)}
+.mile.stat b{font-family:var(--f-body);font-weight:600;font-size:.98rem}
