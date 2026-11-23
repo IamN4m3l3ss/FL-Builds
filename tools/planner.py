@@ -23,7 +23,7 @@ def load_tree():
     t = json.loads((ROOT / 'data' / 'tree.json').read_text())
     nodes = {n['id']: n for n in t['nodes']}
     adj = collections.defaultdict(set)
-    for a, b in t['edges']:
+    for a, b, *_ in t['edges']:
         adj[a].add(b)
         adj[b].add(a)
     return nodes, adj

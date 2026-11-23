@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fallen Lineage Wiki</title>
+<meta name="description" content="Every Fallen Lineage item with stats, powers and drop chances, every enemy, and the game's glossary.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Balthazar&family=Source+Sans+3:wght@400;600;700&family=Source+Code+Pro:wght@500&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a class="brand" href="./">FL Builds</a><span class="topnav"><a href="tree.html">Passive tree</a><a href="wiki.html">Wiki</a><a href="https://github.com/IamN4m3l3ss/FL-Builds">GitHub</a></span></div>
+  <header class="hero tight">
+    <h1>Wiki</h1>
+    <p>Every item, enemy and game term, read from the game's own data.</p>
+  </header>
+  <div class="wtabs" role="tablist">
+    <button role="tab" data-tab="items" aria-selected="true">Items</button>
+    <button role="tab" data-tab="enemies" aria-selected="false">Enemies</button>
+    <button role="tab" data-tab="terms" aria-selected="false">Glossary</button>
+  </div>
+  <section id="tab-items">
+    <div class="panel wfilters">
+      <input id="iq" type="search" placeholder="Search items, powers…" aria-label="Search items">
+      <select id="islot" aria-label="Slot"></select>
+      <select id="irar" aria-label="Rarity"></select>
+      <select id="isort" aria-label="Sort"><option value="rarity">Sort: rarity</option><option value="level">Sort: level</option><option value="name">Sort: name</option></select>
+      <span class="muted" id="icount"></span>
+    </div>
+    <p class="note" id="dropnote"></p>
+    <div class="wgrid" id="items"></div>
+  </section>
+  <section id="tab-enemies" hidden>
+    <div class="panel wfilters"><input id="eq" type="search" placeholder="Search enemies, places…" aria-label="Search enemies"><span class="muted" id="ecount"></span></div>
+    <p class="note">HP is the enemy's base HP before level, difficulty and tower scaling. In the tower, enemy HP grows 12% and damage 7% per floor.</p>
+    <div class="panel tablewrap"><table><thead><tr><th>Enemy</th><th>Family</th><th class="n">HP</th><th class="n">Armor</th><th class="n">Ward</th><th>Skills</th><th>Found in</th></tr></thead><tbody id="enemies"></tbody></table></div>
+  </section>
+  <section id="tab-terms" hidden>
+    <div class="panel wfilters"><input id="tq" type="search" placeholder="Search terms…" aria-label="Search glossary"><select id="tk" aria-label="Kind"></select><span class="muted" id="tcount"></span></div>
+    <div class="wterms" id="terms"></div>
+  </section>
+  <footer>Fan-made. Not affiliated with the game's developers. Data from the game client.</footer>
+</div>
+<script src="assets/wiki.js"></script>
+</body>
+</html>
