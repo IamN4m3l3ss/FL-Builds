@@ -1,0 +1,187 @@
+{
+ "id": "assassin",
+ "name": "Assassin",
+ "cls": "rogue",
+ "clsName": "Rogue",
+ "super": "assassin",
+ "weapon": "Daggers",
+ "floor": 35.5,
+ "floors": [
+  36,
+  35
+ ],
+ "rupture": 0.139,
+ "maxHP": 2185,
+ "diedTo": [
+  "elite",
+  "fight"
+ ],
+ "race": "Kepra",
+ "lineage": "Gorab",
+ "origin": "Acolyte",
+ "originBonus": "10% more healing done.",
+ "stats": {
+  "Agility": 59,
+  "Spirit": 59
+ },
+ "statNodes": "Spirit",
+ "gate": "g5",
+ "order": [
+  "t31",
+  "t32",
+  "t33",
+  "t50",
+  "t40",
+  "t73",
+  "t74",
+  "r.retort.e",
+  "r.retort.b",
+  "r.retort.bn",
+  "f5080.s0",
+  "f5080.s1",
+  "w.pierce.sig.s2",
+  "w.pierce.sig.n0",
+  "w.blood.sig.s0",
+  "w.blood.sig.s1",
+  "w.blood.sig.s3",
+  "w.blood.sig.n1",
+  "w.blood.1.s0",
+  "w.blood.1.s1",
+  "w.blood.1.s2",
+  "w.blood.1.n0",
+  "t51",
+  "t41",
+  "t52",
+  "t36",
+  "t35",
+  "i.grit.n0",
+  "f1026.s0",
+  "w.blood.1.s4",
+  "w.blood.sig.s2",
+  "w.blood.sig.s6",
+  "w.blood.sig.s8",
+  "f127.s0",
+  "f1026.s1",
+  "f1026.s2",
+  "f488.s0",
+  "f488.s2",
+  "f1136.s2",
+  "f488.s1",
+  "f1136.s1",
+  "f1136.s0",
+  "i.grit.s0",
+  "w.blood.1.s3",
+  "w.blood.sig.s7",
+  "f39.s1",
+  "i.constitution.n0",
+  "f39.s2",
+  "f39.s0",
+  "f637.s1",
+  "f637.s2",
+  "f637.s0",
+  "f127.s1",
+  "f127.s2",
+  "f127.s3",
+  "f342.s2",
+  "f1774.s2",
+  "f1774.s1",
+  "f1774.s0"
+ ],
+ "targets": [
+  "Goad",
+  "Sunder Line",
+  "Haemorrhage",
+  "Open Wounds",
+  "Red Harvest"
+ ],
+ "classTree": [
+  "assassin:shadows:1",
+  "assassin:contract:1",
+  "assassin:venom:1",
+  "assassin:venom:2",
+  "assassin:venom:3",
+  "assassin:venom:4"
+ ],
+ "skills": [
+  "Twin Cut",
+  "Deep Cut",
+  "Mark for Death",
+  "Execute"
+ ],
+ "gear": [
+  {
+   "slot": "Weapon",
+   "id": "crimson_fangs",
+   "name": "Crimson Fang",
+   "rarity": "epic"
+  },
+  {
+   "slot": "Offhand",
+   "id": "rimefang_daggers",
+   "name": "Rimefang Dagger",
+   "rarity": "mythic"
+  },
+  {
+   "slot": "Head",
+   "id": "bloodfever_helm",
+   "name": "Bloodfever Helm",
+   "rarity": "epic"
+  },
+  {
+   "slot": "Torso",
+   "id": "wyrmtooth_coat",
+   "name": "Wyrmtooth Coat",
+   "rarity": "epic"
+  },
+  {
+   "slot": "Feet",
+   "id": "galestride_boots",
+   "name": "Galestride Boots",
+   "rarity": "mythic"
+  },
+  {
+   "slot": "Amulet",
+   "id": "dawnshard",
+   "name": "Dawnshard",
+   "rarity": "mythic"
+  },
+  {
+   "slot": "Ring",
+   "id": "lightbringers_ring",
+   "name": "Lightbringer's Ring",
+   "rarity": "legendary"
+  },
+  {
+   "slot": "Ring",
+   "id": "smiths_band",
+   "name": "Smith's Band",
+   "rarity": "common"
+  }
+ ],
+ "gems": [
+  {
+   "skill": "Twin Cut",
+   "gems": [
+    "Renew"
+   ]
+  },
+  {
+   "skill": "Deep Cut",
+   "gems": [
+    "Retaliate",
+    "Bloodprice",
+    "Charge"
+   ]
+  },
+  {
+   "skill": "Execute",
+   "gems": [
+    "Overload",
+    "Strength Gem",
+    "Retaliate"
+   ]
+  }
+ ],
+ "updated": "2026-11-23",
+ "tier": "B"
+}

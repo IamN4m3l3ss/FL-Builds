@@ -3,72 +3,55 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Fallen Lineage Builds</title>
-<meta name="description" content="Best build for every Fallen Lineage class, found by simulating thousands of tower fights.">
+<title>FL Wiki · Fallen Lineage</title>
+<meta name="description" content="Fallen Lineage wiki: every item with stats, powers and drop chances, every enemy, the passive tree, and the best build for each class.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Balthazar&family=Source+Sans+3:wght@400;600;700&family=Source+Code+Pro:wght@500&display=swap">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/css/core.css">
+<link rel="stylesheet" href="assets/css/home.css">
 </head>
-<body>
-<div class="wrap">
-  <div class="top"><a class="brand" href="./">FL Builds</a><span class="topnav"><a href="tree.html">Passive tree</a><a href="wiki.html">Wiki</a><a href="https://github.com/IamN4m3l3ss/FL-Builds">GitHub</a></span></div>
-
-  <header class="hero">
-    <h1>Fallen Lineage Builds</h1>
-    <p>The best build for every class, found by simulating thousands of tower fights with formulas measured in game.</p>
-  </header>
-
-  <section>
-    <div class="sechead"><h2>Pick your class</h2></div>
-    <div class="crests" id="crests"></div>
-  </section>
-
-  <section id="sim">
-    <div class="sechead">
-      <h2>Simulated tower fights</h2>
-      <p>Each Bleed build fought a tower room (4 enemies, 30k HP each) and a floor-35 boss (100k HP) at level 60 with max gear. Sustain is healing per turn as a share of max HP; tower builds need about 15%.</p>
+<body data-page="home">
+<header id="site-head"></header>
+<div class="wrap wide">
+  <section class="land">
+    <h1 id="site-title">FL Wiki</h1>
+    <p>Items, drop chances, enemies, the passive tree and the strongest build for every class in Fallen Lineage.</p>
+    <form class="bigsearch" action="wiki.html" role="search">
+      <input class="field" name="q" type="search" placeholder="Search items, powers, enemies…" aria-label="Search the wiki" autocomplete="off">
+      <button type="submit">Search</button>
+    </form>
+    <div class="quick" aria-label="Popular searches">
+      <span class="muted">Popular:</span>
+      <a href="wiki.html?q=rupture#/items">Rupture</a><a href="wiki.html?q=bleed#/items">Bleed</a><a href="wiki.html?q=vulnerable#/items">Vulnerable</a>
+      <a href="wiki.html?q=lifesteal#/items">Lifesteal</a><a href="wiki.html?q=crit#/items">Crit</a><a href="wiki.html#/enemies/bosses">Bosses</a>
     </div>
-    <div class="panel tablewrap"><table>
-      <thead><tr><th>Build</th><th>Room</th><th></th><th>Boss</th><th>Sustain</th></tr></thead>
-      <tbody id="simrows"></tbody>
-    </table></div>
-    <p class="note">Measured in game: Rupture = 1.25 × n(n+3)/2 × level scale × (1 + status power), level scale = 1 + 0.08 × (level − 1). Assumed: hit damage scaled from a level-26 Attack, max HP 900, and how item bonuses stack. Mage and Bard builds are not simulated yet.</p>
+    <a class="cta" href="classes.html">See the best classes <span aria-hidden="true">→</span></a>
   </section>
 
   <section>
-    <div class="sechead"><h2>Tier list: tower</h2><p>Every super class, for groups of high-HP enemies where healing keeps you alive.</p></div>
-    <div class="panel tiers" id="tiers"></div>
+    <div class="sechead"><h2>Browse</h2></div>
+    <div class="tiles" id="tiles">
+      <a class="panel tile" href="wiki.html#/items"><b>Items</b><span>Every weapon, armor piece and trinket with stats, powers and where it drops.</span><em data-count="items"></em></a>
+      <a class="panel tile" href="wiki.html#/items/weapon:daggers"><b>Weapons</b><span>Daggers, swords, greatswords, spears, bows, staves and lutes.</span><em data-count="weapons"></em></a>
+      <a class="panel tile" href="wiki.html#/items/amulet"><b>Jewellery</b><span>Amulets and rings, including the Rupture enablers.</span><em data-count="jewellery"></em></a>
+      <a class="panel tile" href="wiki.html#/materials"><b>Materials</b><span>Phoenix Feather, Leviathan Scale, pet eggs, skill gems, orbs and crafting stock.</span><em data-count="materials"></em></a>
+      <a class="panel tile" href="wiki.html#/pets"><b>Pets</b><span>Every pet with its passive, combat effect and hatch chance.</span><em data-count="pets"></em></a>
+      <a class="panel tile" href="wiki.html#/races"><b>Races &amp; origins</b><span>All races and lineages with their abilities and roll odds.</span><em data-count="races"></em></a>
+      <a class="panel tile" href="wiki.html#/classes"><b>Classes</b><span>Every class and super class with skills and full class trees.</span><em data-count="classes"></em></a>
+      <a class="panel tile" href="wiki.html#/enemies"><b>Enemies</b><span>HP, armor, skills and where each enemy appears.</span><em data-count="enemies"></em></a>
+      <a class="panel tile" href="wiki.html#/glossary"><b>Glossary</b><span>Statuses, reactions, races, lineages and every game term.</span><em data-count="terms"></em></a>
+      <a class="panel tile" href="tree.html"><b>Passive tree</b><span>Hover any node, plan a path and share it. Class trees in the centre.</span><em>587 nodes</em></a>
+    </div>
   </section>
 
-  <footer>Fan-made. Not affiliated with the game's developers. Data from a game client snapshot, 22 Nov 2026.</footer>
+  <section>
+    <div class="sechead"><h2>Top classes</h2><p>Ranked by how far each build gets in the Fallen Tower.</p></div>
+    <div class="topcls" id="topcls"></div>
+    <a class="cta ghost" href="classes.html">Full tier list and builds <span aria-hidden="true">→</span></a>
+  </section>
 </div>
-<script>
-Promise.all([fetch('builds/index.json').then(r => r.json()), fetch('builds/tiers.json').then(r => r.json())]).then(([list, tiers]) => {
-  const link = {}; list.forEach(b => link[b.class.split('→').pop().trim()] = b.id);
-  const t = (x, d = 1) => x == null ? '—' : x.toFixed(d);
-  document.getElementById('crests').innerHTML = list.map(b => {
-    const [cls, sup] = b.class.split('→').map(s => s.trim());
-    const stats = b.sim
-      ? `<div class="stat"><b>${t(b.sim.room)}</b><span>turns per room</span></div><div class="stat"><b>${t(b.sim.boss)}</b><span>turns per boss</span></div>`
-      : `<div class="stat"><b>—</b><span>not simulated yet</span></div><div class="stat"><b>${b.weapon}</b><span>weapon</span></div>`;
-    return `<a class="panel crest" href="build.html?id=${encodeURIComponent(b.id)}">
-      <div class="row"><span class="tier ${b.tier}">${b.tier}</span><span class="cls">${cls}</span></div>
-      <span class="sup">${sup} · ${b.name}</span>
-      <p>${b.summary}</p>
-      <div class="stats">${stats}</div></a>`;
-  }).join('');
-  const sims = list.filter(b => b.sim).sort((a, b) => a.sim.room - b.sim.room);
-  const worst = Math.max(...sims.map(b => b.sim.room), 1);
-  document.getElementById('simrows').innerHTML = sims.map(b =>
-    `<tr><td><a href="build.html?id=${b.id}">${b.name}</a><br><span class="muted">${b.class}</span></td>
-     <td class="n">${t(b.sim.room)} turns</td><td style="width:30%"><div class="bar"><i style="width:${(b.sim.room / worst * 100).toFixed(0)}%"></i></div></td>
-     <td class="n">${t(b.sim.boss)} turns</td><td class="n">${b.sim.sustain == null ? '—' : b.sim.sustain >= 100 ? '100%+' : b.sim.sustain.toFixed(0) + '%'}</td></tr>`).join('');
-  document.getElementById('tiers').innerHTML = tiers.map(row =>
-    `<div class="trow"><span class="tl ${row.tier}">${row.tier}</span><div class="ents">${row.entries.map(e => {
-      const nm = link[e.name] ? `<a href="build.html?id=${link[e.name]}"><b>${e.name}</b> →</a>` : `<b>${e.name}</b>`;
-      return `<div class="ent">${nm}<span class="f">${e.from}</span><p>${e.why}</p></div>`;
-    }).join('')}</div></div>`).join('');
-});
-</script>
+<footer id="site-foot"></footer>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/home.js"></script>
 </body>
 </html>

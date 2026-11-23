@@ -1,0 +1,187 @@
+{
+ "id": "gunner",
+ "name": "Gunner",
+ "cls": "archer",
+ "clsName": "Archer",
+ "super": "gunner",
+ "weapon": "Bow",
+ "floor": 41.5,
+ "floors": [
+  42,
+  41
+ ],
+ "rupture": 0.28,
+ "maxHP": 2281,
+ "diedTo": [
+  "boss",
+  "fight"
+ ],
+ "race": "Kepra",
+ "lineage": "Gorab",
+ "origin": "Acolyte",
+ "originBonus": "10% more healing done.",
+ "stats": {
+  "Agility": 88,
+  "Spirit": 30
+ },
+ "statNodes": "Spirit",
+ "gate": "g1",
+ "order": [
+  "i.chorus.s0",
+  "f342.s0",
+  "t124",
+  "i.grit.s0",
+  "i.grit.n0",
+  "t35",
+  "t36",
+  "t52",
+  "t41",
+  "t51",
+  "t33",
+  "f5080.s0",
+  "f5080.s1",
+  "w.pierce.sig.s2",
+  "w.pierce.sig.n0",
+  "t50",
+  "w.blood.sig.s0",
+  "w.blood.sig.s1",
+  "w.blood.sig.s3",
+  "w.blood.sig.n1",
+  "t19",
+  "t20",
+  "t21",
+  "t57",
+  "t55",
+  "t56",
+  "t86",
+  "k.gale",
+  "w.blood.1.s0",
+  "w.blood.1.s4",
+  "w.blood.sig.s2",
+  "w.blood.sig.s6",
+  "w.blood.sig.s8",
+  "f127.s0",
+  "w.blood.1.s3",
+  "w.blood.1.s2",
+  "w.blood.1.n0",
+  "w.blood.1.s1",
+  "w.blood.sig.s7",
+  "f39.s1",
+  "i.constitution.n0",
+  "f39.s2",
+  "f39.s0",
+  "f637.s1",
+  "f637.s2",
+  "f637.s0",
+  "f127.s1",
+  "f127.s2",
+  "f127.s3",
+  "f342.s2",
+  "f1774.s2",
+  "f1774.s1",
+  "f1774.s0",
+  "i.chorus.s2",
+  "w.pierce.sig.s0",
+  "i.constitution.s1",
+  "i.constitution.s0",
+  "t1",
+  "t2"
+ ],
+ "targets": [
+  "Sunder Line",
+  "Haemorrhage",
+  "Red Harvest",
+  "Windborne"
+ ],
+ "classTree": [
+  "gunner:flame:1",
+  "gunner:flame:2",
+  "gunner:rough:1",
+  "gunner:rough:2",
+  "gunner:rough:3",
+  "gunner:rough:4"
+ ],
+ "skills": [
+  "Aimed Shot",
+  "Pinning Shot",
+  "Blast",
+  "Scattershot"
+ ],
+ "gear": [
+  {
+   "slot": "Weapon",
+   "id": "antler_bow",
+   "name": "Antler Bow",
+   "rarity": "mythic"
+  },
+  {
+   "slot": "Offhand",
+   "id": "wraith_quiver",
+   "name": "Wraith Quiver",
+   "rarity": "mythic"
+  },
+  {
+   "slot": "Head",
+   "id": "duelist_hat",
+   "name": "Duelist's Hat",
+   "rarity": "rare"
+  },
+  {
+   "slot": "Torso",
+   "id": "sunsong_coat",
+   "name": "Sunsong Coat",
+   "rarity": "epic"
+  },
+  {
+   "slot": "Feet",
+   "id": "astren_shoes",
+   "name": "Astren Shoes",
+   "rarity": "legendary"
+  },
+  {
+   "slot": "Amulet",
+   "id": "stag_amulet",
+   "name": "Eneth",
+   "rarity": "epic"
+  },
+  {
+   "slot": "Ring",
+   "id": "iron_crown",
+   "name": "Iron Crown Ring",
+   "rarity": "legendary"
+  },
+  {
+   "slot": "Ring",
+   "id": "serpent_coil",
+   "name": "Serpent Coil",
+   "rarity": "mythic"
+  }
+ ],
+ "gems": [
+  {
+   "skill": "Aimed Shot",
+   "gems": [
+    "Retaliate",
+    "Strength Gem",
+    "Magic Gem"
+   ]
+  },
+  {
+   "skill": "Pinning Shot",
+   "gems": [
+    "Spirit Gem",
+    "Retaliate"
+   ]
+  },
+  {
+   "skill": "Blast",
+   "gems": [
+    "Spirit Gem",
+    "Echo",
+    "Charge"
+   ]
+  }
+ ],
+ "updated": "2026-11-23",
+ "tier": "S"
+}

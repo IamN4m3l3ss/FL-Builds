@@ -7,21 +7,18 @@
 <meta name="description" content="Interactive Fallen Lineage passive tree: hover any node to read it, click to plan a path, share the link.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Balthazar&family=Source+Sans+3:wght@400;600;700&family=Source+Code+Pro:wght@500&display=swap">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/css/core.css">
+<link rel="stylesheet" href="assets/css/tree.css">
 </head>
-<body>
+<body data-page="tree">
+<header id="site-head"></header>
 <div class="wrap">
-  <div class="top"><a class="brand" href="./">FL Builds</a><span class="topnav"><a href="tree.html">Passive tree</a><a href="wiki.html">Wiki</a><a href="https://github.com/IamN4m3l3ss/FL-Builds">GitHub</a></span></div>
   <header class="hero tight">
     <h1>Passive tree</h1>
     <p>Hover a node to read it (tap on a phone). Click a gate to start, then click connected nodes to plan a path. Pick a class on the right to see its super-class tree in the centre circle. The link updates as you go, so you can share it.</p>
   </header>
   <div class="tplan">
-    <div class="panel map tmap">
-      <svg id="svg" role="img" aria-label="Passive tree"></svg>
-      <div class="ctrl"><button id="zin" aria-label="Zoom in">+</button><button id="zout" aria-label="Zoom out">−</button><button id="zfit">Fit</button></div>
-      <div class="tip" id="tip" hidden></div>
-    </div>
+    <div class="panel" id="map"></div>
     <aside class="panel tside">
       <label class="label" for="cls">Class tree (centre of the map)</label>
       <div class="csel"><select id="cls" aria-label="Class"></select><select id="sup" aria-label="Super class"></select></div>
@@ -33,8 +30,10 @@
       <div id="picked"></div>
     </aside>
   </div>
-  <footer>Fan-made. Not affiliated with the game's developers. Tree data from the game client.</footer>
 </div>
-<script src="assets/tree.js"></script>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/treemap.js"></script>
+<script src="assets/js/tree.js"></script>
+<footer id="site-foot"></footer>
 </body>
 </html>

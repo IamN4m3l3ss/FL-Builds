@@ -2,126 +2,13 @@
  {
   "tier": "S",
   "entries": [
-   {
-    "name": "Ranger",
-    "from": "Archer",
-    "why": "Proven to floor 35. The hawk keeps hitting, stacking Bleed and healing you through lifesteal."
-   },
-   {
-    "name": "Dragoon",
-    "from": "Lancer",
-    "why": "Fastest simulated tower room: Sunder pops Rupture on every enemy, Spearhead stacks extra Bleed."
-   },
-   {
-    "name": "Berserker",
-    "from": "Warrior",
-    "why": "Attacks hit every enemy while Frenzied, with lifesteal. Best tower sustain."
-   },
-   {
-    "name": "Sellsword",
-    "from": "Warrior",
-    "why": "Fastest simulated boss kill: a sure crit every turn sets off Rupture."
-   },
-   {
-    "name": "Pyromancer",
-    "from": "Mage",
-    "why": "Burn on every enemy every turn, then Detonate. Not simulated yet."
-   }
-  ]
- },
- {
-  "tier": "A",
-  "entries": [
-   {
-    "name": "Assassin",
-    "from": "Rogue",
-    "why": "Best at stacking Bleed. Hidden plus Unseen Blade gives sure crits."
-   },
-   {
-    "name": "Marksman",
-    "from": "Archer",
-    "why": "Volley hits every enemy every turn. Not simulated for hit damage yet."
-   },
-   {
-    "name": "Zealot",
-    "from": "Priest ultra",
-    "why": "Level 40+. Area Brand, extra actions and a self-healing ultra."
-   },
-   {
-    "name": "Seraph",
-    "from": "Priest ultra",
-    "why": "Level 40+. Area damage plus full-party heals and revives."
-   }
+   "gunner"
   ]
  },
  {
   "tier": "B",
   "entries": [
-   {
-    "name": "Gladiator",
-    "from": "Lancer",
-    "why": "Bloodsport adds Bleed, Favor adds crits. One target at a time."
-   },
-   {
-    "name": "Outlaw",
-    "from": "Rogue",
-    "why": "Rob gives Haste. Works with Bleed but lacks a Rupture trigger."
-   },
-   {
-    "name": "Gunner",
-    "from": "Archer",
-    "why": "Scattershot Burns every enemy. Costs HP."
-   },
-   {
-    "name": "Jester",
-    "from": "Bard",
-    "why": "Mockery hits every enemy and makes them Vulnerable. Low damage alone."
-   },
-   {
-    "name": "Skald",
-    "from": "Bard",
-    "why": "Strong party buffs (Keen, Haste). Little damage alone."
-   },
-   {
-    "name": "Oracle",
-    "from": "Priest ultra",
-    "why": "Undoes damage and revives. Support first."
-   }
-  ]
- },
- {
-  "tier": "C",
-  "entries": [
-   {
-    "name": "Duelist",
-    "from": "Rogue",
-    "why": "Strong one-on-one, poor against groups."
-   },
-   {
-    "name": "Druid",
-    "from": "Mage",
-    "why": "Single-target Poison and Regen."
-   },
-   {
-    "name": "Priest",
-    "from": "Mage",
-    "why": "Healer. Take it to reach the ultra classes at level 40."
-   },
-   {
-    "name": "Knight",
-    "from": "Warrior",
-    "why": "Protects allies."
-   },
-   {
-    "name": "Herald",
-    "from": "Bard",
-    "why": "Gives allies extra actions."
-   },
-   {
-    "name": "Sentinel",
-    "from": "Lancer",
-    "why": "Defensive support."
-   }
+   "assassin"
   ]
  }
 ]

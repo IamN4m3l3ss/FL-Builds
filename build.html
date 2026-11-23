@@ -3,66 +3,56 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Fallen Lineage Build</title>
+<title>Build · FL Wiki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Balthazar&family=Source+Sans+3:wght@400;600;700&family=Source+Code+Pro:wght@500&display=swap">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/css/core.css">
+<link rel="stylesheet" href="assets/css/build.css">
 </head>
-<body>
+<body data-page="build">
+<header id="site-head"></header>
 <div class="secbar"><nav>
-  <a class="home" href="./">FL Builds</a>
-  <a href="#tree">Passive tree</a><a href="#class">Class tree</a><a href="#gear">Gear</a><a href="#gems">Gems</a><a href="#rotation">Rotation</a><a href="#sim" id="simlink">Simulation</a>
+  <a href="classes.html">← All classes</a>
+  <a href="#tree">Passive tree</a><a href="#character">Character</a><a href="#gear">Gear</a><a href="#gems">Gems</a>
 </nav></div>
-<div class="wrap">
+<div class="wrap wide">
   <header class="bhead">
     <div class="meta" id="meta"></div>
     <h1 id="name">Loading…</h1>
     <p id="summary"></p>
   </header>
-
   <div class="panel overview" id="overview"></div>
 
   <section id="tree">
-    <div class="sechead"><h2>Passive tree</h2><p>60 points. Numbers show the point where each notable unlocks. Tap a row to jump the map there.</p></div>
+    <div class="sechead"><h2>Passive tree and class tree</h2><p>The red path is the passive tree in allocation order; the super-class nodes are lit in the centre circle. Hover any node to read it, slide to see the build at any level.</p></div>
     <div class="treegrid">
       <div class="mapcol">
-        <div class="panel map">
-          <svg id="svg" role="img" aria-label="Passive tree with the build path in red"></svg>
-          <div class="ctrl"><button id="zin" aria-label="Zoom in">+</button><button id="zout" aria-label="Zoom out">−</button><button id="zfit">Fit</button></div>
-        </div>
-        <div class="panel slider"><label for="step" class="label">Points</label><input type="range" id="step" min="0" max="60" value="60"><span class="num" id="stepn"></span></div>
+        <div class="panel" id="map"></div>
+        <div class="panel slider"><label for="step" class="label">Points</label><input type="range" id="step" min="0" max="59" value="59"><span class="num" id="stepn"></span></div>
       </div>
       <div class="panel miles" id="miles"></div>
     </div>
   </section>
 
-  <section id="class">
-    <div class="sechead"><h2 id="ctree-title">Class tree</h2><p>Take the numbered nodes in order. Each branch unlocks from the top.</p></div>
-    <div class="ctree" id="ctree"></div>
+  <section id="character">
+    <div class="sechead"><h2>Character</h2></div>
+    <div class="cgrid" id="char"></div>
   </section>
 
   <section id="gear">
-    <div class="sechead"><h2>Gear</h2><p>Max rolls. Tier and grade only raise an item's first stat, so the effects are the same at every tier. Prices are the cheapest listing when the market was scanned.</p></div>
+    <div class="sechead"><h2>Gear</h2><p>Tier 5, max rolls. Click an item to open it in the wiki.</p></div>
     <div class="equip" id="equip"></div>
   </section>
 
   <section id="gems">
-    <div class="sechead"><h2>Skill gems</h2><p>Up to 3 per skill with the Gemcutter upgraded. Tap a gem to read it.</p></div>
+    <div class="sechead"><h2>Skills and gems</h2></div>
     <div class="panel gems" id="gemlist"></div>
   </section>
-
-  <section id="rotation">
-    <div class="sechead"><h2>Rotation</h2></div>
-    <ol class="rot" id="rot"></ol>
-  </section>
-
-  <section id="sim">
-    <div class="sechead"><h2>Simulation</h2><p id="simnote"></p></div>
-    <div class="simgrid" id="simgrid"></div>
-  </section>
-
-  <footer>Fan-made. Not affiliated with the game's developers. <span id="snap"></span></footer>
+  <p class="note" id="snap"></p>
 </div>
-<script src="assets/build.js"></script>
+<footer id="site-foot"></footer>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/treemap.js"></script>
+<script src="assets/js/build.js"></script>
 </body>
 </html>

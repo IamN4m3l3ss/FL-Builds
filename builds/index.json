@@ -1,76 +1,26 @@
 [
  {
-  "id": "lancer",
-  "name": "Skewer Dragoon",
-  "class": "Lancer \u2192 Dragoon",
-  "weapon": "Spear",
+  "id": "gunner",
+  "name": "Gunner",
+  "clsName": "Archer",
+  "cls": "archer",
   "tier": "S",
-  "summary": "Simulated best Bleed build for Lancer: clears a 4-enemy tower room in 3.0 turns while healing over 100% of max HP per turn.",
-  "simulated": true,
-  "sim": {
-   "room": 3.0,
-   "boss": 8.65,
-   "sustain": 100
-  }
- },
- {
-  "id": "warrior",
-  "name": "Bloodstorm Berserker",
-  "class": "Warrior \u2192 Berserker",
-  "weapon": "Two sword",
-  "tier": "S",
-  "summary": "Simulated best Bleed build for Warrior: clears a 4-enemy tower room in 4.0 turns while healing over 100% of max HP per turn.",
-  "simulated": true,
-  "sim": {
-   "room": 4.0,
-   "boss": 4.29,
-   "sustain": 100
-  }
- },
- {
-  "id": "archer",
-  "name": "Barbed Ranger",
-  "class": "Archer \u2192 Ranger",
+  "floor": 41.5,
+  "rupture": 0.28,
   "weapon": "Bow",
-  "tier": "S",
-  "summary": "Simulated best Bleed build for Archer: clears a 4-enemy tower room in 6.5 turns while healing over 100% of max HP per turn.",
-  "simulated": true,
-  "sim": {
-   "room": 6.46,
-   "boss": 7.59,
-   "sustain": 100
-  }
+  "race": "Kepra",
+  "origin": "Acolyte"
  },
  {
-  "id": "pyromancer",
-  "name": "Everburn Pyromancer",
-  "class": "Mage \u2192 Pyromancer",
-  "weapon": "Staff",
-  "tier": "S",
-  "summary": "Burn every enemy with Burn that never fades, then Detonate the whole group.",
-  "simulated": false
- },
- {
-  "id": "bloodletter",
-  "name": "Bloodletter Assassin",
-  "class": "Rogue \u2192 Assassin",
-  "weapon": "Two daggers",
-  "tier": "A",
-  "summary": "Simulated best Bleed build for Rogue: clears a 4-enemy tower room in 3.0 turns while healing over 100% of max HP per turn.",
-  "simulated": true,
-  "sim": {
-   "room": 3.0,
-   "boss": 3.72,
-   "sustain": 100
-  }
- },
- {
-  "id": "jester",
-  "name": "Mocking Jester",
-  "class": "Bard \u2192 Jester",
-  "weapon": "Lute",
+  "id": "assassin",
+  "name": "Assassin",
+  "clsName": "Rogue",
+  "cls": "rogue",
   "tier": "B",
-  "summary": "Mockery hits every enemy and Taunts them. Taunted enemies also get Vulnerable.",
-  "simulated": false
+  "floor": 35.5,
+  "rupture": 0.139,
+  "weapon": "Daggers",
+  "race": "Kepra",
+  "origin": "Acolyte"
  }
 ]

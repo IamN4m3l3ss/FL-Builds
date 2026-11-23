@@ -1,0 +1,27 @@
+/* Wiki landing */
+.land{display:flex;flex-direction:column;align-items:flex-start;gap:14px;padding:44px 0 8px}
+.land h1{font-size:clamp(2.8rem,8vw,4.4rem)}
+.land>p{font-size:1.15rem;color:var(--muted);max-width:60ch}
+.bigsearch{display:flex;gap:8px;width:min(680px,100%)}
+.bigsearch .field{flex:1;font-size:1.05rem;padding:12px 14px}
+.bigsearch button{padding:10px 18px;font-size:1rem;font-weight:700}
+.quick{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.92rem}
+.quick a{text-decoration:none;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:3px 11px;background:var(--panel)}
+.quick a:hover{color:var(--gold);border-color:var(--gold)}
+.cta{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;color:#fff;background:var(--blood);
+  padding:11px 20px;border-radius:8px;margin-top:6px;box-shadow:0 2px 0 color-mix(in srgb, var(--blood) 60%, #000)}
+.cta:hover{filter:brightness(1.08)}
+.cta.ghost{background:none;color:var(--gold);box-shadow:none;border:1px solid var(--frame);align-self:flex-start}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:900px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.tiles{grid-template-columns:minmax(0,1fr)}}
+.tile{display:flex;flex-direction:column;gap:6px;padding:18px;text-decoration:none;transition:transform .15s}
+.tile:hover{transform:translateY(-2px)}
+.tile b{font-family:var(--f-display);font-weight:400;font-size:1.6rem;color:var(--gold)}
+.tile span{color:var(--muted);font-size:.95rem}
+.tile em{font-style:normal;font-family:var(--f-mono);font-size:.8rem;color:var(--faint);margin-top:auto}
+.topcls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+@media (max-width:900px){.topcls{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tc{display:flex;gap:12px;align-items:center;padding:14px;text-decoration:none}
+.tc b{font-family:var(--f-display);font-weight:400;font-size:1.3rem;display:block}
+.tc small{color:var(--faint);font-size:.82rem}

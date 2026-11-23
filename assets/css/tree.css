@@ -1,0 +1,19 @@
+/* Passive tree planner */
+.hero.tight{padding-bottom:8px}
+.tplan{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:16px;align-items:start}
+@media (max-width:900px){.tplan{grid-template-columns:1fr}}
+.tplan .tmap{aspect-ratio:auto;height:min(78vh,900px);min-height:420px}
+.tside{display:flex;flex-direction:column;gap:10px;max-height:min(78vh,900px);overflow:auto}
+.tside input{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--panel2);color:var(--ink)}
+.qn{font-size:13px;color:var(--muted);min-height:1em}
+.pts{display:flex;align-items:baseline;gap:8px;border-top:1px solid var(--line);padding-top:10px}
+.pts b{font-family:var(--f-mono);font-size:24px}
+.pts button{margin-left:auto}
+.pk{display:flex;flex-direction:column;gap:2px;text-align:left;font:inherit;color:inherit;background:var(--panel2);
+  border:1px solid var(--line);border-radius:6px;padding:8px 10px;cursor:pointer}
+.pk b{font-family:var(--f-display);font-size:16px}
+.pk .d{font-size:13px;color:var(--muted)}
+.pk .ks{font-size:11px;text-transform:uppercase;color:var(--blood)}
+.csel{display:flex;gap:8px}
+.csel select{flex:1;font:inherit;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--panel2);color:var(--ink)}
+.pk .c{color:var(--blood)}
